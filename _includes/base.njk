@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>{{ title }} | Krayu — Program Intelligence</title>
+<meta name="description" content="{{ description }}"/>
+
+<link rel="canonical" href="{{ canonicalUrl }}"/>
+<link rel="stylesheet" href="/css/style.css"/>
+
+{% include "structured-data-org.njk" %}
+{% include "structured-data-pi-concept.njk" %}
+
+{% if pageSchema %}
+<script type="application/ld+json">
+{{ pageSchema | safe }}
+</script>
+{% endif %}
+
+</head>
+
+<body>
+
+{% include "header.njk" %}
+
+<main>
+{{ content | safe }}
+</main>
+
+{% include "footer.njk" %}
+
+</body>
+</html>
+
