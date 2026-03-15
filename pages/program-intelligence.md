@@ -47,3 +47,14 @@ Program Intelligence surfaces these signals before they become program failures.
 Program Intelligence also enables comparison of program stability across portfolios through the [Execution Stability Index (ESI)](/portfolio-intelligence).
 
 <div class="cta-block"><a href="https://krayu.be/ProgramIntelligence">Explore the full Program Intelligence page →</a></div>
+
+## Program Intelligence Knowledge Map
+
+Program Intelligence is structured across the following domains:
+
+• Signal Science  
+• Execution Stability Index  
+• Program Diagnosis Models  
+• Program Intelligence Operating System (PiOS)  
+• Signal Infrastructure  
+• Transformation Portfolio Intelligence
