@@ -1,0 +1,76 @@
+{
+  "run_ts": "2026-03-30 20:33:52",
+  "status": "PARTIAL",
+  "property": "https://mirror.krayu.be/",
+  "fail_count": 0,
+  "route_count": 6,
+  "results": [
+    {
+      "route": "/execution-blindness-examples",
+      "url": "https://mirror.krayu.be/execution-blindness-examples",
+      "page_class": "additive_expansion",
+      "canonical_status": "preview-pending-publish",
+      "indexation_class": "DISCOVERED_NOT_INDEXED",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "crawled_as": "UNKNOWN",
+      "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED"
+    },
+    {
+      "route": "/why-dashboards-fail-programs",
+      "url": "https://mirror.krayu.be/why-dashboards-fail-programs",
+      "page_class": "additive_expansion",
+      "canonical_status": "preview-pending-publish",
+      "indexation_class": "DISCOVERED_NOT_INDEXED",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "crawled_as": "UNKNOWN",
+      "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED"
+    },
+    {
+      "route": "/early-warning-signals-program-failure",
+      "url": "https://mirror.krayu.be/early-warning-signals-program-failure",
+      "page_class": "additive_expansion",
+      "canonical_status": "preview-pending-publish",
+      "indexation_class": "DISCOVERED_NOT_INDEXED",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "crawled_as": "UNKNOWN",
+      "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED"
+    },
+    {
+      "route": "/program-intelligence/",
+      "url": "https://mirror.krayu.be/program-intelligence/",
+      "page_class": "not_in_pages",
+      "canonical_status": "not_compiled",
+      "indexation_class": "DISCOVERED_NOT_INDEXED",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "crawled_as": "UNKNOWN",
+      "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED"
+    },
+    {
+      "route": "/execution-stability-index",
+      "url": "https://mirror.krayu.be/execution-stability-index",
+      "page_class": "unknown",
+      "canonical_status": "live",
+      "indexation_class": "DISCOVERED_NOT_INDEXED",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "crawled_as": "UNKNOWN",
+      "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED"
+    },
+    {
+      "route": "/risk-acceleration-gradient",
+      "url": "https://mirror.krayu.be/risk-acceleration-gradient",
+      "page_class": "unknown",
+      "canonical_status": "live",
+      "indexation_class": "DISCOVERED_NOT_INDEXED",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "crawled_as": "UNKNOWN",
+      "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED"
+    }
+  ],
+  "matrix_file": "/Users/khorrix/Projects/krayu-mirror/docs/mirror-validation/indexation_matrix.md"
+}

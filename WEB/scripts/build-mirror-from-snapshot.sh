@@ -416,7 +416,7 @@ for entry in "${COMPILED_PAGES[@]}"; do
   # ── 5. RELATIONSHIP VALIDATOR ─────────────────────────────────────────────
   # At least one cross-link to a related canonical page
   # Severity: WARNING — cross-linking is a quality recommendation, not a hard governance requirement
-  RELATED_PAGES=("/execution-stability-index" "/risk-acceleration-gradient" "/program-intelligence/" "/signal-infrastructure" "/portfolio-intelligence" "/pios")
+  RELATED_PAGES=("/execution-stability-index/" "/risk-acceleration-gradient/" "/program-intelligence/" "/signal-infrastructure" "/portfolio-intelligence" "/pios")
   FOUND_RELATED=0
   for rp in "${RELATED_PAGES[@]}"; do
     if echo "$BODY_CONTENT" | grep -q "$rp"; then
@@ -741,7 +741,7 @@ for entry in "${COMPILED_PAGES[@]}"; do
     if [[ ! -f "$PAGES_DIR/$link_file" ]]; then
       warn "8. internal link may not resolve: /$link_file (from $fname)"
     fi
-  done < <(grep -oE '\(/[a-z][a-z0-9-]*\)' "$PAGES_DIR/$fname" 2>/dev/null | tr -d '()' | grep -v '^/program-intelligence/$\|^/execution-stability-index\|^/risk-acceleration-gradient\|^/signal-infrastructure\|^/portfolio-intelligence\|^/pios\|^/manifesto' || true)
+  done < <(grep -oE '\(/[a-z][a-z0-9-]*\)' "$PAGES_DIR/$fname" 2>/dev/null | tr -d '()' | grep -v '^/program-intelligence/$\|^/execution-stability-index/\|^/risk-acceleration-gradient/\|^/signal-infrastructure\|^/portfolio-intelligence\|^/pios\|^/manifesto' || true)
 done
 pass "8. cross-linking graph checked (warnings issued for any unresolvable links)"
 

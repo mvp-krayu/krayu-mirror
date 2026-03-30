@@ -59,8 +59,8 @@ load_routes() {
       /why-dashboards-fail-programs
       /early-warning-signals-program-failure
       /program-intelligence/
-      /execution-stability-index
-      /risk-acceleration-gradient
+      /execution-stability-index/
+      /risk-acceleration-gradient/
     )
   fi
 }

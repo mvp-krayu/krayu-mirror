@@ -2,19 +2,19 @@
 
 Source of truth: GSC URL Inspection API
 Property: https://mirror.krayu.be/
-Last updated: 2026-03-30 20:23:03
+Last updated: 2026-03-30 20:37:18
 Overall status: PARTIAL
 
 ---
 
 | Route | Page Class | Canonical Status | Indexation Status | Source of Truth | Timestamp |
 |-------|-----------|-----------------|------------------|----------------|-----------|
-| /execution-blindness-examples | additive_expansion | preview-pending-publish | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:23:03 |
-| /why-dashboards-fail-programs | additive_expansion | preview-pending-publish | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:23:03 |
-| /early-warning-signals-program-failure | additive_expansion | preview-pending-publish | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:23:03 |
-| /program-intelligence/ | not_in_pages | not_compiled | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:23:03 |
-| /execution-stability-index | unknown | live | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:23:03 |
-| /risk-acceleration-gradient | unknown | live | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:23:03 |
+| /execution-blindness-examples | additive_expansion | preview-pending-publish | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:37:18 |
+| /why-dashboards-fail-programs | additive_expansion | preview-pending-publish | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:37:18 |
+| /early-warning-signals-program-failure | additive_expansion | preview-pending-publish | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:37:18 |
+| /program-intelligence/ | not_in_pages | not_compiled | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:37:18 |
+| /execution-stability-index/ | not_in_pages | not_compiled | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:37:18 |
+| /risk-acceleration-gradient/ | not_in_pages | not_compiled | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:37:18 |
 
 ---
 
@@ -38,4 +38,4 @@ Overall status: PARTIAL
 
 ---
 
-*Indexation Matrix — WEB-OPS external validation | 2026-03-30 20:23:03*
+*Indexation Matrix — WEB-OPS external validation | 2026-03-30 20:37:18*
