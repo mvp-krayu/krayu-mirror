@@ -1,0 +1,98 @@
+{
+  "run_ts": "2026-03-30 22:03:34",
+  "status": "PARTIAL",
+  "property": "https://mirror.krayu.be/",
+  "fail_count": 0,
+  "route_count": 8,
+  "results": [
+    {
+      "route": "/execution-stability-index/",
+      "url": "https://mirror.krayu.be/execution-stability-index/",
+      "page_class": "unknown",
+      "canonical_status": "live",
+      "indexation_class": "DISCOVERED_NOT_INDEXED",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "crawled_as": "UNKNOWN",
+      "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED"
+    },
+    {
+      "route": "/",
+      "url": "https://mirror.krayu.be/",
+      "page_class": "unknown",
+      "canonical_status": "live",
+      "indexation_class": "INDEXED",
+      "verdict": "PASS",
+      "coverage": "Submitted and indexed",
+      "crawled_as": "MOBILE",
+      "robots_txt_state": "ALLOWED"
+    },
+    {
+      "route": "/pios/",
+      "url": "https://mirror.krayu.be/pios/",
+      "page_class": "unknown",
+      "canonical_status": "live",
+      "indexation_class": "DISCOVERED_NOT_INDEXED",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "crawled_as": "UNKNOWN",
+      "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED"
+    },
+    {
+      "route": "/portfolio-intelligence/",
+      "url": "https://mirror.krayu.be/portfolio-intelligence/",
+      "page_class": "unknown",
+      "canonical_status": "live",
+      "indexation_class": "INDEXED",
+      "verdict": "PASS",
+      "coverage": "Submitted and indexed",
+      "crawled_as": "MOBILE",
+      "robots_txt_state": "ALLOWED"
+    },
+    {
+      "route": "/program-intelligence/",
+      "url": "https://mirror.krayu.be/program-intelligence/",
+      "page_class": "unknown",
+      "canonical_status": "live",
+      "indexation_class": "DISCOVERED_NOT_INDEXED",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "crawled_as": "UNKNOWN",
+      "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED"
+    },
+    {
+      "route": "/research/",
+      "url": "https://mirror.krayu.be/research/",
+      "page_class": "unknown",
+      "canonical_status": "live",
+      "indexation_class": "DISCOVERED_NOT_INDEXED",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "crawled_as": "UNKNOWN",
+      "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED"
+    },
+    {
+      "route": "/risk-acceleration-gradient/",
+      "url": "https://mirror.krayu.be/risk-acceleration-gradient/",
+      "page_class": "unknown",
+      "canonical_status": "live",
+      "indexation_class": "DISCOVERED_NOT_INDEXED",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "crawled_as": "UNKNOWN",
+      "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED"
+    },
+    {
+      "route": "/signal-platform/",
+      "url": "https://mirror.krayu.be/signal-platform/",
+      "page_class": "unknown",
+      "canonical_status": "live",
+      "indexation_class": "DISCOVERED_NOT_INDEXED",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "crawled_as": "UNKNOWN",
+      "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED"
+    }
+  ],
+  "matrix_file": "/Users/khorrix/Projects/krayu-mirror/docs/mirror-validation/indexation_matrix.md"
+}

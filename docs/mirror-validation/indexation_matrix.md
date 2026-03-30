@@ -2,22 +2,21 @@
 
 Source of truth: GSC URL Inspection API
 Property: https://mirror.krayu.be/
-Last updated: 2026-03-30 20:52:03
+Last updated: 2026-03-30 22:03:34
 Overall status: PARTIAL
 
 ---
 
 | Route | Page Class | Canonical Status | Indexation Status | Source of Truth | Timestamp |
 |-------|-----------|-----------------|------------------|----------------|-----------|
-| /execution-stability-index/ | unknown | live | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:52:03 |
-| / | unknown | live | INDEXED | GSC URL Inspection API | 2026-03-30 20:52:03 |
-| /manifesto/ | unknown | live | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:52:03 |
-| /pios/ | unknown | live | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:52:03 |
-| /portfolio-intelligence/ | unknown | live | INDEXED | GSC URL Inspection API | 2026-03-30 20:52:03 |
-| /program-intelligence/ | unknown | live | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:52:03 |
-| /research/ | unknown | live | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:52:03 |
-| /risk-acceleration-gradient/ | unknown | live | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:52:03 |
-| /signal-platform/ | unknown | live | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:52:03 |
+| /execution-stability-index/ | unknown | live | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 22:03:34 |
+| / | unknown | live | INDEXED | GSC URL Inspection API | 2026-03-30 22:03:34 |
+| /pios/ | unknown | live | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 22:03:34 |
+| /portfolio-intelligence/ | unknown | live | INDEXED | GSC URL Inspection API | 2026-03-30 22:03:34 |
+| /program-intelligence/ | unknown | live | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 22:03:34 |
+| /research/ | unknown | live | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 22:03:34 |
+| /risk-acceleration-gradient/ | unknown | live | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 22:03:34 |
+| /signal-platform/ | unknown | live | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 22:03:34 |
 
 ---
 
@@ -41,4 +40,4 @@ Overall status: PARTIAL
 
 ---
 
-*Indexation Matrix — WEB-OPS external validation | 2026-03-30 20:52:03*
+*Indexation Matrix — WEB-OPS external validation | 2026-03-30 22:03:34*
