@@ -2,19 +2,19 @@
 
 Source of truth: GSC URL Inspection API
 Property: https://mirror.krayu.be/
-Last updated: 2026-03-30 19:41:32
+Last updated: 2026-03-30 20:18:56
 Overall status: PARTIAL
 
 ---
 
 | Route | Page Class | Canonical Status | Indexation Status | Source of Truth | Timestamp |
 |-------|-----------|-----------------|------------------|----------------|-----------|
-| /execution-blindness-examples | additive_expansion | preview-pending-publish | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 19:41:32 |
-| /why-dashboards-fail-programs | additive_expansion | preview-pending-publish | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 19:41:32 |
-| /early-warning-signals-program-failure | additive_expansion | preview-pending-publish | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 19:41:32 |
-| /program-intelligence | unknown | unknown | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 19:41:32 |
-| /execution-stability-index | unknown | unknown | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 19:41:32 |
-| /risk-acceleration-gradient | unknown | unknown | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 19:41:32 |
+| /execution-blindness-examples | additive_expansion | preview-pending-publish | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:18:56 |
+| /why-dashboards-fail-programs | additive_expansion | preview-pending-publish | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:18:56 |
+| /early-warning-signals-program-failure | additive_expansion | preview-pending-publish | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:18:56 |
+| /program-intelligence | unknown | live | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:18:56 |
+| /execution-stability-index | unknown | live | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:18:56 |
+| /risk-acceleration-gradient | unknown | live | DISCOVERED_NOT_INDEXED | GSC URL Inspection API | 2026-03-30 20:18:56 |
 
 ---
 
@@ -38,4 +38,4 @@ Overall status: PARTIAL
 
 ---
 
-*Indexation Matrix — WEB-OPS external validation | 2026-03-30 19:41:32*
+*Indexation Matrix — WEB-OPS external validation | 2026-03-30 20:18:56*
