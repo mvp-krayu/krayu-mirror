@@ -11,5 +11,9 @@
   "description": "",
   "dependencies": {
     "@11ty/eleventy": "^3.1.2"
+  },
+  "devDependencies": {
+    "playwright": "^1.58.2",
+    "turndown": "^7.2.2"
   }
 }

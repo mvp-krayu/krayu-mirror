@@ -1,0 +1,12 @@
+{
+  "run_ts": "2026-03-30 18:19:59",
+  "status": "NOT_CONFIGURED",
+  "property": "https://krayu.be/",
+  "message": "GSC_ACCESS_TOKEN and GSC_SERVICE_ACCOUNT_KEY_FILE are both unset",
+  "routes": [
+    "/early-warning-signals-program-failure",
+    "/execution-blindness-examples",
+    "/why-dashboards-fail-programs"
+  ],
+  "results": []
+}

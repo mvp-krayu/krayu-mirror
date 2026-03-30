@@ -1,60 +1,160 @@
 ---
 layout: base.njk
-title: "Program Intelligence"
-description: "Program Intelligence is the discipline of translating engineering execution into executive insight."
-canonicalUrl: "https://krayu.be/ProgramIntelligence"
-pageSchema: |
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Program Intelligence Overview",
-    "description": "Program Intelligence is the discipline of translating engineering execution into executive insight.",
-    "url": "https://krayu.be/ProgramIntelligence",
-    "mainEntityOfPage": { "@id": "https://krayu.be/#ProgramIntelligenceConcept" },
-    "about": { "@id": "https://krayu.be/#ProgramIntelligenceConcept" },
-    "publisher": { "@id": "https://krayu.be/#organization" }
-  }
+title: "Program Intelligence — Execution Observability for Complex Programs"
+description: "Program Intelligence is the discipline of translating engineering execution into executive insight — introducing a structured interpretive layer above engineering systems."
+canonical: "https://krayu.be/program-intelligence"
+publish_status: "live"
 ---
 
 # Program Intelligence
 
-<p class="thesis">The discipline of translating engineering execution into executive insight.</p>
+The discipline of translating engineering execution into executive insight.
 
-Program Intelligence introduces a structured interpretive layer above engineering systems. It transforms operational delivery data into signals about program structure, delivery momentum, and emerging execution risk.
+Modern technology organizations generate vast operational data across repositories, delivery pipelines, architecture domains, and enterprise systems. Engineering tools measure activity in detail, yet leadership often struggles to understand what this activity means for the program as a whole.
 
-## The Program Intelligence Gap
+This disconnect creates a structural visibility problem between engineering execution and executive decision-making.
 
-Engineering tools answer operational questions such as which tickets are open or which builds succeeded. Executive leadership requires a different perspective: which programs are underway, where delivery risks are accumulating, and how stable the execution environment is.
+Program Intelligence introduces a structured interpretive layer above engineering systems. It transforms operational delivery data into clear signals about program structure, delivery momentum, and emerging execution risk.
 
-This difference is the **Program Intelligence Gap**.
+Rather than relying on fragmented dashboards or manual reporting, Program Intelligence converts engineering telemetry into structured executive intelligence that leadership can use to steer complex technology initiatives.
 
-## Execution Blindness
+> The problem is not the absence of data. The problem is interpretation.
+>
+> — Program Intelligence Manifesto
 
-<div class="example-block">
+---
 
-Engineering systems report activity as normal. Yet structural instability signals may already be building across schedule, cost, risk, predictability, and delivery flow.
+## What Program Intelligence Addresses
+
+### Execution Blindness
+
+Most technology programs fail gradually — long before leadership realizes it.
+
+Engineering tools report activity: commits, deployments, tickets. **They do not reveal execution stability.**
+
+A program may still appear operationally normal while structural instability signals are already emerging across schedule pressure, cost variance, delivery predictability, and risk accumulation.
 
 Program Intelligence surfaces these signals before they become program failures.
 
-</div>
+[Execution Blindness — full explanation →](/execution-blindness)
 
-## The Role of Signäl
+### The Program Intelligence Gap
 
-[Signäl](/signal-platform) converts engineering telemetry from systems such as Jira, Git, and ServiceNow into structured executive signals.
+Engineering systems answer:
+
+- What commits were made?
+- Which tickets are open?
+- How many deployments occurred?
+- What is the velocity of a team?
+
+Executive leadership needs:
+
+- What programs are actually underway?
+- Which initiatives generate strategic value?
+- Where are delivery risks accumulating?
+- How stable is the execution environment?
+
+Engineering tools reveal **activity**. Program Intelligence explains **meaning**.
+
+[The Program Intelligence Gap — full explanation →](/program-intelligence-gap)
+
+---
+
+## From Engineering Execution to Executive Insight
+
+| Layer | Content |
+|-------|---------|
+| Engineering Execution | Jira · Git · CI/CD · Architecture · Service Platforms |
+| Program Intelligence | Program structure · Initiative transparency · Execution signals · Governance models |
+| Executive Insight | Program visibility · Delivery risk awareness · Strategic decision support |
+
+### Program Structure
+
+Complex engineering environments often evolve organically across repositories, services, and teams. Program Intelligence reconstructs the true program architecture, revealing how initiatives, systems, and delivery domains relate to each other.
+
+### Initiative Visibility
+
+Leadership requires clear understanding of which initiatives exist, how they progress, and how they contribute to broader program objectives. Program Intelligence maps initiative structures and delivery progress across engineering domains.
+
+### Execution Signals
+
+Operational delivery patterns contain early indicators of program instability. Program Intelligence extracts signals from engineering activity that highlight structural pressure, delivery divergence, and risk propagation.
+
+### Executive Insight
+
+When execution signals are structured and contextualized, leadership gains a reliable view of program health, momentum, and emerging risks.
+
+---
+
+## Core Analytical Constructs
+
+Program Intelligence is operationalized through two core analytical constructs that together provide a complete view of execution health.
+
+### Execution Stability Index (ESI)
+
+Measures the structural stability of a program's execution system across five dimensions — schedule stability, cost stability, delivery predictability, flow compression, and risk acceleration — composited into a single indicator that leadership can monitor over time.
+
+[Execution Stability Index →](/execution-stability-index)
+
+### Risk Acceleration Gradient (RAG)
+
+Measures how execution risk evolves over time. RAG captures the rate of change and acceleration of risk injection, escalation momentum, and propagation across program boundaries.
+
+[Risk Acceleration Gradient →](/risk-acceleration-gradient)
+
+---
+
+## Relationship to Existing Disciplines
+
+Program Intelligence occupies a distinct analytical position from established disciplines.
+
+| Discipline | Focus |
+|---|---|
+| Engineering Observability | System performance and reliability |
+| DevOps Analytics | Delivery efficiency within teams |
+| Business Intelligence | Commercial and operational outcomes |
+| **Program Intelligence** | **Program execution dynamics for leadership — the analytical bridge** |
+
+Engineering observability focuses on the performance and reliability of systems. DevOps analytics examines delivery efficiency within engineering teams. Business intelligence analyzes commercial and operational outcomes. Program Intelligence focuses on the dynamics of program execution itself — interpreting engineering activity to understand how complex technology initiatives evolve over time.
+
+---
+
+## Why Program Intelligence Is Emerging Now
+
+Engineering environments now generate continuous execution data across repositories, delivery pipelines, service platforms, and enterprise systems. Organizations can observe infrastructure reliability and application performance with increasing precision, yet program execution itself remains largely opaque to leadership.
+
+As delivery environments scale across hundreds of services, teams, and platforms, traditional governance approaches struggle to maintain visibility over program dynamics. Activity is visible, but meaning is not.
+
+> Just as financial intelligence became essential for governing capital, Program Intelligence will become essential for governing complex engineering execution.
+>
+> — Program Intelligence Manifesto
+
+---
+
+## The Operational System: PiOS
+
+The discipline of Program Intelligence is operationalized through PiOS™ — the Program Intelligence Operating System. PiOS provides the governed transformation chain that converts execution evidence into signals, conditions, and decision-grade intelligence.
+
+[PiOS — Program Intelligence Operating System →](/pios)
+
+## Signal Infrastructure
+
+The execution signals that Program Intelligence produces are delivered through **Signäl** — the signal infrastructure built by KRAYU. Signäl sits above engineering systems such as Jira, Git, DevOps pipelines, and enterprise platforms, converting execution telemetry into structured signals across ESI, RAG, and the ExecLens intelligence surface.
+
+[Signal Infrastructure →](/signal-infrastructure)
 
 ## Portfolio Intelligence
 
-Program Intelligence also enables comparison of program stability across portfolios through the [Execution Stability Index (ESI)](/portfolio-intelligence).
+Program Intelligence scales across portfolios. By computing ESI and RAG across multiple programs, leadership can compare execution stability, identify relative risk concentration, and understand portfolio-level dynamics.
 
-<div class="cta-block"><a href="https://krayu.be/ProgramIntelligence">Explore the full Program Intelligence page →</a></div>
+[Portfolio Intelligence →](/portfolio-intelligence)
 
-## Program Intelligence Knowledge Map
+---
 
-Program Intelligence is structured across the following domains:
+## Program Intelligence Advisory
 
-• Signal Science  
-• Execution Stability Index  
-• Program Diagnosis Models  
-• Program Intelligence Operating System (PiOS)  
-• Signal Infrastructure  
-• Transformation Portfolio Intelligence
+KRAYU provides advisory services to help technology organizations introduce Program Intelligence into their delivery environments. Our work combines program architecture, strategic advisory, and execution signal infrastructure to translate engineering execution into credible executive insight.
+
+---
+
+*Program Intelligence — Krayu canonical discipline definition | Authority: CKR-001 | GOV-00 | CAT-00 | Source: krayu.be/program-intelligence snapshot 2026-03-30*

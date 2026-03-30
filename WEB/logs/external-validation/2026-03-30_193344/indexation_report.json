@@ -1,0 +1,58 @@
+{
+  "run_ts": "2026-03-30 19:33:44",
+  "status": "FAIL",
+  "property": "https://mirror.krayu.be/",
+  "fail_count": 6,
+  "route_count": 6,
+  "results": [
+    {
+      "route": "/execution-blindness-examples",
+      "url": "https://mirror.krayu.be/execution-blindness-examples",
+      "page_class": "additive_expansion",
+      "canonical_status": "preview-pending-publish",
+      "indexation_class": "NOT_FOUND",
+      "error": "Google Search Console API has not been used in project 968967648844 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/searchconsole.googleapis.com/overview?project=968967648844 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+    },
+    {
+      "route": "/why-dashboards-fail-programs",
+      "url": "https://mirror.krayu.be/why-dashboards-fail-programs",
+      "page_class": "additive_expansion",
+      "canonical_status": "preview-pending-publish",
+      "indexation_class": "NOT_FOUND",
+      "error": "Google Search Console API has not been used in project 968967648844 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/searchconsole.googleapis.com/overview?project=968967648844 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+    },
+    {
+      "route": "/early-warning-signals-program-failure",
+      "url": "https://mirror.krayu.be/early-warning-signals-program-failure",
+      "page_class": "additive_expansion",
+      "canonical_status": "preview-pending-publish",
+      "indexation_class": "NOT_FOUND",
+      "error": "Google Search Console API has not been used in project 968967648844 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/searchconsole.googleapis.com/overview?project=968967648844 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+    },
+    {
+      "route": "/program-intelligence",
+      "url": "https://mirror.krayu.be/program-intelligence",
+      "page_class": "unknown",
+      "canonical_status": "unknown",
+      "indexation_class": "NOT_FOUND",
+      "error": "Google Search Console API has not been used in project 968967648844 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/searchconsole.googleapis.com/overview?project=968967648844 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+    },
+    {
+      "route": "/execution-stability-index",
+      "url": "https://mirror.krayu.be/execution-stability-index",
+      "page_class": "unknown",
+      "canonical_status": "unknown",
+      "indexation_class": "NOT_FOUND",
+      "error": "Google Search Console API has not been used in project 968967648844 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/searchconsole.googleapis.com/overview?project=968967648844 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+    },
+    {
+      "route": "/risk-acceleration-gradient",
+      "url": "https://mirror.krayu.be/risk-acceleration-gradient",
+      "page_class": "unknown",
+      "canonical_status": "unknown",
+      "indexation_class": "NOT_FOUND",
+      "error": "Google Search Console API has not been used in project 968967648844 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/searchconsole.googleapis.com/overview?project=968967648844 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+    }
+  ],
+  "matrix_file": "/Users/khorrix/Projects/krayu-mirror/docs/mirror-validation/indexation_matrix.md"
+}

@@ -1,0 +1,219 @@
+name: WEB-OPS Build
+
+# Trigger: manual dispatch always available.
+# Push trigger: only for changes to pipeline-relevant paths (pages/, WEB/).
+# Deploy is NOT included in this workflow — see WEB/contracts/edge-delivery.md.
+
+on:
+  workflow_dispatch:
+    inputs:
+      compile_mode:
+        description: "Compile mode (strict | permissive)"
+        required: false
+        default: "strict"
+        type: choice
+        options:
+          - strict
+          - permissive
+      origin_stream:
+        description: "Origin stream name (recorded in manifests)"
+        required: false
+        default: "CI-WEBOPS-BUILD"
+        type: string
+      run_eleventy:
+        description: "Run Eleventy build step"
+        required: false
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+
+  push:
+    branches:
+      - main
+    paths:
+      - "pages/**"
+      - "WEB/base44-snapshot/**"
+      - "WEB/scripts/**"
+      - "_includes/**"
+      - "_data/**"
+      - ".eleventy.js"
+      - "package.json"
+
+env:
+  NODE_VERSION: "20"
+  COMPILE_MODE: ${{ github.event.inputs.compile_mode || 'strict' }}
+  ORIGIN_STREAM: ${{ github.event.inputs.origin_stream || 'CI-WEBOPS-PUSH' }}
+  RUN_ELEVENTY: ${{ github.event.inputs.run_eleventy || 'true' }}
+
+jobs:
+  webops-build:
+    name: WEB-OPS Mirror Build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      # ── Checkout ─────────────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      # ── Node.js setup ────────────────────────────────────────────────────────
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+          cache-dependency-path: package-lock.json
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      # ── Snapshot validation ──────────────────────────────────────────────────
+      # The pipeline requires a promoted snapshot (latest/ symlink) to compile from.
+      # In CI, the snapshot is committed to the repository.
+      # If latest/ does not exist or is not a valid symlink, the compile will fail
+      # with a clear error message from build-mirror-from-snapshot.sh.
+      - name: Check promoted snapshot exists
+        run: |
+          echo "=== Snapshot State ==="
+          if [ -L "WEB/base44-snapshot/latest" ]; then
+            TARGET="$(readlink WEB/base44-snapshot/latest)"
+            echo "latest → $TARGET"
+            echo "Snapshot files:"
+            ls -la "WEB/base44-snapshot/$TARGET/" 2>/dev/null || ls -la "WEB/base44-snapshot/latest/"
+          elif [ -d "WEB/base44-snapshot/latest" ]; then
+            echo "latest/ is a real directory (not a symlink)"
+            ls -la WEB/base44-snapshot/latest/
+          else
+            echo "ERROR: WEB/base44-snapshot/latest does not exist."
+            echo "A promoted snapshot is required. Run promote-snapshot.sh locally first."
+            exit 1
+          fi
+
+      # ── Stage 3: Compile mirror ──────────────────────────────────────────────
+      - name: Compile mirror from snapshot
+        run: |
+          bash WEB/scripts/build-mirror-from-snapshot.sh \
+            --stream "${{ env.ORIGIN_STREAM }}" \
+            --mode "${{ env.COMPILE_MODE }}"
+
+      # ── Stage 4 (optional): Eleventy build ───────────────────────────────────
+      - name: Run Eleventy build
+        if: env.RUN_ELEVENTY == 'true'
+        run: |
+          npx @11ty/eleventy --output=_site
+          echo "=== Eleventy build complete ==="
+          echo "Output directory: _site/"
+          echo "Files generated: $(find _site -type f | wc -l | tr -d ' ')"
+
+      - name: Verify Eleventy output
+        if: env.RUN_ELEVENTY == 'true'
+        run: |
+          if [ ! -d "_site" ]; then
+            echo "FAIL: _site/ directory not created by Eleventy build"
+            exit 1
+          fi
+          echo "=== _site/ contents (top-level) ==="
+          ls -la _site/
+
+      # ── Stage 5: External validation ────────────────────────────────────────
+      # GSC credentials injected via GSC_SERVICE_ACCOUNT_KEY_B64 secret (base64-encoded JSON key).
+      # Falls back to NOT_CONFIGURED mode if secret is not set — never blocks CI.
+      - name: Inject GSC service account key
+        env:
+          GSC_SERVICE_ACCOUNT_KEY_B64: ${{ secrets.GSC_SERVICE_ACCOUNT_KEY_B64 }}
+        run: |
+          if [ -n "$GSC_SERVICE_ACCOUNT_KEY_B64" ]; then
+            echo "$GSC_SERVICE_ACCOUNT_KEY_B64" | base64 --decode > /tmp/gsc-key.json
+            echo "GSC_SERVICE_ACCOUNT_KEY_FILE=/tmp/gsc-key.json" >> "$GITHUB_ENV"
+            echo "GSC key injected."
+          else
+            echo "GSC_SERVICE_ACCOUNT_KEY_B64 not set — external validation will run in NOT_CONFIGURED mode."
+          fi
+
+      - name: External validation (sitemap — no credentials required)
+        run: |
+          bash WEB/scripts/check-sitemap.sh \
+            --mode permissive \
+            --base-url https://mirror.krayu.be
+        continue-on-error: true
+
+      - name: External validation (indexation)
+        run: |
+          bash WEB/scripts/check-url-indexation.sh \
+            --property "https://mirror.krayu.be/"
+        # Exits 0 for NOT_CONFIGURED — never blocks CI
+        continue-on-error: true
+
+      - name: External validation (Search Console)
+        run: |
+          bash WEB/scripts/validate-search-console.sh \
+            --property "https://mirror.krayu.be/" \
+            --days 7
+        # Exits 0 for NOT_CONFIGURED — never blocks CI
+        continue-on-error: true
+
+      # ── Archive validation artifacts ─────────────────────────────────────────
+      - name: Archive mirror validation artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mirror-validation-${{ github.run_number }}
+          path: |
+            docs/mirror-validation/
+            WEB/logs/external-validation/
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Archive compiled pages
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-pages-${{ github.run_number }}
+          path: pages/
+          retention-days: 14
+          if-no-files-found: warn
+
+      - name: Archive built site
+        if: env.RUN_ELEVENTY == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: built-site-${{ github.run_number }}
+          path: _site/
+          retention-days: 7
+          if-no-files-found: warn
+
+      # ── Summary ──────────────────────────────────────────────────────────────
+      - name: Build summary
+        if: always()
+        run: |
+          echo "=== WEB-OPS BUILD SUMMARY ==="
+          echo "Stream:       ${{ env.ORIGIN_STREAM }}"
+          echo "Mode:         ${{ env.COMPILE_MODE }}"
+          echo "Eleventy:     ${{ env.RUN_ELEVENTY }}"
+          echo "Run:          ${{ github.run_number }}"
+          echo ""
+          echo "--- Compile manifest ---"
+          cat docs/mirror-validation/compile_manifest.md 2>/dev/null | head -30 || echo "(not written)"
+          echo ""
+          echo "--- Hard validator verdict ---"
+          grep -E "Overall Verdict|BLOCKING|WARNING|PASS checks" \
+            docs/mirror-validation/hard_validator_report.md 2>/dev/null || echo "(not written)"
+          echo ""
+          echo "--- External validation ---"
+          if [ -f "docs/mirror-validation/indexation_matrix.md" ]; then
+            grep -E "Source of truth|Property|GSC credentials" docs/mirror-validation/indexation_matrix.md 2>/dev/null | head -5 || echo "(not written)"
+          else
+            echo "(indexation_matrix.md not written)"
+          fi
+          echo ""
+          echo "--- Artifacts archived ---"
+          echo "  docs/mirror-validation/ → mirror-validation-${{ github.run_number }}"
+          echo "  pages/                  → compiled-pages-${{ github.run_number }}"
+          if [ "${{ env.RUN_ELEVENTY }}" = "true" ]; then
+            echo "  _site/                  → built-site-${{ github.run_number }}"
+          fi

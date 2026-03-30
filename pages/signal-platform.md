@@ -12,6 +12,7 @@ pageSchema: |
     "publisher": { "@id": "https://krayu.be/#organization" },
     "about": { "@id": "https://krayu.be/#ProgramIntelligenceConcept" }
   }
+publish_status: "live"
 ---
 
 <p class="back-link"><a href="/program-intelligence">← Program Intelligence</a></p>

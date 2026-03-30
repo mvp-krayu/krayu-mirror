@@ -1,0 +1,35 @@
+{
+  "run_ts": "2026-03-30 19:33:38",
+  "status": "FAIL",
+  "property": "https://mirror.krayu.be/",
+  "start_date": "2026-03-23",
+  "end_date": "2026-03-30",
+  "query_count": 5,
+  "results": [
+    {
+      "query": "execution blindness",
+      "status": "FAIL",
+      "error": "Google Search Console API has not been used in project 968967648844 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/searchconsole.googleapis.com/overview?project=968967648844 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+    },
+    {
+      "query": "program intelligence",
+      "status": "FAIL",
+      "error": "Google Search Console API has not been used in project 968967648844 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/searchconsole.googleapis.com/overview?project=968967648844 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+    },
+    {
+      "query": "ESI execution stability",
+      "status": "FAIL",
+      "error": "Google Search Console API has not been used in project 968967648844 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/searchconsole.googleapis.com/overview?project=968967648844 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+    },
+    {
+      "query": "execution blindness examples",
+      "status": "FAIL",
+      "error": "Google Search Console API has not been used in project 968967648844 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/searchconsole.googleapis.com/overview?project=968967648844 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+    },
+    {
+      "query": "why dashboards fail programs",
+      "status": "FAIL",
+      "error": "Google Search Console API has not been used in project 968967648844 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/searchconsole.googleapis.com/overview?project=968967648844 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+    }
+  ]
+}

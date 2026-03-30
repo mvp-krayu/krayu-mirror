@@ -13,6 +13,7 @@ pageSchema: |
     "about": { "@id": "https://krayu.be/#ProgramIntelligenceConcept" },
     "publisher": { "@id": "https://krayu.be/#organization" }
   }
+publish_status: "live"
 ---
 
 # Program Intelligence for Technology Organizations
