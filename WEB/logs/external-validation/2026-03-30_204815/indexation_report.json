@@ -1,0 +1,18 @@
+{
+  "run_ts": "2026-03-30 20:48:15",
+  "status": "NOT_CONFIGURED",
+  "property": "https://mirror.krayu.be/",
+  "message": "GSC_ACCESS_TOKEN and GSC_SERVICE_ACCOUNT_KEY_FILE are both unset",
+  "routes": [
+    "/execution-stability-index/",
+    "/",
+    "/manifesto/",
+    "/pios/",
+    "/portfolio-intelligence/",
+    "/program-intelligence/",
+    "/research/",
+    "/risk-acceleration-gradient/",
+    "/signal-platform/"
+  ],
+  "results": []
+}

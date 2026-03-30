@@ -47,6 +47,31 @@ mkdir -p "$VALIDATION_DIR"
 mkdir -p "$LOG_DIR"
 
 # ─── ROUTE RESOLUTION ────────────────────────────────────────────────────────
+# Priority: --route-file > --routes > derived from pages/ (publish_status=live only)
+# Derived routes use same normalization as the sitemap validator:
+#   pages/index.md  → /
+#   pages/<slug>.md → /<slug>/
+#   anchor routes (# present) → excluded
+
+normalize_probe_route() {
+  local r="$1"
+  # Strip scheme + hostname
+  r="$(echo "$r" | sed -E 's|^https?://[^/]*||')"
+  # Ensure leading slash
+  [[ -z "$r" || "${r:0:1}" != "/" ]] && r="/$r"
+  # Collapse duplicate slashes
+  r="$(echo "$r" | sed 's|//\+|/|g')"
+  # /index → /
+  if [[ "$r" == "/index" || "$r" == "/index/" ]]; then
+    echo "/"; return
+  fi
+  # Anchor routes excluded — caller must check before calling
+  # Trailing slash for non-root
+  if [[ "$r" != "/" && "${r: -1}" != "/" ]]; then
+    r="${r}/"
+  fi
+  echo "$r"
+}
 
 load_routes() {
   if [[ -n "$ROUTE_FILE" ]] && [[ -f "$ROUTE_FILE" ]]; then
@@ -54,14 +79,28 @@ load_routes() {
   elif [[ -n "$ROUTES_ARG" ]]; then
     IFS=',' read -ra ROUTES <<< "$ROUTES_ARG"
   else
-    ROUTES=(
-      /execution-blindness-examples
-      /why-dashboards-fail-programs
-      /early-warning-signals-program-failure
-      /program-intelligence/
-      /execution-stability-index/
-      /risk-acceleration-gradient/
-    )
+    # Derive from pages/ — live pages only, anchors excluded
+    if [[ -d "$PAGES_DIR" ]]; then
+      local pfile publish_status canonical route
+      while IFS= read -r pfile; do
+        [[ -f "$pfile" ]] || continue
+        publish_status="$(awk '/^---$/{c++;if(c==2)exit;next} c==1 && /^publish_status:/{sub(/^publish_status: *"?/,"");sub(/"[ \t]*$/,"");print;exit}' "$pfile" 2>/dev/null || echo "")"
+        [[ "$publish_status" != "live" ]] && continue
+        canonical="$(awk '/^---$/{c++;if(c==2)exit;next} c==1 && /^canonical:/{sub(/^canonical: *"?/,"");sub(/"[ \t]*$/,"");print;exit}' "$pfile" 2>/dev/null || echo "")"
+        if [[ -n "$canonical" ]]; then
+          # Strip domain to get path
+          route="$(echo "$canonical" | sed -E 's|^https?://[^/]*||')"
+          [[ "${route:0:1}" != "/" ]] && route="/$route"
+        else
+          route="/$(basename "$pfile" .md)"
+        fi
+        # Exclude anchor routes
+        [[ "$route" == *"#"* ]] && continue
+        # Normalize
+        route="$(normalize_probe_route "$route")"
+        ROUTES+=("$route")
+      done < <(find "$PAGES_DIR" -maxdepth 1 -name "*.md" | sort)
+    fi
   fi
 }
 
@@ -73,8 +112,14 @@ load_routes
 
 get_page_metadata() {
   local route="$1"
-  local fname="${route#/}.md"
-  local filepath="$PAGES_DIR/$fname"
+  local slug filepath
+  if [[ "$route" == "/" ]]; then
+    slug="index"
+  else
+    slug="${route#/}"   # strip leading slash
+    slug="${slug%/}"    # strip trailing slash
+  fi
+  filepath="$PAGES_DIR/${slug}.md"
 
   if [[ -f "$filepath" ]]; then
     local page_class publish_status

@@ -792,3 +792,106 @@ Overall status: PARTIAL
 
 JSON: `/Users/khorrix/Projects/krayu-mirror/WEB/logs/external-validation/2026-03-30_203801/gsc_report.json`
 
+
+---
+
+## URL Indexation Check — 2026-03-30 20:41:31
+
+Property: https://mirror.krayu.be/
+Overall status: PARTIAL
+
+| Route | Status | Coverage State | Crawled As |
+|-------|--------|---------------|------------|
+| /execution-blindness-examples | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /why-dashboards-fail-programs | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /early-warning-signals-program-failure | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /program-intelligence/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /execution-stability-index/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /risk-acceleration-gradient/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+
+Matrix: `/Users/khorrix/Projects/krayu-mirror/docs/mirror-validation/indexation_matrix.md`
+JSON: `/Users/khorrix/Projects/krayu-mirror/WEB/logs/external-validation/2026-03-30_204131/indexation_report.json`
+
+
+---
+
+## Search Console Validation — 2026-03-30 20:42:13
+
+Property: https://mirror.krayu.be/
+Date range: 2026-03-23 to 2026-03-30
+Overall status: PARTIAL
+
+### Query Results
+
+| Query | Status | Detail |
+|-------|--------|--------|
+| execution blindness | WARN | no data returned |
+| program intelligence | WARN | no data returned |
+| ESI execution stability | WARN | no data returned |
+| execution blindness examples | WARN | no data returned |
+| why dashboards fail programs | WARN | no data returned |
+
+JSON: `/Users/khorrix/Projects/krayu-mirror/WEB/logs/external-validation/2026-03-30_204213/gsc_report.json`
+
+
+---
+
+## URL Indexation Check — 2026-03-30 20:48:15
+
+Status: NOT_CONFIGURED
+
+Credentials required:
+- `GSC_ACCESS_TOKEN` environment variable (OAuth2 bearer token)
+- OR `GSC_SERVICE_ACCOUNT_KEY_FILE` environment variable (path to GCP service account JSON key)
+
+Property: https://mirror.krayu.be/
+
+No indexation data collected. Pipeline may proceed with NOT_CONFIGURED warning.
+
+Indexation matrix: /Users/khorrix/Projects/krayu-mirror/docs/mirror-validation/indexation_matrix.md (all routes marked NOT_CONFIGURED)
+JSON output: /Users/khorrix/Projects/krayu-mirror/WEB/logs/external-validation/2026-03-30_204815/indexation_report.json
+
+
+---
+
+## URL Indexation Check — 2026-03-30 20:52:03
+
+Property: https://mirror.krayu.be/
+Overall status: PARTIAL
+
+| Route | Status | Coverage State | Crawled As |
+|-------|--------|---------------|------------|
+| /execution-stability-index/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| / | PASS | Submitted and indexed | MOBILE |
+| /manifesto/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /pios/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /portfolio-intelligence/ | PASS | Submitted and indexed | MOBILE |
+| /program-intelligence/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /research/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /risk-acceleration-gradient/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /signal-platform/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+
+Matrix: `/Users/khorrix/Projects/krayu-mirror/docs/mirror-validation/indexation_matrix.md`
+JSON: `/Users/khorrix/Projects/krayu-mirror/WEB/logs/external-validation/2026-03-30_205203/indexation_report.json`
+
+
+---
+
+## Search Console Validation — 2026-03-30 20:53:06
+
+Property: https://mirror.krayu.be/
+Date range: 2026-03-23 to 2026-03-30
+Overall status: PARTIAL
+
+### Query Results
+
+| Query | Status | Detail |
+|-------|--------|--------|
+| execution blindness | WARN | no data returned |
+| program intelligence | WARN | no data returned |
+| ESI execution stability | WARN | no data returned |
+| execution blindness examples | WARN | no data returned |
+| why dashboards fail programs | WARN | no data returned |
+
+JSON: `/Users/khorrix/Projects/krayu-mirror/WEB/logs/external-validation/2026-03-30_205306/gsc_report.json`
+
