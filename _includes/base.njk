@@ -24,15 +24,18 @@
 </head>
 
 <body>
+<div class="site-wrapper">
 
 {% include "header.njk" %}
 
 <main>
+<article class="page-content">
 {{ content | safe }}
+</article>
 </main>
 
 {% include "footer.njk" %}
 
+</div>
 </body>
 </html>
-
