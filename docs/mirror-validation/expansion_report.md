@@ -56,7 +56,7 @@ Extraction method: Playwright Chromium headless — `main` selector, networkidle
 - All scenario narratives (What Activity Metrics Showed / What RAG Showed / What ESI Showed)
 - All comparison table content
 - All signal descriptions (ESI decline signals, RAG signals, dimension signals)
-- All canonical links to /program-intelligence#execution-blindness
+- All canonical links to /program-intelligence/#execution-blindness
 
 **No content was added, improved, reinterpreted, or shortened for convenience.**
 
@@ -68,7 +68,7 @@ Extraction method: Playwright Chromium headless — `main` selector, networkidle
 
 **Compiled mirror page:** Structured as 3 H2 scenarios with H3 subsections (What Activity Metrics Showed / What RAG Showed / What ESI Showed / Lead Time Advantage). Sprint tables reconstructed from extracted data. Summary pattern table added from extracted conclusion section.
 
-**Canonical anchor:** /program-intelligence#execution-blindness — preserved in intro and footer.
+**Canonical anchor:** /program-intelligence/#execution-blindness — preserved in intro and footer.
 **Class:** additive_expansion. Does not redefine Execution Blindness.
 
 ---
@@ -79,7 +79,7 @@ Extraction method: Playwright Chromium headless — `main` selector, networkidle
 
 **Compiled mirror page:** Structured as 5 H2 sections. Quote preserved verbatim. Comparison table preserved. ESI and RAG links preserved with full display names. Emoji icon category labels from UI stripped; substantive content retained.
 
-**Canonical anchor:** /program-intelligence#execution-blindness — preserved in intro and footer.
+**Canonical anchor:** /program-intelligence/#execution-blindness — preserved in intro and footer.
 **Class:** additive_expansion. Does not redefine Execution Blindness; references and reinforces it.
 
 ---
@@ -90,7 +90,7 @@ Extraction method: Playwright Chromium headless — `main` selector, networkidle
 
 **Compiled mirror page:** Structured as 5 H2 sections with 5 H3 dimension subsections. Arrow-prefixed bullet points converted to standard markdown bullets. Emoji dimension icons stripped; dimension names preserved as H3 headings. Lead time example preserved with exact sprint numbers. Closing "not better dashboards" statement preserved verbatim.
 
-**Canonical anchor:** /program-intelligence#execution-blindness — preserved in intro and footer.
+**Canonical anchor:** /program-intelligence/#execution-blindness — preserved in intro and footer.
 **Class:** additive_expansion. Does not redefine ESI or RAG; references canonical definitions and links to canonical pages.
 
 ---
@@ -99,9 +99,9 @@ Extraction method: Playwright Chromium headless — `main` selector, networkidle
 
 | Page | Class | Expands What | Canonical Authority Preserved |
 |------|-------|-------------|-------------------------------|
-| execution-blindness-examples.md | additive_expansion | /program-intelligence#execution-blindness | YES |
-| why-dashboards-fail-programs.md | additive_expansion | /program-intelligence#execution-blindness | YES |
-| early-warning-signals-program-failure.md | additive_expansion | /program-intelligence#execution-blindness | YES |
+| execution-blindness-examples.md | additive_expansion | /program-intelligence/#execution-blindness | YES |
+| why-dashboards-fail-programs.md | additive_expansion | /program-intelligence/#execution-blindness | YES |
+| early-warning-signals-program-failure.md | additive_expansion | /program-intelligence/#execution-blindness | YES |
 
 No additive page was promoted to canonical_core.
 No additive page redefines a canonical concept.

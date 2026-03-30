@@ -626,7 +626,7 @@ grep -E "FAIL|PARTIAL" docs/mirror-validation/hard_validator_report.md | grep -v
 | STRUCTURE | No H2 or short body | Page content may be incomplete — re-extract from Base44 |
 | TERMINOLOGY | Missing required terms | Verify Base44 page content includes Execution Blindness, ESI, RAG |
 | DEFINITION | Wrong page_class | Fix page_class frontmatter in snapshot before re-compile |
-| CONTEXT | Missing canonical anchor | Verify page body links to /program-intelligence#execution-blindness |
+| CONTEXT | Missing canonical anchor | Verify page body links to /program-intelligence/#execution-blindness |
 | STANDALONE | Missing title | Fix title frontmatter in compiled output |
 | METADATA | Missing frontmatter fields | Check compile stage — field may not have been extracted from snapshot |
 | LINK | Empty href or link text | Fix markdown link syntax in snapshot before re-compile |

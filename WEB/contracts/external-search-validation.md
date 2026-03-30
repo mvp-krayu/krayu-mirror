@@ -94,7 +94,7 @@ Every route published through WEB-EXP series must be inspected post-publish:
 | /execution-blindness-examples | URL inspection + indexation |
 | /why-dashboards-fail-programs | URL inspection + indexation |
 | /early-warning-signals-program-failure | URL inspection + indexation |
-| /program-intelligence | Baseline — confirm no regression |
+| /program-intelligence/ | Baseline — confirm no regression |
 | /execution-stability-index | Baseline — confirm no regression |
 | /risk-acceleration-gradient | Baseline — confirm no regression |
 

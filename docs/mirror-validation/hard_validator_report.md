@@ -57,7 +57,7 @@ All BLOCKING validators passed.
 | STRUCTURE | BLOCKING | early-warning-signals-program-failure.md | PASS | H1 present, 4 H2 sections, 111 body lines |
 | TERMINOLOGY | BLOCKING | early-warning-signals-program-failure.md | PASS | All required terms present |
 | DEFINITION | BLOCKING | early-warning-signals-program-failure.md | PASS | No canonical concept redefinition detected |
-| CONTEXT | BLOCKING | early-warning-signals-program-failure.md | PASS | Canonical anchor link present: /program-intelligence#execution-blindness |
+| CONTEXT | BLOCKING | early-warning-signals-program-failure.md | PASS | Canonical anchor link present: /program-intelligence/#execution-blindness |
 | RELATIONSHIP | WARNING | early-warning-signals-program-failure.md | PASS | At least one cross-link to related canonical page |
 | STANDALONE | BLOCKING | early-warning-signals-program-failure.md | PASS | title, description, and sufficient body present |
 | METADATA | BLOCKING | early-warning-signals-program-failure.md | PASS | All required frontmatter fields present |
@@ -65,7 +65,7 @@ All BLOCKING validators passed.
 | STRUCTURE | BLOCKING | execution-blindness-examples.md | PASS | H1 present, 3 H2 sections, 159 body lines |
 | TERMINOLOGY | BLOCKING | execution-blindness-examples.md | PASS | All required terms present |
 | DEFINITION | BLOCKING | execution-blindness-examples.md | PASS | No canonical concept redefinition detected |
-| CONTEXT | BLOCKING | execution-blindness-examples.md | PASS | Canonical anchor link present: /program-intelligence#execution-blindness |
+| CONTEXT | BLOCKING | execution-blindness-examples.md | PASS | Canonical anchor link present: /program-intelligence/#execution-blindness |
 | RELATIONSHIP | WARNING | execution-blindness-examples.md | PASS | At least one cross-link to related canonical page |
 | STANDALONE | BLOCKING | execution-blindness-examples.md | PASS | title, description, and sufficient body present |
 | METADATA | BLOCKING | execution-blindness-examples.md | PASS | All required frontmatter fields present |
@@ -73,7 +73,7 @@ All BLOCKING validators passed.
 | STRUCTURE | BLOCKING | why-dashboards-fail-programs.md | PASS | H1 present, 5 H2 sections, 107 body lines |
 | TERMINOLOGY | BLOCKING | why-dashboards-fail-programs.md | PASS | All required terms present |
 | DEFINITION | BLOCKING | why-dashboards-fail-programs.md | PASS | No canonical concept redefinition detected |
-| CONTEXT | BLOCKING | why-dashboards-fail-programs.md | PASS | Canonical anchor link present: /program-intelligence#execution-blindness |
+| CONTEXT | BLOCKING | why-dashboards-fail-programs.md | PASS | Canonical anchor link present: /program-intelligence/#execution-blindness |
 | RELATIONSHIP | WARNING | why-dashboards-fail-programs.md | PASS | At least one cross-link to related canonical page |
 | STANDALONE | BLOCKING | why-dashboards-fail-programs.md | PASS | title, description, and sufficient body present |
 | METADATA | BLOCKING | why-dashboards-fail-programs.md | PASS | All required frontmatter fields present |

@@ -2,7 +2,7 @@
 layout: base.njk
 title: "Program Intelligence — Execution Observability for Complex Programs"
 description: "Program Intelligence is the discipline of translating engineering execution into executive insight — introducing a structured interpretive layer above engineering systems."
-canonical: "https://krayu.be/program-intelligence"
+canonical: "https://krayu.be/program-intelligence/"
 publish_status: "live"
 ---
 
@@ -56,7 +56,7 @@ Executive leadership needs:
 
 Engineering tools reveal **activity**. Program Intelligence explains **meaning**.
 
-[The Program Intelligence Gap — full explanation →](/program-intelligence-gap)
+[The Program Intelligence Gap — full explanation →](/program-intelligence/-gap)
 
 ---
 

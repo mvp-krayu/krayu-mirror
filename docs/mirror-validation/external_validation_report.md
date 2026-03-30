@@ -117,16 +117,16 @@ Overall status: FAIL
 | preview page correctly excluded from sitemap: /manifesto | PASS |
 | preview page correctly excluded from sitemap: /pios | PASS |
 | preview page correctly excluded from sitemap: /portfolio-intelligence | PASS |
-| preview page correctly excluded from sitemap: /program-intelligence | PASS |
+| preview page correctly excluded from sitemap: /program-intelligence/ | PASS |
 | preview page correctly excluded from sitemap: /research | PASS |
 | preview page correctly excluded from sitemap: /risk-acceleration-gradient | PASS |
 | preview page correctly excluded from sitemap: /signal-platform | PASS |
 | preview page correctly excluded from sitemap: /why-dashboards-fail-programs | PASS |
-| anchor-section excluded from sitemap (correct): /program-intelligence#execution-blindness | PASS |
-| anchor-section excluded from sitemap (correct): /program-intelligence#program-intelligence-gap | PASS |
-| anchor-section excluded from sitemap (correct): /program-intelligence#signal-infrastructure | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence/#execution-blindness | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence/#program-intelligence-gap | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence/#signal-infrastructure | PASS |
 | ORPHAN SITEMAP ROUTE: /https://mirror.krayu.be/ (in sitemap but no page in pages/) | FAIL |
-| ORPHAN SITEMAP ROUTE: /https://mirror.krayu.be/program-intelligence (in sitemap but no page in pages/) | FAIL |
+| ORPHAN SITEMAP ROUTE: /https://mirror.krayu.be/program-intelligence/ (in sitemap but no page in pages/) | FAIL |
 | ORPHAN SITEMAP ROUTE: /https://mirror.krayu.be/manifesto (in sitemap but no page in pages/) | FAIL |
 | ORPHAN SITEMAP ROUTE: /https://mirror.krayu.be/research (in sitemap but no page in pages/) | FAIL |
 | ORPHAN SITEMAP ROUTE: /https://mirror.krayu.be/signal-platform (in sitemap but no page in pages/) | FAIL |
@@ -168,15 +168,15 @@ Overall status: FAIL
 | PREVIEW PAGE IN SITEMAP: /manifesto (publish_status=unknown — blocking) | FAIL |
 | preview page correctly excluded from sitemap: /pios | PASS |
 | PREVIEW PAGE IN SITEMAP: /portfolio-intelligence (publish_status=unknown — blocking) | FAIL |
-| PREVIEW PAGE IN SITEMAP: /program-intelligence (publish_status=unknown — blocking) | FAIL |
+| PREVIEW PAGE IN SITEMAP: /program-intelligence/ (publish_status=unknown — blocking) | FAIL |
 | PREVIEW PAGE IN SITEMAP: /research (publish_status=unknown — blocking) | FAIL |
 | preview page correctly excluded from sitemap: /risk-acceleration-gradient | PASS |
 | PREVIEW PAGE IN SITEMAP: /signal-platform (publish_status=unknown — blocking) | FAIL |
 | preview page correctly excluded from sitemap: /why-dashboards-fail-programs | PASS |
-| anchor-section excluded from sitemap (correct): /program-intelligence#execution-blindness | PASS |
-| anchor-section excluded from sitemap (correct): /program-intelligence#program-intelligence-gap | PASS |
-| anchor-section excluded from sitemap (correct): /program-intelligence#signal-infrastructure | PASS |
-| sitemap route has backing page: /program-intelligence | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence/#execution-blindness | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence/#program-intelligence-gap | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence/#signal-infrastructure | PASS |
+| sitemap route has backing page: /program-intelligence/ | PASS |
 | sitemap route has backing page: /manifesto | PASS |
 | sitemap route has backing page: /research | PASS |
 | sitemap route has backing page: /signal-platform | PASS |
@@ -218,15 +218,15 @@ Overall status: FAIL
 | PREVIEW PAGE IN SITEMAP: /manifesto (publish_status=unknown — blocking) | FAIL |
 | preview page correctly excluded from sitemap: /pios | PASS |
 | PREVIEW PAGE IN SITEMAP: /portfolio-intelligence (publish_status=unknown — blocking) | FAIL |
-| PREVIEW PAGE IN SITEMAP: /program-intelligence (publish_status=unknown — blocking) | FAIL |
+| PREVIEW PAGE IN SITEMAP: /program-intelligence/ (publish_status=unknown — blocking) | FAIL |
 | PREVIEW PAGE IN SITEMAP: /research (publish_status=unknown — blocking) | FAIL |
 | preview page correctly excluded from sitemap: /risk-acceleration-gradient | PASS |
 | PREVIEW PAGE IN SITEMAP: /signal-platform (publish_status=unknown — blocking) | FAIL |
 | preview page correctly excluded from sitemap: /why-dashboards-fail-programs | PASS |
-| anchor-section excluded from sitemap (correct): /program-intelligence#execution-blindness | PASS |
-| anchor-section excluded from sitemap (correct): /program-intelligence#program-intelligence-gap | PASS |
-| anchor-section excluded from sitemap (correct): /program-intelligence#signal-infrastructure | PASS |
-| sitemap route has backing page: /program-intelligence | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence/#execution-blindness | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence/#program-intelligence-gap | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence/#signal-infrastructure | PASS |
+| sitemap route has backing page: /program-intelligence/ | PASS |
 | sitemap route has backing page: /manifesto | PASS |
 | sitemap route has backing page: /research | PASS |
 | sitemap route has backing page: /signal-platform | PASS |
@@ -268,15 +268,15 @@ Overall status: FAIL
 | PREVIEW PAGE IN SITEMAP: /manifesto (publish_status=unknown — blocking) | FAIL |
 | preview page correctly excluded from sitemap: /pios | PASS |
 | PREVIEW PAGE IN SITEMAP: /portfolio-intelligence (publish_status=unknown — blocking) | FAIL |
-| PREVIEW PAGE IN SITEMAP: /program-intelligence (publish_status=unknown — blocking) | FAIL |
+| PREVIEW PAGE IN SITEMAP: /program-intelligence/ (publish_status=unknown — blocking) | FAIL |
 | PREVIEW PAGE IN SITEMAP: /research (publish_status=unknown — blocking) | FAIL |
 | preview page correctly excluded from sitemap: /risk-acceleration-gradient | PASS |
 | PREVIEW PAGE IN SITEMAP: /signal-platform (publish_status=unknown — blocking) | FAIL |
 | preview page correctly excluded from sitemap: /why-dashboards-fail-programs | PASS |
-| anchor-section excluded from sitemap (correct): /program-intelligence#execution-blindness | PASS |
-| anchor-section excluded from sitemap (correct): /program-intelligence#program-intelligence-gap | PASS |
-| anchor-section excluded from sitemap (correct): /program-intelligence#signal-infrastructure | PASS |
-| sitemap route has backing page: /program-intelligence | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence/#execution-blindness | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence/#program-intelligence-gap | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence/#signal-infrastructure | PASS |
+| sitemap route has backing page: /program-intelligence/ | PASS |
 | sitemap route has backing page: /manifesto | PASS |
 | sitemap route has backing page: /research | PASS |
 | sitemap route has backing page: /signal-platform | PASS |
@@ -318,15 +318,15 @@ Overall status: FAIL
 | PREVIEW PAGE IN SITEMAP: /manifesto (publish_status=unknown — blocking) | FAIL |
 | preview page correctly excluded from sitemap: /pios | PASS |
 | PREVIEW PAGE IN SITEMAP: /portfolio-intelligence (publish_status=unknown — blocking) | FAIL |
-| PREVIEW PAGE IN SITEMAP: /program-intelligence (publish_status=unknown — blocking) | FAIL |
+| PREVIEW PAGE IN SITEMAP: /program-intelligence/ (publish_status=unknown — blocking) | FAIL |
 | PREVIEW PAGE IN SITEMAP: /research (publish_status=unknown — blocking) | FAIL |
 | preview page correctly excluded from sitemap: /risk-acceleration-gradient | PASS |
 | PREVIEW PAGE IN SITEMAP: /signal-platform (publish_status=unknown — blocking) | FAIL |
 | preview page correctly excluded from sitemap: /why-dashboards-fail-programs | PASS |
-| anchor-section excluded from sitemap (correct): /program-intelligence#execution-blindness | PASS |
-| anchor-section excluded from sitemap (correct): /program-intelligence#program-intelligence-gap | PASS |
-| anchor-section excluded from sitemap (correct): /program-intelligence#signal-infrastructure | PASS |
-| sitemap route has backing page: /program-intelligence | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence/#execution-blindness | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence/#program-intelligence-gap | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence/#signal-infrastructure | PASS |
+| sitemap route has backing page: /program-intelligence/ | PASS |
 | sitemap route has backing page: /manifesto | PASS |
 | sitemap route has backing page: /research | PASS |
 | sitemap route has backing page: /signal-platform | PASS |
@@ -372,7 +372,7 @@ Overall status: FAIL
 | /execution-blindness-examples | FAIL | API_ERROR | n/a |
 | /why-dashboards-fail-programs | FAIL | API_ERROR | n/a |
 | /early-warning-signals-program-failure | FAIL | API_ERROR | n/a |
-| /program-intelligence | FAIL | API_ERROR | n/a |
+| /program-intelligence/ | FAIL | API_ERROR | n/a |
 | /execution-stability-index | FAIL | API_ERROR | n/a |
 | /risk-acceleration-gradient | FAIL | API_ERROR | n/a |
 
@@ -413,7 +413,7 @@ Overall status: PARTIAL
 | /execution-blindness-examples | PARTIAL | URL is unknown to Google | UNKNOWN |
 | /why-dashboards-fail-programs | PARTIAL | URL is unknown to Google | UNKNOWN |
 | /early-warning-signals-program-failure | PARTIAL | URL is unknown to Google | UNKNOWN |
-| /program-intelligence | PARTIAL | Redirect error | MOBILE |
+| /program-intelligence/ | PARTIAL | Redirect error | MOBILE |
 | /execution-stability-index | PARTIAL | URL is unknown to Google | UNKNOWN |
 | /risk-acceleration-gradient | PARTIAL | URL is unknown to Google | UNKNOWN |
 
@@ -439,16 +439,16 @@ Overall status: FAIL
 | MISSING from sitemap: /manifesto (publish_status=live — blocking) | FAIL |
 | MISSING from sitemap: /pios (publish_status=live — blocking) | FAIL |
 | MISSING from sitemap: /portfolio-intelligence (publish_status=live — blocking) | FAIL |
-| MISSING from sitemap: /program-intelligence (publish_status=live — blocking) | FAIL |
+| MISSING from sitemap: /program-intelligence/ (publish_status=live — blocking) | FAIL |
 | MISSING from sitemap: /research (publish_status=live — blocking) | FAIL |
 | MISSING from sitemap: /risk-acceleration-gradient (publish_status=live — blocking) | FAIL |
 | MISSING from sitemap: /signal-platform (publish_status=live — blocking) | FAIL |
 | preview page correctly excluded from sitemap: /early-warning-signals-program-failure | PASS |
 | preview page correctly excluded from sitemap: /execution-blindness-examples | PASS |
 | preview page correctly excluded from sitemap: /why-dashboards-fail-programs | PASS |
-| anchor-section excluded from sitemap (correct): /program-intelligence#execution-blindness | PASS |
-| anchor-section excluded from sitemap (correct): /program-intelligence#program-intelligence-gap | PASS |
-| anchor-section excluded from sitemap (correct): /program-intelligence#signal-infrastructure | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence/#execution-blindness | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence/#program-intelligence-gap | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence/#signal-infrastructure | PASS |
 | ORPHAN SITEMAP ROUTE: /manifesto/ (in sitemap but no page in pages/) | FAIL |
 | ORPHAN SITEMAP ROUTE: /research/ (in sitemap but no page in pages/) | FAIL |
 | ORPHAN SITEMAP ROUTE: /signal-platform/ (in sitemap but no page in pages/) | FAIL |
@@ -457,7 +457,7 @@ Overall status: FAIL
 | ORPHAN SITEMAP ROUTE: /execution-stability-index/ (in sitemap but no page in pages/) | FAIL |
 | ORPHAN SITEMAP ROUTE: /risk-acceleration-gradient/ (in sitemap but no page in pages/) | FAIL |
 | ORPHAN SITEMAP ROUTE: /portfolio-intelligence/ (in sitemap but no page in pages/) | FAIL |
-| ORPHAN SITEMAP ROUTE: /program-intelligence-gap/ (in sitemap but no page in pages/) | FAIL |
+| ORPHAN SITEMAP ROUTE: /program-intelligence/-gap/ (in sitemap but no page in pages/) | FAIL |
 | ORPHAN SITEMAP ROUTE: /execution-blindness/ (in sitemap but no page in pages/) | FAIL |
 | ORPHAN SITEMAP ROUTE: /signal-infrastructure/ (in sitemap but no page in pages/) | FAIL |
 | robots.txt present: repo root robots.txt | PASS |
@@ -480,7 +480,7 @@ Overall status: PARTIAL
 | /execution-blindness-examples | PARTIAL | URL is unknown to Google | UNKNOWN |
 | /why-dashboards-fail-programs | PARTIAL | URL is unknown to Google | UNKNOWN |
 | /early-warning-signals-program-failure | PARTIAL | URL is unknown to Google | UNKNOWN |
-| /program-intelligence | PARTIAL | Redirect error | MOBILE |
+| /program-intelligence/ | PARTIAL | Redirect error | MOBILE |
 | /execution-stability-index | PARTIAL | URL is unknown to Google | UNKNOWN |
 | /risk-acceleration-gradient | PARTIAL | URL is unknown to Google | UNKNOWN |
 
@@ -507,4 +507,92 @@ Overall status: PARTIAL
 | why dashboards fail programs | WARN | no data returned |
 
 JSON: `/Users/khorrix/Projects/krayu-mirror/WEB/logs/external-validation/2026-03-30_201938/gsc_report.json`
+
+
+---
+
+## Sitemap Consistency Check — 2026-03-30 20:23:03
+
+Mode: local only
+Sitemap source: _site/sitemap.xml
+Overall status: FAIL
+
+| Check | Result |
+|-------|--------|
+| pages/ scanned: 15 page(s) found | PASS |
+| sitemap.xml present: _site/sitemap.xml | PASS |
+| sitemap.xml has valid <urlset> root | PASS |
+| MISSING from sitemap: /execution-stability-index (publish_status=live — blocking) | FAIL |
+| MISSING from sitemap: /index (publish_status=live — blocking) | FAIL |
+| MISSING from sitemap: /manifesto (publish_status=live — blocking) | FAIL |
+| MISSING from sitemap: /pios (publish_status=live — blocking) | FAIL |
+| MISSING from sitemap: /portfolio-intelligence (publish_status=live — blocking) | FAIL |
+| live page in sitemap: /program-intelligence/ | PASS |
+| MISSING from sitemap: /research (publish_status=live — blocking) | FAIL |
+| MISSING from sitemap: /risk-acceleration-gradient (publish_status=live — blocking) | FAIL |
+| MISSING from sitemap: /signal-platform (publish_status=live — blocking) | FAIL |
+| preview page correctly excluded from sitemap: /early-warning-signals-program-failure | PASS |
+| preview page correctly excluded from sitemap: /execution-blindness-examples | PASS |
+| preview page correctly excluded from sitemap: /why-dashboards-fail-programs | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence#execution-blindness | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence#program-intelligence-gap | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence#signal-infrastructure | PASS |
+| ORPHAN SITEMAP ROUTE: /manifesto/ (in sitemap but no page in pages/) | FAIL |
+| ORPHAN SITEMAP ROUTE: /research/ (in sitemap but no page in pages/) | FAIL |
+| ORPHAN SITEMAP ROUTE: /signal-platform/ (in sitemap but no page in pages/) | FAIL |
+| sitemap route has backing page: /program-intelligence/ | PASS |
+| ORPHAN SITEMAP ROUTE: /pios/ (in sitemap but no page in pages/) | FAIL |
+| ORPHAN SITEMAP ROUTE: /execution-stability-index/ (in sitemap but no page in pages/) | FAIL |
+| ORPHAN SITEMAP ROUTE: /risk-acceleration-gradient/ (in sitemap but no page in pages/) | FAIL |
+| ORPHAN SITEMAP ROUTE: /portfolio-intelligence/ (in sitemap but no page in pages/) | FAIL |
+| ORPHAN SITEMAP ROUTE: /program-intelligence-gap/ (in sitemap but no page in pages/) | FAIL |
+| ORPHAN SITEMAP ROUTE: /execution-blindness/ (in sitemap but no page in pages/) | FAIL |
+| ORPHAN SITEMAP ROUTE: /signal-infrastructure/ (in sitemap but no page in pages/) | FAIL |
+| robots.txt present: repo root robots.txt | PASS |
+| robots.txt contains User-agent: * | PASS |
+| robots.txt references sitemap: Sitemap: https://mirror.krayu.be/sitemap.xml | PASS |
+| sitemap reference points to correct URL | PASS |
+
+Consistency report: `/Users/khorrix/Projects/krayu-mirror/docs/mirror-validation/sitemap_consistency_report.md`
+
+
+---
+
+## URL Indexation Check — 2026-03-30 20:23:03
+
+Property: https://mirror.krayu.be/
+Overall status: PARTIAL
+
+| Route | Status | Coverage State | Crawled As |
+|-------|--------|---------------|------------|
+| /execution-blindness-examples | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /why-dashboards-fail-programs | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /early-warning-signals-program-failure | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /program-intelligence/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /execution-stability-index | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /risk-acceleration-gradient | PARTIAL | URL is unknown to Google | UNKNOWN |
+
+Matrix: `/Users/khorrix/Projects/krayu-mirror/docs/mirror-validation/indexation_matrix.md`
+JSON: `/Users/khorrix/Projects/krayu-mirror/WEB/logs/external-validation/2026-03-30_202303/indexation_report.json`
+
+
+---
+
+## Search Console Validation — 2026-03-30 20:23:46
+
+Property: https://mirror.krayu.be/
+Date range: 2026-03-23 to 2026-03-30
+Overall status: PARTIAL
+
+### Query Results
+
+| Query | Status | Detail |
+|-------|--------|--------|
+| execution blindness | WARN | no data returned |
+| program intelligence | WARN | no data returned |
+| ESI execution stability | WARN | no data returned |
+| execution blindness examples | WARN | no data returned |
+| why dashboards fail programs | WARN | no data returned |
+
+JSON: `/Users/khorrix/Projects/krayu-mirror/WEB/logs/external-validation/2026-03-30_202346/gsc_report.json`
 

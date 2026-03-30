@@ -10,7 +10,7 @@ publish_status: "live"
 
 The operating system that makes Program Intelligence executable.
 
-Where [Program Intelligence](/program-intelligence) defines the discipline of translating engineering execution into executive insight, PiOS provides the structured system through which that translation becomes operational — transforming fragmented execution evidence into signals, conditions, diagnosis, and decision-grade intelligence.
+Where [Program Intelligence](/program-intelligence/) defines the discipline of translating engineering execution into executive insight, PiOS provides the structured system through which that translation becomes operational — transforming fragmented execution evidence into signals, conditions, diagnosis, and decision-grade intelligence.
 
 ---
 

@@ -10,7 +10,7 @@ publish_status: "live"
 
 The governed system through which Program Intelligence becomes operational.
 
-Signal Infrastructure is the capability that enables [Program Intelligence](/program-intelligence) to interpret large volumes of engineering execution data and convert it into structured signals that describe how engineering delivery evolves over time — giving leadership a reliable view of program stability, delivery momentum, and risk accumulation.
+Signal Infrastructure is the capability that enables [Program Intelligence](/program-intelligence/) to interpret large volumes of engineering execution data and convert it into structured signals that describe how engineering delivery evolves over time — giving leadership a reliable view of program stability, delivery momentum, and risk accumulation.
 
 ---
 

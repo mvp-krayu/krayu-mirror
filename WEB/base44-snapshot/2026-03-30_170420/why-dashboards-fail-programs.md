@@ -14,7 +14,7 @@ capture_method_note: "Preview URL returns SPA shell only; MCP has no page conten
 
 # Why Dashboards Fail to Detect Program Failure
 
-Canonical reference: [/program-intelligence#execution-blindness](/program-intelligence#execution-blindness)
+Canonical reference: [/program-intelligence/#execution-blindness](/program-intelligence/#execution-blindness)
 
 ---
 

@@ -72,7 +72,7 @@ Current compile stream: WEB-OPS-04 — Promotion + Mirror Compile
 | /execution-blindness-examples | Created via WEB-EXP-01 Base44 MCP run | NO | PREVIEW-PENDING |
 | /why-dashboards-fail-programs | Created via WEB-EXP-01 Base44 MCP run | NO | PREVIEW-PENDING |
 | /early-warning-signals-program-failure | Created via WEB-EXP-01 Base44 MCP run | NO | PREVIEW-PENDING |
-| /program-intelligence#execution-blindness | Pre-existing confirmed anchor | NO | CONFIRMED LIVE |
+| /program-intelligence/#execution-blindness | Pre-existing confirmed anchor | NO | CONFIRMED LIVE |
 
 **Zero invented routes. Zero canonical drift.**
 

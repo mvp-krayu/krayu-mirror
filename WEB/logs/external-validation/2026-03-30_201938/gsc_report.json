@@ -1,0 +1,35 @@
+{
+  "run_ts": "2026-03-30 20:19:38",
+  "status": "PARTIAL",
+  "property": "https://mirror.krayu.be/",
+  "start_date": "2026-03-23",
+  "end_date": "2026-03-30",
+  "query_count": 5,
+  "results": [
+    {
+      "query": "execution blindness",
+      "status": "WARN",
+      "note": "no data returned"
+    },
+    {
+      "query": "program intelligence",
+      "status": "WARN",
+      "note": "no data returned"
+    },
+    {
+      "query": "ESI execution stability",
+      "status": "WARN",
+      "note": "no data returned"
+    },
+    {
+      "query": "execution blindness examples",
+      "status": "WARN",
+      "note": "no data returned"
+    },
+    {
+      "query": "why dashboards fail programs",
+      "status": "WARN",
+      "note": "no data returned"
+    }
+  ]
+}

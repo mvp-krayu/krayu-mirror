@@ -89,7 +89,7 @@ For each route in the push route list:
 
 1. Confirm route is accessible at `<previewBase><route>?_preview_token=<token>`
 2. Confirm page content matches what was requested
-3. Confirm canonical link to `/program-intelligence#execution-blindness` (or relevant anchor) is present
+3. Confirm canonical link to `/program-intelligence/#execution-blindness` (or relevant anchor) is present
 4. Confirm page is NOT overwriting an existing protected route
 
 Record status per route: PASS / FAIL / PARTIAL

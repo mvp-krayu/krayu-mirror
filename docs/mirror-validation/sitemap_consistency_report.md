@@ -1,6 +1,6 @@
 # Sitemap Consistency Report
 
-Run timestamp: 2026-03-30 20:18:55
+Run timestamp: 2026-03-30 20:23:03
 Mode: strict
 Sitemap source: _site/sitemap.xml
 Pages dir: /Users/khorrix/Projects/krayu-mirror/pages
@@ -18,7 +18,7 @@ Overall status: FAIL
 | /manifesto | unknown | live | FAIL | Live page missing from sitemap |
 | /pios | unknown | live | FAIL | Live page missing from sitemap |
 | /portfolio-intelligence | unknown | live | FAIL | Live page missing from sitemap |
-| /program-intelligence | unknown | live | FAIL | Live page missing from sitemap |
+| /program-intelligence/ | unknown | live | PASS | Present in sitemap |
 | /research | unknown | live | FAIL | Live page missing from sitemap |
 | /risk-acceleration-gradient | unknown | live | FAIL | Live page missing from sitemap |
 | /signal-platform | unknown | live | FAIL | Live page missing from sitemap |
@@ -31,7 +31,6 @@ Overall status: FAIL
 | /manifesto/ | unknown | sitemap-only | FAIL | Sitemap route has no backing page in pages/ |
 | /research/ | unknown | sitemap-only | FAIL | Sitemap route has no backing page in pages/ |
 | /signal-platform/ | unknown | sitemap-only | FAIL | Sitemap route has no backing page in pages/ |
-| /program-intelligence/ | unknown | sitemap-only | FAIL | Sitemap route has no backing page in pages/ |
 | /pios/ | unknown | sitemap-only | FAIL | Sitemap route has no backing page in pages/ |
 | /execution-stability-index/ | unknown | sitemap-only | FAIL | Sitemap route has no backing page in pages/ |
 | /risk-acceleration-gradient/ | unknown | sitemap-only | FAIL | Sitemap route has no backing page in pages/ |
@@ -66,7 +65,7 @@ Overall status: FAIL
 | MISSING from sitemap: /manifesto (publish_status=live — blocking) | FAIL |
 | MISSING from sitemap: /pios (publish_status=live — blocking) | FAIL |
 | MISSING from sitemap: /portfolio-intelligence (publish_status=live — blocking) | FAIL |
-| MISSING from sitemap: /program-intelligence (publish_status=live — blocking) | FAIL |
+| live page in sitemap: /program-intelligence/ | PASS |
 | MISSING from sitemap: /research (publish_status=live — blocking) | FAIL |
 | MISSING from sitemap: /risk-acceleration-gradient (publish_status=live — blocking) | FAIL |
 | MISSING from sitemap: /signal-platform (publish_status=live — blocking) | FAIL |
@@ -79,7 +78,7 @@ Overall status: FAIL
 | ORPHAN SITEMAP ROUTE: /manifesto/ (in sitemap but no page in pages/) | FAIL |
 | ORPHAN SITEMAP ROUTE: /research/ (in sitemap but no page in pages/) | FAIL |
 | ORPHAN SITEMAP ROUTE: /signal-platform/ (in sitemap but no page in pages/) | FAIL |
-| ORPHAN SITEMAP ROUTE: /program-intelligence/ (in sitemap but no page in pages/) | FAIL |
+| sitemap route has backing page: /program-intelligence/ | PASS |
 | ORPHAN SITEMAP ROUTE: /pios/ (in sitemap but no page in pages/) | FAIL |
 | ORPHAN SITEMAP ROUTE: /execution-stability-index/ (in sitemap but no page in pages/) | FAIL |
 | ORPHAN SITEMAP ROUTE: /risk-acceleration-gradient/ (in sitemap but no page in pages/) | FAIL |
@@ -105,4 +104,4 @@ Overall status: FAIL
 
 ---
 
-*Sitemap Consistency Report — WEB-OPS-05C | 2026-03-30 20:18:55*
+*Sitemap Consistency Report — WEB-OPS-05C | 2026-03-30 20:23:03*

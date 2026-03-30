@@ -12,7 +12,7 @@ status: "captured"
 
 # Why Dashboards Fail to Detect Program Failure | Program Intelligence | Krayu
 
-[Program Intelligence](/program-intelligence)›[Execution Blindness](/program-intelligence#execution-blindness)
+[Program Intelligence](/program-intelligence/)›[Execution Blindness](/program-intelligence/#execution-blindness)
 
 📊 Structural Analysis
 
@@ -20,7 +20,7 @@ status: "captured"
 
 The structural limitation of operational dashboards — and how Program Intelligence closes the gap
 
-Dashboards do not fail because they malfunction. They fail because they were not designed to detect the class of instability that causes program failure. This structural limitation has a name: [Execution Blindness](/program-intelligence#execution-blindness).
+Dashboards do not fail because they malfunction. They fail because they were not designed to detect the class of instability that causes program failure. This structural limitation has a name: [Execution Blindness](/program-intelligence/#execution-blindness).
 
 What Dashboards Are Designed To Do
 
@@ -88,7 +88,7 @@ Execution Blindness
 
 ## The name for this structural gap
 
-[Execution Blindness](/program-intelligence#execution-blindness) is the condition in which operational metrics appear healthy while the underlying program system is structurally deteriorating.
+[Execution Blindness](/program-intelligence/#execution-blindness) is the condition in which operational metrics appear healthy while the underlying program system is structurally deteriorating.
 
 Dashboards do not cause Execution Blindness through malfunction — they cause it through design. They were built to show activity, and they do that well. But activity is not structure. Activity metrics can remain entirely normal while schedule stability is compressing, risk is accelerating, and delivery predictability is decaying.
 
@@ -114,4 +114,4 @@ A dynamic risk measurement that captures how fast risk is growing and whether th
 
 The solution to Execution Blindness is not better dashboards. It is a governed interpretive layer that transforms execution evidence into structural intelligence — the role that Program Intelligence is designed to perform.
 
-[Execution Blindness](/program-intelligence#execution-blindness)[Real-World Examples](/execution-blindness-examples) [Early Warning Signals](/early-warning-signals-program-failure) [Explore ESI](/execution-stability-index)
+[Execution Blindness](/program-intelligence/#execution-blindness)[Real-World Examples](/execution-blindness-examples) [Early Warning Signals](/early-warning-signals-program-failure) [Explore ESI](/execution-stability-index)

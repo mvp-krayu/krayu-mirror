@@ -34,11 +34,11 @@ Capture integrity: rendered_capture
 
 | Page | Promoted Snapshot Used | Canonical Anchor | Page Class | Concept Clarity | Standalone Capability |
 |------|----------------------|-----------------|------------|----------------|----------------------|
-| execution-blindness-examples.md | YES — 2026-03-30_181500 (rendered_capture) | /program-intelligence#execution-blindness | additive_expansion | HIGH | YES |
-| why-dashboards-fail-programs.md | YES — 2026-03-30_181500 (rendered_capture) | /program-intelligence#execution-blindness | additive_expansion | HIGH | YES |
-| early-warning-signals-program-failure.md | YES — 2026-03-30_181500 (rendered_capture) | /program-intelligence#execution-blindness | additive_expansion | HIGH | YES |
+| execution-blindness-examples.md | YES — 2026-03-30_181500 (rendered_capture) | /program-intelligence/#execution-blindness | additive_expansion | HIGH | YES |
+| why-dashboards-fail-programs.md | YES — 2026-03-30_181500 (rendered_capture) | /program-intelligence/#execution-blindness | additive_expansion | HIGH | YES |
+| early-warning-signals-program-failure.md | YES — 2026-03-30_181500 (rendered_capture) | /program-intelligence/#execution-blindness | additive_expansion | HIGH | YES |
 
-**Canonical authority used:** /program-intelligence#execution-blindness (confirmed anchor)
+**Canonical authority used:** /program-intelligence/#execution-blindness (confirmed anchor)
 **Terminology lock:** Execution Blindness, ESI (Execution Stability Index), RAG (Risk Acceleration Gradient) — all preserved as specified in WEB-EXP-01.
 
 ### Additive Expansion Governance Check

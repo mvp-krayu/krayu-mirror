@@ -12,7 +12,7 @@ status: "captured"
 
 # Execution Blindness Examples | Program Intelligence | Krayu
 
-[Program Intelligence](/program-intelligence)›[Execution Blindness](/program-intelligence#execution-blindness)›Examples
+[Program Intelligence](/program-intelligence/)›[Execution Blindness](/program-intelligence/#execution-blindness)›Examples
 
 🔍 Program Scenarios
 
@@ -20,7 +20,7 @@ status: "captured"
 
 Three programs where activity appeared normal — and structural stability was collapsing
 
-[Execution Blindness](/program-intelligence#execution-blindness) is the condition in which operational metrics appear healthy while the underlying program system is deteriorating. These scenarios show how ESI and RAG detected failure signals multiple sprints before they became operationally visible.
+[Execution Blindness](/program-intelligence/#execution-blindness) is the condition in which operational metrics appear healthy while the underlying program system is deteriorating. These scenarios show how ESI and RAG detected failure signals multiple sprints before they became operationally visible.
 
 ESI 70–84 · Emerging Instability
 
@@ -166,4 +166,4 @@ In all three scenarios, ESI and RAG detected structural deterioration 2–4 spri
 
 This is the lead-time advantage of Program Intelligence signal infrastructure over traditional operational reporting.
 
-[Execution Blindness](/program-intelligence#execution-blindness)[Execution Stability Index](/execution-stability-index) [Risk Acceleration Gradient](/risk-acceleration-gradient) [Early Warning Signals](/early-warning-signals-program-failure)
+[Execution Blindness](/program-intelligence/#execution-blindness)[Execution Stability Index](/execution-stability-index) [Risk Acceleration Gradient](/risk-acceleration-gradient) [Early Warning Signals](/early-warning-signals-program-failure)

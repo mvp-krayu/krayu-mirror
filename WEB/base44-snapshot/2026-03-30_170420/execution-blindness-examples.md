@@ -14,7 +14,7 @@ capture_method_note: "Preview URL returns SPA shell only; MCP has no page conten
 
 # Execution Blindness Examples
 
-Canonical reference: [/program-intelligence#execution-blindness](/program-intelligence#execution-blindness)
+Canonical reference: [/program-intelligence/#execution-blindness](/program-intelligence/#execution-blindness)
 
 This page presents three real-world program scenarios illustrating Execution Blindness — the condition in which activity metrics appear normal while structural stability is deteriorating. Each scenario includes ESI (Execution Stability Index) and RAG (Risk Acceleration Gradient) interpretation.
 

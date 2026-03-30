@@ -114,7 +114,7 @@ Together, ESI and RAG provide early structural visibility into conditions that E
 
 ## Relationship with the Program Intelligence Gap
 
-Execution Blindness is the visible failure mode produced by the [Program Intelligence Gap](/program-intelligence-gap). The gap is the absence of an interpretive discipline governing how execution evidence becomes intelligence. Execution Blindness is what that absence looks like in practice: programs that are degrading structurally while appearing operationally normal.
+Execution Blindness is the visible failure mode produced by the [Program Intelligence Gap](/program-intelligence/-gap). The gap is the absence of an interpretive discipline governing how execution evidence becomes intelligence. Execution Blindness is what that absence looks like in practice: programs that are degrading structurally while appearing operationally normal.
 
 Closing the Program Intelligence Gap — by building the governed analytical discipline of Program Intelligence — removes the structural condition that produces Execution Blindness.
 

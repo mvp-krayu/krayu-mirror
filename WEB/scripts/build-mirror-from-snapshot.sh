@@ -334,7 +334,7 @@ hv_result() {
 
 # Required term sets by page_class
 REQUIRED_TERMS_ADDITIVE_EXPANSION=("Execution Blindness" "ESI" "RAG")
-CANONICAL_ANCHOR="/program-intelligence#execution-blindness"
+CANONICAL_ANCHOR="/program-intelligence/#execution-blindness"
 
 for entry in "${COMPILED_PAGES[@]}"; do
   fname="$(echo "$entry" | cut -d'|' -f1)"
@@ -405,7 +405,7 @@ for entry in "${COMPILED_PAGES[@]}"; do
   fi
 
   # ── 4. CONTEXT VALIDATOR ──────────────────────────────────────────────────
-  # Canonical anchor link to /program-intelligence#execution-blindness must be present
+  # Canonical anchor link to /program-intelligence/#execution-blindness must be present
   # Severity: BLOCKING — missing anchor means page is disconnected from canonical authority
   if echo "$BODY_CONTENT" | grep -q "program-intelligence#execution-blindness"; then
     hv_result "CONTEXT"      "$fname" "PASS"    "Canonical anchor link present: $CANONICAL_ANCHOR" "BLOCKING"
@@ -416,7 +416,7 @@ for entry in "${COMPILED_PAGES[@]}"; do
   # ── 5. RELATIONSHIP VALIDATOR ─────────────────────────────────────────────
   # At least one cross-link to a related canonical page
   # Severity: WARNING — cross-linking is a quality recommendation, not a hard governance requirement
-  RELATED_PAGES=("/execution-stability-index" "/risk-acceleration-gradient" "/program-intelligence" "/signal-infrastructure" "/portfolio-intelligence" "/pios")
+  RELATED_PAGES=("/execution-stability-index" "/risk-acceleration-gradient" "/program-intelligence/" "/signal-infrastructure" "/portfolio-intelligence" "/pios")
   FOUND_RELATED=0
   for rp in "${RELATED_PAGES[@]}"; do
     if echo "$BODY_CONTENT" | grep -q "$rp"; then
@@ -741,7 +741,7 @@ for entry in "${COMPILED_PAGES[@]}"; do
     if [[ ! -f "$PAGES_DIR/$link_file" ]]; then
       warn "8. internal link may not resolve: /$link_file (from $fname)"
     fi
-  done < <(grep -oE '\(/[a-z][a-z0-9-]*\)' "$PAGES_DIR/$fname" 2>/dev/null | tr -d '()' | grep -v '^/program-intelligence$\|^/execution-stability-index\|^/risk-acceleration-gradient\|^/signal-infrastructure\|^/portfolio-intelligence\|^/pios\|^/manifesto' || true)
+  done < <(grep -oE '\(/[a-z][a-z0-9-]*\)' "$PAGES_DIR/$fname" 2>/dev/null | tr -d '()' | grep -v '^/program-intelligence/$\|^/execution-stability-index\|^/risk-acceleration-gradient\|^/signal-infrastructure\|^/portfolio-intelligence\|^/pios\|^/manifesto' || true)
 done
 pass "8. cross-linking graph checked (warnings issued for any unresolvable links)"
 
@@ -977,7 +977,7 @@ ${ROUTE_STATUS_TABLE}
 ## 5. Canonical Status Summary
 
 All compiled pages reference ${ORIGIN_STREAM}-created routes.
-Canonical anchor preserved: /program-intelligence#execution-blindness
+Canonical anchor preserved: /program-intelligence/#execution-blindness
 
 ## 6. Page Class Summary
 

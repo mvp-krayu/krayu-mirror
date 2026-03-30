@@ -14,7 +14,7 @@ capture_method_note: "Preview URL returns SPA shell only; MCP has no page conten
 
 # Early Warning Signals of Program Failure
 
-Canonical reference: [/program-intelligence#execution-blindness](/program-intelligence#execution-blindness)
+Canonical reference: [/program-intelligence/#execution-blindness](/program-intelligence/#execution-blindness)
 
 These signals appear before program failure is visible in operational metrics. They require the Program Intelligence signal infrastructure to detect — they are not visible in dashboards, activity reports, or standard engineering tooling.
 

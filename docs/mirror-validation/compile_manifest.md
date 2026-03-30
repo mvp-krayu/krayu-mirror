@@ -35,7 +35,7 @@ Integrity: rendered_capture
 ## 5. Canonical Status Summary
 
 All compiled pages reference WEB-OPS-04-created routes.
-Canonical anchor preserved: /program-intelligence#execution-blindness
+Canonical anchor preserved: /program-intelligence/#execution-blindness
 
 ## 6. Page Class Summary
 

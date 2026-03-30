@@ -15,7 +15,7 @@ pageSchema: |
 publish_status: "live"
 ---
 
-<p class="back-link"><a href="/program-intelligence">← Program Intelligence</a></p>
+<p class="back-link"><a href="/program-intelligence/">← Program Intelligence</a></p>
 
 # Signäl Platform
 

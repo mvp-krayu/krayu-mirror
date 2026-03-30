@@ -1,9 +1,9 @@
 ---
 title: "Signal Infrastructure"
-route: "/program-intelligence#signal-infrastructure"
+route: "/program-intelligence/#signal-infrastructure"
 source: "https://krayu.be/program-intelligence#signal-infrastructure"
 snapshot_date: "2026-03-30"
-note: "Named anchor section within /program-intelligence. Does not resolve as a standalone route."
+note: "Named anchor section within /program-intelligence/. Does not resolve as a standalone route."
 ---
 
 # Signal Infrastructure

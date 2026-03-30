@@ -1,6 +1,6 @@
 ---
 title: "Program Intelligence — Execution Observability for Complex Programs"
-route: "/program-intelligence"
+route: "/program-intelligence/"
 source: "https://krayu.be/program-intelligence"
 snapshot_date: "2026-03-30"
 ---

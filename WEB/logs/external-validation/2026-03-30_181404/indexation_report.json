@@ -5,7 +5,7 @@
   "message": "GSC_ACCESS_TOKEN and GSC_SERVICE_ACCOUNT_KEY_FILE are both unset",
   "routes": [
     "/execution-blindness-examples",
-    "/program-intelligence"
+    "/program-intelligence/"
   ],
   "results": []
 }

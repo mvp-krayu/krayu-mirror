@@ -12,7 +12,7 @@ Execution Stability Index — Portfolio Comparison.
 
 Compare ESI scores and risk trajectories across workstreams and programs to surface which portfolio areas are trending toward systemic risk and require priority intervention.
 
-Part of the [Program Intelligence](/program-intelligence) discipline.
+Part of the [Program Intelligence](/program-intelligence/) discipline.
 
 ---
 

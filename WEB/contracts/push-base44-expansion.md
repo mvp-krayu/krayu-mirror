@@ -44,12 +44,12 @@ Before any push, the operator must confirm:
 4. The target app ID matches the correct non-frozen app
 
 **Protected canonical routes (must never be modified by push):**
-- /program-intelligence
+- /program-intelligence/
 - /execution-stability-index
 - /risk-acceleration-gradient
 - /pios
 - /portfolio-intelligence
-- /program-intelligence-gap
+- /program-intelligence/-gap
 - /execution-blindness
 - /signal-infrastructure
 - /manifesto

@@ -32,7 +32,7 @@ These routes enter the sitemap when ALL five conditions in §"When Routes Enter 
 
 | Route | Page Class | Entry Condition |
 |-------|-----------|----------------|
-| /program-intelligence | canonical_core | Already live — must remain in sitemap |
+| /program-intelligence/ | canonical_core | Already live — must remain in sitemap |
 | /execution-stability-index | canonical_core | Already live — must remain in sitemap |
 | /risk-acceleration-gradient | canonical_core | Already live — must remain in sitemap |
 | /pios | canonical_core | Already live — must remain in sitemap |
@@ -101,7 +101,7 @@ Rules:
 - Canonical must exactly match the live public URL of the page
 - Canonical must never point to a non-existent route
 - Canonical must never point to the preview surface
-- For anchor-section mirror pages (e.g. `/program-intelligence#execution-blindness`): the canonical must reference the parent page + anchor hash
+- For anchor-section mirror pages (e.g. `/program-intelligence/#execution-blindness`): the canonical must reference the parent page + anchor hash
 - For additive expansion pages with `publish_status: preview-pending-publish`: canonical is set to the intended live route but must not be published until the route is live
 
 Canonical format: `https://krayu.be/<route>`

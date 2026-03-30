@@ -12,7 +12,7 @@ status: "captured"
 
 # Early Warning Signals of Program Failure | Program Intelligence | Krayu
 
-[Program Intelligence](/program-intelligence)›[Execution Blindness](/program-intelligence#execution-blindness)
+[Program Intelligence](/program-intelligence/)›[Execution Blindness](/program-intelligence/#execution-blindness)
 
 ⚡ Signal Reference
 
@@ -20,7 +20,7 @@ status: "captured"
 
 Structural signals that precede operational failure by multiple sprints
 
-These signals emerge before failure is visible in activity metrics. Detecting them requires the Program Intelligence signal infrastructure — not better dashboards, but a governed interpretive layer that transforms execution evidence into structural intelligence. Related: [Execution Blindness](/program-intelligence#execution-blindness).
+These signals emerge before failure is visible in activity metrics. Detecting them requires the Program Intelligence signal infrastructure — not better dashboards, but a governed interpretive layer that transforms execution evidence into structural intelligence. Related: [Execution Blindness](/program-intelligence/#execution-blindness).
 
 ESI Decline Signals
 
@@ -118,4 +118,4 @@ Detecting these signals requires the Program Intelligence signal infrastructure.
 
 Not better dashboards. Not more metrics. A governed interpretive layer that transforms execution evidence into structural intelligence — computing ESI and RAG from engineering telemetry and making structural conditions visible before they manifest as operational failures.
 
-[Execution Blindness](/program-intelligence#execution-blindness)[See Real-World Examples](/execution-blindness-examples) [Execution Stability Index](/execution-stability-index) [Risk Acceleration Gradient](/risk-acceleration-gradient)
+[Execution Blindness](/program-intelligence/#execution-blindness)[See Real-World Examples](/execution-blindness-examples) [Execution Stability Index](/execution-stability-index) [Risk Acceleration Gradient](/risk-acceleration-gradient)

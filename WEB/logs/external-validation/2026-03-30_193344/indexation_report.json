@@ -30,8 +30,8 @@
       "error": "Google Search Console API has not been used in project 968967648844 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/searchconsole.googleapis.com/overview?project=968967648844 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
     },
     {
-      "route": "/program-intelligence",
-      "url": "https://mirror.krayu.be/program-intelligence",
+      "route": "/program-intelligence/",
+      "url": "https://mirror.krayu.be/program-intelligence/",
       "page_class": "unknown",
       "canonical_status": "unknown",
       "indexation_class": "NOT_FOUND",

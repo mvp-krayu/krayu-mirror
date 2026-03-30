@@ -58,7 +58,7 @@ load_routes() {
       /execution-blindness-examples
       /why-dashboards-fail-programs
       /early-warning-signals-program-failure
-      /program-intelligence
+      /program-intelligence/
       /execution-stability-index
       /risk-acceleration-gradient
     )

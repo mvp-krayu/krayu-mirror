@@ -58,11 +58,11 @@ All validation checks passed:
 ## 9. Canonical Status Notes
 These are additive expansion pages. They are not canonical core pages.
 
-- /execution-blindness-examples — additive expansion; no canonical equivalent required; references /program-intelligence#execution-blindness as canonical anchor
-- /why-dashboards-fail-programs — additive expansion; no canonical equivalent required; references /program-intelligence#execution-blindness as canonical anchor
-- /early-warning-signals-program-failure — additive expansion; no canonical equivalent required; references /program-intelligence#execution-blindness as canonical anchor
+- /execution-blindness-examples — additive expansion; no canonical equivalent required; references /program-intelligence/#execution-blindness as canonical anchor
+- /why-dashboards-fail-programs — additive expansion; no canonical equivalent required; references /program-intelligence/#execution-blindness as canonical anchor
+- /early-warning-signals-program-failure — additive expansion; no canonical equivalent required; references /program-intelligence/#execution-blindness as canonical anchor
 
-The canonical anchor /program-intelligence#execution-blindness was NOT modified during WEB-EXP-01 execution.
+The canonical anchor /program-intelligence/#execution-blindness was NOT modified during WEB-EXP-01 execution.
 
 ## 10. Published vs Preview Status
 **PREVIEW-ONLY**
