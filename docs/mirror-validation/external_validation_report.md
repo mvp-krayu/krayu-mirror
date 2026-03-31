@@ -1030,3 +1030,256 @@ Overall status: PARTIAL
 
 JSON: `/Users/khorrix/Projects/krayu-mirror/WEB/logs/external-validation/2026-03-30_220431/gsc_report.json`
 
+
+---
+
+## Sitemap Consistency Check — 2026-03-31 11:20:17
+
+Mode: local only
+Sitemap source: _site/sitemap.xml
+Overall status: PARTIAL
+
+| Check | Result |
+|-------|--------|
+| unknown publish_status for manifesto.md (unknown) — treating as preview-pending | WARN |
+| pages/ scanned: 15 page(s) found | PASS |
+| sitemap.xml present: _site/sitemap.xml | PASS |
+| sitemap.xml has valid <urlset> root | PASS |
+| live page in sitemap: /execution-stability-index/ | PASS |
+| live page in sitemap: / | PASS |
+| live page in sitemap: /pios/ | PASS |
+| live page in sitemap: /portfolio-intelligence/ | PASS |
+| live page in sitemap: /program-intelligence/ | PASS |
+| live page in sitemap: /research/ | PASS |
+| live page in sitemap: /risk-acceleration-gradient/ | PASS |
+| live page in sitemap: /signal-platform/ | PASS |
+| preview page correctly excluded from sitemap: /early-warning-signals-program-failure/ | PASS |
+| preview page correctly excluded from sitemap: /execution-blindness-examples/ | PASS |
+| preview page correctly excluded from sitemap: /manifesto/ | PASS |
+| preview page correctly excluded from sitemap: /why-dashboards-fail-programs/ | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence#execution-blindness | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence#program-intelligence-gap | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence#signal-infrastructure | PASS |
+| sitemap route has backing page: /program-intelligence/ | PASS |
+| sitemap route has backing page: /pios/ | PASS |
+| sitemap route has backing page: /execution-stability-index/ | PASS |
+| sitemap route has backing page: /risk-acceleration-gradient/ | PASS |
+| sitemap route has backing page: /portfolio-intelligence/ | PASS |
+| sitemap route has backing page: /program-intelligence-gap/ | PASS |
+| sitemap route has backing page: /execution-blindness/ | PASS |
+| sitemap route has backing page: /signal-infrastructure/ | PASS |
+| sitemap route has backing page: /research/ | PASS |
+| sitemap route has backing page: /signal-platform/ | PASS |
+| sitemap route has backing page: / | PASS |
+| robots.txt present: repo root robots.txt | PASS |
+| robots.txt contains User-agent: * | PASS |
+| robots.txt references sitemap: Sitemap: https://mirror.krayu.be/sitemap.xml | PASS |
+| sitemap reference points to correct URL | PASS |
+
+Consistency report: `/Users/khorrix/Projects/krayu-mirror/docs/mirror-validation/sitemap_consistency_report.md`
+
+
+---
+
+## URL Indexation Check — 2026-03-31 11:20:17
+
+Property: https://mirror.krayu.be/
+Overall status: PARTIAL
+
+| Route | Status | Coverage State | Crawled As |
+|-------|--------|---------------|------------|
+| /execution-stability-index/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| / | PASS | Submitted and indexed | MOBILE |
+| /pios/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /portfolio-intelligence/ | PASS | Submitted and indexed | MOBILE |
+| /program-intelligence/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /research/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /risk-acceleration-gradient/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /signal-platform/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+
+Matrix: `/Users/khorrix/Projects/krayu-mirror/docs/mirror-validation/indexation_matrix.md`
+JSON: `/Users/khorrix/Projects/krayu-mirror/WEB/logs/external-validation/2026-03-31_112017/indexation_report.json`
+
+
+---
+
+## Search Console Validation — 2026-03-31 11:21:17
+
+Property: https://mirror.krayu.be/
+Date range: 2026-03-24 to 2026-03-31
+Overall status: PARTIAL
+
+### Query Results
+
+| Query | Status | Detail |
+|-------|--------|--------|
+| execution blindness | WARN | no data returned |
+| program intelligence | WARN | no data returned |
+| ESI execution stability | WARN | no data returned |
+| execution blindness examples | WARN | no data returned |
+| why dashboards fail programs | WARN | no data returned |
+
+JSON: `/Users/khorrix/Projects/krayu-mirror/WEB/logs/external-validation/2026-03-31_112117/gsc_report.json`
+
+
+---
+
+## Sitemap Consistency Check — 2026-03-31 11:24:15
+
+Mode: local only
+Sitemap source: _site/sitemap.xml
+Overall status: FAIL
+
+| Check | Result |
+|-------|--------|
+| pages/ scanned: 15 page(s) found | PASS |
+| sitemap.xml present: _site/sitemap.xml | PASS |
+| sitemap.xml has valid <urlset> root | PASS |
+| live page in sitemap: /execution-stability-index/ | PASS |
+| live page in sitemap: / | PASS |
+| MISSING from sitemap: /manifesto/ (publish_status=live — blocking) | FAIL |
+| live page in sitemap: /pios/ | PASS |
+| live page in sitemap: /portfolio-intelligence/ | PASS |
+| live page in sitemap: /program-intelligence/ | PASS |
+| live page in sitemap: /research/ | PASS |
+| live page in sitemap: /risk-acceleration-gradient/ | PASS |
+| live page in sitemap: /signal-platform/ | PASS |
+| preview page correctly excluded from sitemap: /early-warning-signals-program-failure/ | PASS |
+| preview page correctly excluded from sitemap: /execution-blindness-examples/ | PASS |
+| preview page correctly excluded from sitemap: /why-dashboards-fail-programs/ | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence#execution-blindness | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence#program-intelligence-gap | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence#signal-infrastructure | PASS |
+| sitemap route has backing page: /program-intelligence/ | PASS |
+| sitemap route has backing page: /pios/ | PASS |
+| sitemap route has backing page: /execution-stability-index/ | PASS |
+| sitemap route has backing page: /risk-acceleration-gradient/ | PASS |
+| sitemap route has backing page: /portfolio-intelligence/ | PASS |
+| sitemap route has backing page: /program-intelligence-gap/ | PASS |
+| sitemap route has backing page: /execution-blindness/ | PASS |
+| sitemap route has backing page: /signal-infrastructure/ | PASS |
+| sitemap route has backing page: /research/ | PASS |
+| sitemap route has backing page: /signal-platform/ | PASS |
+| sitemap route has backing page: / | PASS |
+| robots.txt present: repo root robots.txt | PASS |
+| robots.txt contains User-agent: * | PASS |
+| robots.txt references sitemap: Sitemap: https://mirror.krayu.be/sitemap.xml | PASS |
+| sitemap reference points to correct URL | PASS |
+
+Consistency report: `/Users/khorrix/Projects/krayu-mirror/docs/mirror-validation/sitemap_consistency_report.md`
+
+
+---
+
+## URL Indexation Check — 2026-03-31 11:24:15
+
+Property: https://mirror.krayu.be/
+Overall status: PARTIAL
+
+| Route | Status | Coverage State | Crawled As |
+|-------|--------|---------------|------------|
+| /execution-stability-index/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| / | PASS | Submitted and indexed | MOBILE |
+| /manifesto/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /pios/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /portfolio-intelligence/ | PASS | Submitted and indexed | MOBILE |
+| /program-intelligence/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /research/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /risk-acceleration-gradient/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /signal-platform/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+
+Matrix: `/Users/khorrix/Projects/krayu-mirror/docs/mirror-validation/indexation_matrix.md`
+JSON: `/Users/khorrix/Projects/krayu-mirror/WEB/logs/external-validation/2026-03-31_112415/indexation_report.json`
+
+
+---
+
+## Sitemap Consistency Check — 2026-03-31 11:27:54
+
+Mode: local only
+Sitemap source: _site/sitemap.xml
+Overall status: PASS
+
+| Check | Result |
+|-------|--------|
+| pages/ scanned: 15 page(s) found | PASS |
+| sitemap.xml present: _site/sitemap.xml | PASS |
+| sitemap.xml has valid <urlset> root | PASS |
+| live page in sitemap: /execution-stability-index/ | PASS |
+| live page in sitemap: / | PASS |
+| live page in sitemap: /manifesto/ | PASS |
+| live page in sitemap: /pios/ | PASS |
+| live page in sitemap: /portfolio-intelligence/ | PASS |
+| live page in sitemap: /program-intelligence/ | PASS |
+| live page in sitemap: /research/ | PASS |
+| live page in sitemap: /risk-acceleration-gradient/ | PASS |
+| live page in sitemap: /signal-platform/ | PASS |
+| preview page correctly excluded from sitemap: /early-warning-signals-program-failure/ | PASS |
+| preview page correctly excluded from sitemap: /execution-blindness-examples/ | PASS |
+| preview page correctly excluded from sitemap: /why-dashboards-fail-programs/ | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence#execution-blindness | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence#program-intelligence-gap | PASS |
+| anchor-section excluded from sitemap (correct): /program-intelligence#signal-infrastructure | PASS |
+| sitemap route has backing page: /manifesto/ | PASS |
+| sitemap route has backing page: /program-intelligence/ | PASS |
+| sitemap route has backing page: /pios/ | PASS |
+| sitemap route has backing page: /execution-stability-index/ | PASS |
+| sitemap route has backing page: /risk-acceleration-gradient/ | PASS |
+| sitemap route has backing page: /portfolio-intelligence/ | PASS |
+| sitemap route has backing page: /program-intelligence-gap/ | PASS |
+| sitemap route has backing page: /execution-blindness/ | PASS |
+| sitemap route has backing page: /signal-infrastructure/ | PASS |
+| sitemap route has backing page: /research/ | PASS |
+| sitemap route has backing page: /signal-platform/ | PASS |
+| sitemap route has backing page: / | PASS |
+| robots.txt present: repo root robots.txt | PASS |
+| robots.txt contains User-agent: * | PASS |
+| robots.txt references sitemap: Sitemap: https://mirror.krayu.be/sitemap.xml | PASS |
+| sitemap reference points to correct URL | PASS |
+
+Consistency report: `/Users/khorrix/Projects/krayu-mirror/docs/mirror-validation/sitemap_consistency_report.md`
+
+
+---
+
+## URL Indexation Check — 2026-03-31 11:27:54
+
+Property: https://mirror.krayu.be/
+Overall status: PARTIAL
+
+| Route | Status | Coverage State | Crawled As |
+|-------|--------|---------------|------------|
+| /execution-stability-index/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| / | PASS | Submitted and indexed | MOBILE |
+| /manifesto/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /pios/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /portfolio-intelligence/ | PASS | Submitted and indexed | MOBILE |
+| /program-intelligence/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /research/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /risk-acceleration-gradient/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+| /signal-platform/ | PARTIAL | URL is unknown to Google | UNKNOWN |
+
+Matrix: `/Users/khorrix/Projects/krayu-mirror/docs/mirror-validation/indexation_matrix.md`
+JSON: `/Users/khorrix/Projects/krayu-mirror/WEB/logs/external-validation/2026-03-31_112754/indexation_report.json`
+
+
+---
+
+## Search Console Validation — 2026-03-31 11:29:00
+
+Property: https://mirror.krayu.be/
+Date range: 2026-03-24 to 2026-03-31
+Overall status: PARTIAL
+
+### Query Results
+
+| Query | Status | Detail |
+|-------|--------|--------|
+| execution blindness | WARN | no data returned |
+| program intelligence | WARN | no data returned |
+| ESI execution stability | WARN | no data returned |
+| execution blindness examples | WARN | no data returned |
+| why dashboards fail programs | WARN | no data returned |
+
+JSON: `/Users/khorrix/Projects/krayu-mirror/WEB/logs/external-validation/2026-03-31_112900/gsc_report.json`
+

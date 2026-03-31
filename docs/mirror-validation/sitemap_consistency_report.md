@@ -1,11 +1,11 @@
 # Sitemap Consistency Report
 
-Run timestamp: 2026-03-30 22:03:34
+Run timestamp: 2026-03-31 11:27:54
 Mode: strict
 Sitemap source: _site/sitemap.xml
 Pages dir: /Users/khorrix/Projects/krayu-mirror/pages
 Live check: NO
-Overall status: PARTIAL
+Overall status: PASS
 
 ---
 
@@ -15,6 +15,7 @@ Overall status: PARTIAL
 |-------|-----------|---------------|---------------|-------|
 | /execution-stability-index/ | unknown | live | PASS | Present in sitemap |
 | / | unknown | live | PASS | Present in sitemap |
+| /manifesto/ | unknown | live | PASS | Present in sitemap |
 | /pios/ | unknown | live | PASS | Present in sitemap |
 | /portfolio-intelligence/ | unknown | live | PASS | Present in sitemap |
 | /program-intelligence/ | unknown | live | PASS | Present in sitemap |
@@ -23,7 +24,6 @@ Overall status: PARTIAL
 | /signal-platform/ | unknown | live | PASS | Present in sitemap |
 | /early-warning-signals-program-failure/ | additive_expansion | preview-pending-publish | EXCLUDED | Correctly absent from sitemap |
 | /execution-blindness-examples/ | additive_expansion | preview-pending-publish | EXCLUDED | Correctly absent from sitemap |
-| /manifesto/ | unknown | unknown | EXCLUDED | Correctly absent from sitemap |
 | /why-dashboards-fail-programs/ | additive_expansion | preview-pending-publish | EXCLUDED | Correctly absent from sitemap |
 | /program-intelligence#execution-blindness | unknown | anchor-section | EXCLUDED | Anchor-section pages do not receive sitemap entries |
 | /program-intelligence#program-intelligence-gap | unknown | anchor-section | EXCLUDED | Anchor-section pages do not receive sitemap entries |
@@ -47,12 +47,12 @@ Overall status: PARTIAL
 
 | Check | Result |
 |-------|--------|
-| unknown publish_status for manifesto.md (unknown) — treating as preview-pending | WARN |
 | pages/ scanned: 15 page(s) found | PASS |
 | sitemap.xml present: _site/sitemap.xml | PASS |
 | sitemap.xml has valid <urlset> root | PASS |
 | live page in sitemap: /execution-stability-index/ | PASS |
 | live page in sitemap: / | PASS |
+| live page in sitemap: /manifesto/ | PASS |
 | live page in sitemap: /pios/ | PASS |
 | live page in sitemap: /portfolio-intelligence/ | PASS |
 | live page in sitemap: /program-intelligence/ | PASS |
@@ -61,14 +61,11 @@ Overall status: PARTIAL
 | live page in sitemap: /signal-platform/ | PASS |
 | preview page correctly excluded from sitemap: /early-warning-signals-program-failure/ | PASS |
 | preview page correctly excluded from sitemap: /execution-blindness-examples/ | PASS |
-| preview page correctly excluded from sitemap: /manifesto/ | PASS |
 | preview page correctly excluded from sitemap: /why-dashboards-fail-programs/ | PASS |
 | anchor-section excluded from sitemap (correct): /program-intelligence#execution-blindness | PASS |
 | anchor-section excluded from sitemap (correct): /program-intelligence#program-intelligence-gap | PASS |
 | anchor-section excluded from sitemap (correct): /program-intelligence#signal-infrastructure | PASS |
-| sitemap route has backing page: / | PASS |
-| sitemap route has backing page: /research/ | PASS |
-| sitemap route has backing page: /signal-platform/ | PASS |
+| sitemap route has backing page: /manifesto/ | PASS |
 | sitemap route has backing page: /program-intelligence/ | PASS |
 | sitemap route has backing page: /pios/ | PASS |
 | sitemap route has backing page: /execution-stability-index/ | PASS |
@@ -77,6 +74,9 @@ Overall status: PARTIAL
 | sitemap route has backing page: /program-intelligence-gap/ | PASS |
 | sitemap route has backing page: /execution-blindness/ | PASS |
 | sitemap route has backing page: /signal-infrastructure/ | PASS |
+| sitemap route has backing page: /research/ | PASS |
+| sitemap route has backing page: /signal-platform/ | PASS |
+| sitemap route has backing page: / | PASS |
 | robots.txt present: repo root robots.txt | PASS |
 | robots.txt contains User-agent: * | PASS |
 | robots.txt references sitemap: Sitemap: https://mirror.krayu.be/sitemap.xml | PASS |
@@ -95,4 +95,4 @@ Overall status: PARTIAL
 
 ---
 
-*Sitemap Consistency Report — WEB-OPS-05C | 2026-03-30 22:03:34*
+*Sitemap Consistency Report — WEB-OPS-05C | 2026-03-31 11:27:54*

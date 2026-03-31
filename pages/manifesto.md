@@ -8,6 +8,7 @@ location: "Dubai, UAE"
 year: "2025"
 snapshot_date: "2026-03-30"
 description: "A foundational statement on the emerging discipline of Program Intelligence and why structured execution intelligence is becoming essential for governing complex technology organizations."
+publish_status: "live"
 ---
 
 # Program Intelligence Manifesto: The Future of Technology Governance
