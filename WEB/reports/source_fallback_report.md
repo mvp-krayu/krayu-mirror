@@ -1,7 +1,7 @@
 # Source Fallback Report
 
 Contract: WEB-CAT-INTEGRATION-01
-Generated: 2026-03-31 17:56:53
+Generated: 2026-03-31 19:57:52
 Stream: WEB-CAT-INTEGRATION-01
 
 ---
@@ -26,13 +26,6 @@ The correct steady-state is canonical maturation in k-pi, not mirror-layer patch
 - Verdict: provisional
 - Status: Non-ideal. Remains provisional until canonical k-pi source is defined.
 
-### `/manifesto/`
-
-- Source class: compiled_trusted_legacy
-- Source path: pages/manifesto.md
-- Verdict: provisional
-- Status: Non-ideal. Remains provisional until canonical k-pi source is defined.
-
 ### `/research/`
 
 - Source class: compiled_trusted_legacy
@@ -47,44 +40,9 @@ The correct steady-state is canonical maturation in k-pi, not mirror-layer patch
 - Verdict: provisional
 - Status: Non-ideal. Remains provisional until canonical k-pi source is defined.
 
-### `/portfolio-intelligence/`
-
-- Source class: compiled_trusted_legacy
-- Source path: pages/portfolio-intelligence.md
-- Verdict: provisional
-- Status: Non-ideal. Remains provisional until canonical k-pi source is defined.
-
-### `/signal-infrastructure/`
-
-- Source class: compiled_trusted_legacy
-- Source path: pages/signal-infrastructure.md
-- Verdict: provisional
-- Status: Non-ideal. Remains provisional until canonical k-pi source is defined.
-
-### `/execution-blindness-examples/`
-
-- Source class: base44_snapshot_fallback
-- Source path: WEB/base44-snapshot/latest/execution-blindness-examples.md
-- Verdict: provisional
-- Status: Non-ideal. Remains provisional until canonical k-pi source is defined.
-
-### `/why-dashboards-fail-programs/`
-
-- Source class: base44_snapshot_fallback
-- Source path: WEB/base44-snapshot/latest/why-dashboards-fail-programs.md
-- Verdict: provisional
-- Status: Non-ideal. Remains provisional until canonical k-pi source is defined.
-
-### `/early-warning-signals-program-failure/`
-
-- Source class: base44_snapshot_fallback
-- Source path: WEB/base44-snapshot/latest/early-warning-signals-program-failure.md
-- Verdict: provisional
-- Status: Non-ideal. Remains provisional until canonical k-pi source is defined.
-
 ---
 
-Total fallback routes: 9
+Total fallback routes: 3
 
 ## Resolution Path
 

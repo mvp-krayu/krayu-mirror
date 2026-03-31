@@ -1,7 +1,7 @@
 # CAT Projection Gate Report
 
 Contract: WEB-CAT-INTEGRATION-01
-Generated: 2026-03-31 17:56:53
+Generated: 2026-03-31 19:57:52
 Stream: WEB-CAT-INTEGRATION-01
 
 CAT Artifact Location: /Users/khorrix/Projects/repos/k-pi/docs/governance/category
@@ -27,19 +27,20 @@ CAT Artifact Location: /Users/khorrix/Projects/repos/k-pi/docs/governance/catego
 |-------|-------------|------------------|--------------------|--------------------|---------|
 | `/` | false | N/A | false | N/A | **provisional** |
 | `/program-intelligence/` | true | doctrine (not derivative) | false | N/A | **allowed** |
-| `/manifesto/` | false | N/A | false | N/A | **provisional** |
+| `/manifesto/` | true | doctrine (not derivative) | false | N/A | **allowed** |
 | `/research/` | false | N/A | false | N/A | **provisional** |
 | `/signal-platform/` | false | N/A | false | N/A | **provisional** |
-| `/portfolio-intelligence/` | false | N/A | false | N/A | **provisional** |
+| `/signal/` | true | checked | false | N/A | **allowed** |
+| `/portfolio-intelligence/` | true | checked | false | N/A | **allowed** |
 | `/pios/` | true | doctrine (not derivative) | false | N/A | **allowed** |
 | `/execution-stability-index/` | true | checked | true | PASS (ESI = READY) | **allowed** |
 | `/risk-acceleration-gradient/` | true | checked | true | PASS (RAG = READY) | **allowed** |
 | `/execution-blindness/` | true | checked | false | N/A | **allowed** |
 | `/program-intelligence-gap/` | true | checked | false | N/A | **allowed** |
-| `/signal-infrastructure/` | false | N/A | false | N/A | **provisional** |
-| `/execution-blindness-examples/` | false | N/A | false | N/A | **provisional** |
-| `/why-dashboards-fail-programs/` | false | N/A | false | N/A | **provisional** |
-| `/early-warning-signals-program-failure/` | false | N/A | false | N/A | **provisional** |
+| `/signal-infrastructure/` | true | checked | false | N/A | **allowed** |
+| `/execution-blindness-examples/` | true | checked | false | N/A | **allowed** |
+| `/why-dashboards-fail-programs/` | true | checked | false | N/A | **allowed** |
+| `/early-warning-signals-program-failure/` | true | checked | false | N/A | **allowed** |
 
 ---
 

@@ -43,11 +43,19 @@ body {
   padding: 0 var(--gutter);
 }
 
+/* ─── SEPARATOR (global) ─────────────────────────────────────────────────── */
+/* Used in nav rows and footer link groups */
+.sep {
+  padding: 0 6px;
+  color: var(--border);
+  user-select: none;
+}
+
 /* ─── HEADER / NAV ───────────────────────────────────────────────────────── */
 .site-header {
   border-bottom: 2px solid var(--brand);
-  padding: 14px 0;
-  margin-bottom: 52px;
+  padding: 14px 0 12px;
+  margin-bottom: 44px;
 }
 
 .site-nav {
@@ -70,10 +78,48 @@ body {
   text-underline-offset: 2px;
 }
 
-.site-nav .sep {
-  padding: 0 6px;
-  color: var(--border);
-  user-select: none;
+.site-nav a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--brand);
+}
+
+.nav-home {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Secondary nav row — lighter weight, clearly subordinate */
+.site-nav.nav-secondary {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  margin-top: 7px;
+}
+
+.site-nav.nav-secondary a {
+  color: var(--text-muted);
+}
+
+.site-nav.nav-secondary a:hover,
+.site-nav.nav-secondary a[aria-current="page"] {
+  color: var(--brand);
+}
+
+/* ─── BACK LINK ──────────────────────────────────────────────────────────── */
+.back-link {
+  font-size: 0.875rem;
+  margin-bottom: 1.75rem;
+}
+
+.back-link a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.back-link a:hover {
+  color: var(--brand);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* ─── PAGE CONTENT (article wrapper) ─────────────────────────────────────── */
@@ -95,13 +141,13 @@ body {
 .page-content h1 {
   font-size: 2.125rem;
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.125rem;
 }
 
 .page-content h2 {
   font-size: 1.375rem;
   margin-top: 2.75rem;
-  margin-bottom: 0.625rem;
+  margin-bottom: 0.75rem;
   padding-bottom: 0.375rem;
   border-bottom: 1px solid var(--border);
 }
@@ -109,7 +155,7 @@ body {
 .page-content h3 {
   font-size: 1.125rem;
   color: #1c3054;
-  margin-top: 1.875rem;
+  margin-top: 2rem;
   margin-bottom: 0.5rem;
 }
 
@@ -119,9 +165,13 @@ body {
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  margin-top: 1.5rem;
+  margin-top: 1.625rem;
   margin-bottom: 0.375rem;
 }
+
+/* Prevent double top margin when heading follows heading */
+.page-content h2 + h3 { margin-top: 1.25rem; }
+.page-content h3 + h4 { margin-top: 0.75rem; }
 
 /* ─── PARAGRAPHS ─────────────────────────────────────────────────────────── */
 .page-content p {
@@ -129,11 +179,22 @@ body {
   margin-bottom: 1.125rem;
 }
 
+/* ─── STRONG / EM ────────────────────────────────────────────────────────── */
+.page-content strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.page-content em {
+  font-style: italic;
+  color: inherit;
+}
+
 /* ─── LINKS ──────────────────────────────────────────────────────────────── */
 .page-content a {
   color: var(--link);
   text-decoration: underline;
-  text-decoration-color: rgba(29, 78, 216, 0.35);
+  text-decoration-color: rgba(29, 78, 216, 0.3);
   text-underline-offset: 2px;
 }
 
@@ -147,18 +208,18 @@ body {
 .page-content ol {
   padding-left: 1.625rem;
   margin-top: 0;
-  margin-bottom: 1.125rem;
+  margin-bottom: 1.25rem;
 }
 
 .page-content li {
-  margin-bottom: 0.375rem;
+  margin-bottom: 0.4rem;
   line-height: 1.7;
 }
 
 .page-content li > ul,
 .page-content li > ol {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
 }
 
 /* ─── TABLES ─────────────────────────────────────────────────────────────── */
@@ -171,7 +232,7 @@ body {
   border-collapse: collapse;
   font-size: 0.9375rem;
   line-height: 1.5;
-  margin: 1.5rem 0 2rem;
+  margin: 1.75rem 0 2.25rem;
 }
 
 .page-content th {
@@ -181,15 +242,16 @@ body {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 9px 14px;
+  padding: 10px 16px;
   text-align: left;
-  white-space: nowrap;
+  /* No white-space: nowrap — allow headers to wrap on narrow screens */
 }
 
 .page-content td {
-  padding: 9px 14px;
+  padding: 10px 16px;
   border-bottom: 1px solid var(--border);
   vertical-align: top;
+  min-width: 80px;
 }
 
 .page-content tr:last-child td {
@@ -203,8 +265,8 @@ body {
 /* ─── BLOCKQUOTES ────────────────────────────────────────────────────────── */
 .page-content blockquote {
   border-left: 4px solid var(--accent);
-  margin: 1.75rem 0;
-  padding: 0.75rem 1.25rem;
+  margin: 1.875rem 0;
+  padding: 0.875rem 1.375rem;
   color: #374151;
   font-style: italic;
   background: var(--surface);
@@ -230,7 +292,7 @@ body {
   border-radius: var(--radius);
   padding: 1rem 1.25rem;
   overflow-x: auto;
-  margin: 1.5rem 0;
+  margin: 1.75rem 0;
 }
 
 .page-content pre code {
@@ -245,15 +307,15 @@ body {
 .page-content hr {
   border: none;
   border-top: 1px solid var(--border);
-  margin: 2.5rem 0;
+  margin: 2.75rem 0;
 }
 
 /* ─── UTILITY CLASSES ────────────────────────────────────────────────────── */
 .thesis {
   font-size: 1.0625rem;
   border-left: 4px solid var(--accent);
-  padding: 0.75rem 1.25rem;
-  margin: 1.75rem 0;
+  padding: 0.875rem 1.375rem;
+  margin: 1.875rem 0;
   color: #374151;
   background: var(--surface);
   border-radius: 0 var(--radius) var(--radius) 0;
@@ -265,14 +327,14 @@ body {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1rem 1.25rem;
-  margin: 1.75rem 0;
+  margin: 1.875rem 0;
 }
 
 .cta-block {
   background: var(--brand);
   border-radius: var(--radius);
   padding: 1rem 1.25rem;
-  margin: 2.25rem 0 1.5rem;
+  margin: 2.5rem 0 1.75rem;
 }
 
 .cta-block a {
@@ -290,7 +352,7 @@ body {
 .site-footer {
   border-top: 1px solid var(--border);
   margin-top: 72px;
-  padding: 28px 0 56px;
+  padding: 32px 0 56px;
   font-size: 0.875rem;
   color: var(--text-muted);
   line-height: 1.6;
@@ -307,6 +369,41 @@ body {
 
 .site-footer a:hover {
   text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Footer nav grid — four-section structured layout */
+.footer-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.footer-section {
+  min-width: 0; /* prevent grid blowout */
+}
+
+.footer-section-label {
+  font-weight: 600;
+  font-size: 0.6875rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem !important;
+  display: block;
+}
+
+.footer-section p {
+  margin-bottom: 0;
+  line-height: 2;
+}
+
+.footer-section a {
+  display: inline;
+  white-space: nowrap;
 }
 
 /* ─── RESPONSIVE ─────────────────────────────────────────────────────────── */
@@ -314,7 +411,20 @@ body {
   :root {
     --gutter: 16px;
   }
+
   .page-content h1 { font-size: 1.625rem; }
   .page-content h2 { font-size: 1.25rem; }
   .page-content h3 { font-size: 1.0625rem; }
+
+  .footer-nav {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem 1.5rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .footer-nav {
+    grid-template-columns: 1fr;
+    gap: 1rem 0;
+  }
 }

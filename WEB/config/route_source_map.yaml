@@ -1,0 +1,363 @@
+# route_source_map.yaml
+# WEB-CAT-INTEGRATION-01 — Explicit Source Authority Mapping
+# Contract: WEB-CAT-INTEGRATION-01 / 2026-03-31
+#
+# Principle: No route may be compiled without explicit source authority.
+#            WEB enforces CAT; WEB does not define CAT.
+#
+# Authority classes:
+#   canonical_kpi           — source is a k-pi governance document
+#   cat_governed_derivative — source is a k-pi derivative node/narrative
+#   base44_snapshot_fallback — source is rendered Base44 capture
+#   compiled_trusted_legacy — source is pages/ file with no upstream k-pi authority
+#   invalid_unmapped        — route exists but has no declared source (blocked)
+#
+# Verdict values:
+#   allowed     — all required checks pass; may compile
+#   provisional — compiles but requires manual acknowledgment of fallback status
+#   blocked     — must not compile; missing required authority
+#
+# CAT artifacts (k-pi/docs/governance/category/):
+#   construct_positioning_map.md | claim_boundary_model.md | projection_schema.md
+#   projection_readiness_gate.md | category_structure_model.md | domain_mapping_model.md
+
+_meta:
+  version: "1.0"
+  contract: "WEB-CAT-INTEGRATION-01"
+  date: "2026-03-31"
+  kpi_root_relative: "../repos/k-pi"
+  cat_artifacts_path: "docs/governance/category"
+  notes: >
+    All routes must have explicit source authority.
+    No implicit fallback permitted after WEB-CAT-INTEGRATION-01.
+    WEB enforces CAT; WEB does not define CAT.
+
+routes:
+  /:
+    source_type: compiled_trusted_legacy
+    source_path: "pages/index.md"
+    authority_level: legacy_baseline
+    CAT_required: false
+    projection_required: false
+    allowed_claim_class: narrative
+    fallback_policy: allow_with_warn
+    cat_entity: ""
+    projection_construct: ""
+    anchor: false
+    anchor_parent: ""
+    publish_status: live
+    verdict: provisional
+    notes: >
+      No canonical k-pi source maps to the root homepage construct.
+      Content predates the derivative entity governance model.
+      Treated as legacy baseline. Requires canonical maturation before promotion to canonical_kpi.
+
+  /program-intelligence/:
+    source_type: canonical_kpi
+    source_path: "docs/governance/architecture/program_intelligence_stack.md"
+    authority_level: doctrine_core
+    CAT_required: true
+    projection_required: false
+    allowed_claim_class: doctrine
+    fallback_policy: block
+    cat_entity: "program_intelligence"
+    projection_construct: ""
+    anchor: false
+    anchor_parent: ""
+    publish_status: live
+    verdict: allowed
+    notes: >
+      Primary doctrine entry point. Authority: program_intelligence_stack.md.
+      CAT claim boundaries apply. Claim class = doctrine.
+
+  /manifesto/:
+    source_type: canonical_kpi
+    source_path: "docs/governance/doctrine/problem_space_program_intelligence.md"
+    authority_level: doctrine_context
+    CAT_required: true
+    projection_required: false
+    allowed_claim_class: structural_problem_definition
+    fallback_policy: block_if_no_cat
+    cat_entity: "Problem Space (Program Intelligence)"
+    projection_construct: ""
+    anchor: false
+    anchor_parent: ""
+    publish_status: live
+    verdict: allowed
+    notes: >
+      Rebound by I.7 Stream Start (2026-03-31). Former: compiled_trusted_legacy (pages/manifesto.md).
+      Original manifesto archived at: docs/legacy/manifesto_original.md.
+      Canonical source: docs/governance/doctrine/problem_space_program_intelligence.md
+      Doctrine context layer — defines the structural problem space preceding the discipline.
+      Does NOT define Program Intelligence, its constructs, or solutions.
+      construct_positioning_map.md: Class = Doctrine Context Layer,
+      Role = Definition of the structural problem domain preceding the discipline.
+
+  /research/:
+    source_type: compiled_trusted_legacy
+    source_path: "pages/research.md"
+    authority_level: legacy_baseline
+    CAT_required: false
+    projection_required: false
+    allowed_claim_class: narrative
+    fallback_policy: allow_with_warn
+    cat_entity: ""
+    projection_construct: ""
+    anchor: false
+    anchor_parent: ""
+    publish_status: live
+    verdict: provisional
+    notes: >
+      Research page has no canonical k-pi authority source in the derivatives model.
+      Treated as compiled trusted legacy. Provisional.
+
+  /signal-platform/:
+    source_type: compiled_trusted_legacy
+    source_path: "pages/signal-platform.md"
+    authority_level: legacy_baseline
+    CAT_required: false
+    projection_required: false
+    allowed_claim_class: narrative
+    fallback_policy: allow_with_warn
+    cat_entity: ""
+    projection_construct: ""
+    anchor: false
+    anchor_parent: ""
+    publish_status: live
+    verdict: provisional
+    notes: >
+      Product/commercial surface (Signäl). No CAT-governed doctrine source.
+      Category domain_mapping_model.md positions krayu.be as narrative explanation layer.
+      Treated as compiled trusted legacy. Provisional.
+
+  /signal/:
+    source_type: cat_governed_derivative
+    source_path: "docs/governance/derivatives/narratives/signal.md"
+    authority_level: derivative_capability
+    CAT_required: true
+    projection_required: false
+    allowed_claim_class: capability_description
+    fallback_policy: block_if_no_cat
+    cat_entity: "Signal"
+    projection_construct: ""
+    anchor: false
+    anchor_parent: ""
+    publish_status: live
+    verdict: allowed
+    notes: >
+      Canonical narrative: docs/governance/derivatives/narratives/signal.md
+      Promoted by I.6 Hardening Batch 01 (2026-03-31).
+      construct_positioning_map.md: Class = Analytical Signal Layer,
+      Role = Evidence-derived execution signal formation, Parent = Signal Infrastructure.
+      Signal = governed transformation output of Signal Infrastructure pipeline.
+      Sits between Signal Infrastructure and analytical constructs (ESI/RAG).
+
+  /portfolio-intelligence/:
+    source_type: cat_governed_derivative
+    source_path: "docs/governance/derivatives/narratives/portfolio_intelligence.md"
+    authority_level: derivative_capability
+    CAT_required: true
+    projection_required: false
+    allowed_claim_class: capability_description
+    fallback_policy: block_if_no_cat
+    cat_entity: "Portfolio Intelligence"
+    projection_construct: ""
+    anchor: false
+    anchor_parent: ""
+    publish_status: live
+    verdict: allowed
+    notes: >
+      Canonical narrative: docs/governance/derivatives/narratives/portfolio_intelligence.md
+      Promoted by I.6 Hardening Batch 01 (2026-03-31).
+      construct_positioning_map.md: Class = Aggregated Intelligence Layer,
+      Role = Program-level execution aggregation and interpretation, Parent = Program Intelligence.
+      Consumes ESI and RAG outputs across programs. Must not drift into business intelligence.
+      Execution governance view only.
+
+  /pios/:
+    source_type: canonical_kpi
+    source_path: "docs/governance/architecture/pios_architecture_whitepaper.md"
+    authority_level: doctrine_core
+    CAT_required: true
+    projection_required: false
+    allowed_claim_class: doctrine
+    fallback_policy: block
+    cat_entity: "pios"
+    projection_construct: ""
+    anchor: false
+    anchor_parent: ""
+    publish_status: live
+    verdict: allowed
+    notes: >
+      PiOS page grounded in architecture whitepaper. Doctrine-level claim class.
+      CAT domain_mapping_model.md positions krayu.be as narrative explanation for constructs.
+
+  /execution-stability-index/:
+    source_type: cat_governed_derivative
+    source_path: "docs/governance/derivatives/narratives/execution_stability_index.md"
+    authority_level: derivative_signal
+    CAT_required: true
+    projection_required: true
+    allowed_claim_class: derivative_signal
+    fallback_policy: block_if_no_cat
+    cat_entity: "Execution Stability Index (ESI)"
+    projection_construct: "ESI"
+    anchor: false
+    anchor_parent: ""
+    publish_status: live
+    verdict: allowed
+    notes: >
+      ESI is a Category Primitive (construct_positioning_map.md).
+      Full CAT + projection readiness required.
+      Stream 40.16 derivation specification completes projection readiness condition L3.
+      Projection readiness gate: ESI = READY.
+      Claim class = derivative_signal. Must not exceed claim_boundary_model.md.
+
+  /risk-acceleration-gradient/:
+    source_type: cat_governed_derivative
+    source_path: "docs/governance/derivatives/narratives/risk_acceleration_gradient.md"
+    authority_level: derivative_signal
+    CAT_required: true
+    projection_required: true
+    allowed_claim_class: derivative_signal
+    fallback_policy: block_if_no_cat
+    cat_entity: "Risk Acceleration Gradient (RAG)"
+    projection_construct: "RAG"
+    anchor: false
+    anchor_parent: ""
+    publish_status: live
+    verdict: allowed
+    notes: >
+      RAG is a Category Primitive (construct_positioning_map.md).
+      Full CAT + projection readiness required.
+      Stream 40.16 derivation specification completes projection readiness condition L3.
+      Projection readiness gate: RAG = READY.
+      Cross-classified: standalone L1 entity AND fifth dimension of ESI (XL-04).
+      Claim class = derivative_signal. Must not exceed claim_boundary_model.md.
+
+  /execution-blindness/:
+    source_type: cat_governed_derivative
+    source_path: "docs/governance/derivatives/narratives/execution_blindness.md"
+    authority_level: derivative_condition
+    CAT_required: true
+    projection_required: false
+    allowed_claim_class: condition_description
+    fallback_policy: block_if_no_cat
+    cat_entity: "Execution Blindness"
+    projection_construct: ""
+    anchor: true
+    anchor_parent: "/program-intelligence/"
+    publish_status: live
+    verdict: allowed
+    notes: >
+      Anchor surface. Fragment of /program-intelligence/ (#execution-blindness).
+      CAT-governed condition description.
+      construct_positioning_map.md: Class = Condition, Role = Observable failure state.
+
+  /program-intelligence-gap/:
+    source_type: cat_governed_derivative
+    source_path: "docs/governance/derivatives/narratives/program_intelligence_gap.md"
+    authority_level: derivative_context
+    CAT_required: true
+    projection_required: false
+    allowed_claim_class: problem_context
+    fallback_policy: block_if_no_cat
+    cat_entity: "Program Intelligence Gap"
+    projection_construct: ""
+    anchor: true
+    anchor_parent: "/program-intelligence/"
+    publish_status: live
+    verdict: allowed
+    notes: >
+      Anchor surface. Fragment of /program-intelligence/ (#program-intelligence-gap).
+      CAT-governed problem context.
+      construct_positioning_map.md: Class = Problem Context, Role = Structural gap.
+
+  /signal-infrastructure/:
+    source_type: cat_governed_derivative
+    source_path: "docs/governance/derivatives/narratives/signal_infrastructure.md"
+    authority_level: derivative_capability
+    CAT_required: true
+    projection_required: false
+    allowed_claim_class: capability_description
+    fallback_policy: block_if_no_cat
+    cat_entity: "Signal Infrastructure"
+    projection_construct: ""
+    anchor: true
+    anchor_parent: "/program-intelligence/"
+    publish_status: live
+    verdict: allowed
+    notes: >
+      Anchor surface. Fragment of /program-intelligence/ (#signal-infrastructure).
+      Canonical narrative: docs/governance/derivatives/narratives/signal_infrastructure.md
+      Promoted by GAP-05 closure (I.6 / RESEARCH-CANONICAL-EXTRACTION-01 / 2026-03-31).
+      construct_positioning_map.md: Class = Signal Extraction Layer, Role = Execution signal
+      production and structuring. Parent = Program Intelligence.
+      Signal Infrastructure is named in category_structure_model.md as structural parent of
+      ESI and RAG. Projection readiness gate: Signal Infrastructure = READY.
+
+  /execution-blindness-examples/:
+    source_type: cat_governed_derivative
+    source_path: "docs/governance/derivatives/narratives/execution_blindness_examples.md"
+    authority_level: derivative_capability
+    CAT_required: true
+    projection_required: false
+    allowed_claim_class: capability_description
+    fallback_policy: block_if_no_cat
+    cat_entity: "Execution Blindness Examples"
+    projection_construct: ""
+    anchor: false
+    anchor_parent: ""
+    publish_status: live
+    verdict: allowed
+    notes: >
+      Canonical narrative: docs/governance/derivatives/narratives/execution_blindness_examples.md
+      Promoted by I.6 Hardening Batch 03 (2026-03-31).
+      Phase 1 Category A node. Parent: execution_blindness (canonical).
+      construct_positioning_map.md: Class = Pattern Illustration Layer,
+      Role = Structured representation of execution blindness manifestations.
+      Pattern-based (not anecdotal). Derives from execution_blindness.md.
+
+  /why-dashboards-fail-programs/:
+    source_type: cat_governed_derivative
+    source_path: "docs/governance/derivatives/narratives/why_dashboards_fail_programs.md"
+    authority_level: derivative_capability
+    CAT_required: true
+    projection_required: false
+    allowed_claim_class: capability_description
+    fallback_policy: block_if_no_cat
+    cat_entity: "Why Dashboards Fail Programs"
+    projection_construct: ""
+    anchor: false
+    anchor_parent: ""
+    publish_status: live
+    verdict: allowed
+    notes: >
+      Canonical narrative: docs/governance/derivatives/narratives/why_dashboards_fail_programs.md
+      Promoted by I.6 Hardening Batch 03 (2026-03-31).
+      Phase 1 Category A node. Parent: execution_blindness (canonical).
+      construct_positioning_map.md: Class = Diagnostic Explanation Layer,
+      Role = Explanation of metric-based visibility failure.
+      Diagnostic explanation — not opinion. Anchors in signal absence/misalignment.
+
+  /early-warning-signals-program-failure/:
+    source_type: cat_governed_derivative
+    source_path: "docs/governance/derivatives/narratives/early_warning_signals_program_failure.md"
+    authority_level: derivative_capability
+    CAT_required: true
+    projection_required: false
+    allowed_claim_class: capability_description
+    fallback_policy: block_if_no_cat
+    cat_entity: "Early Warning Signals (Program Failure)"
+    projection_construct: ""
+    anchor: false
+    anchor_parent: ""
+    publish_status: live
+    verdict: allowed
+    notes: >
+      Canonical narrative: docs/governance/derivatives/narratives/early_warning_signals_program_failure.md
+      Promoted by I.6 Hardening Batch 03 (2026-03-31).
+      Phase 1 Category A node. Parent: program_intelligence (via ESI).
+      construct_positioning_map.md: Class = Detection Layer,
+      Role = Identification of program failure conditions via signal patterns.
+      Derives from ESI and RAG — does not invent new signals.

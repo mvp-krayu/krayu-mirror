@@ -23,12 +23,14 @@ VALIDATION_DIR="$REPO_ROOT/docs/mirror-validation"
 COMPILE_MODE="strict"
 ORIGIN_STREAM="WEB-OPS-04"
 RUN_EXTERNAL_CHECK=0
+SKIP_SOURCE_GATE=0
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --stream)              ORIGIN_STREAM="$2";  shift 2 ;;
     --mode)                COMPILE_MODE="$2";   shift 2 ;;
     --run-external-check)  RUN_EXTERNAL_CHECK=1; shift ;;
+    --skip-source-gate)    SKIP_SOURCE_GATE=1;  shift ;;
     *)        echo "Unknown arg: $1"; exit 1 ;;
   esac
 done
@@ -103,6 +105,48 @@ get_publish_status() {
 clean_title() {
   echo "$1" | sed 's/ | Program Intelligence | Krayu$//' | sed 's/ | Krayu$//'
 }
+
+# ─── STEP 0: SOURCE AUTHORITY GATE (WEB-CAT-INTEGRATION-01) ─────────────────
+# Runs validate-source-authority.sh before any compile work begins.
+# In strict mode: any blocked CAT-required route halts the build.
+# Skip with --skip-source-gate only for emergency builds.
+
+if [[ "$SKIP_SOURCE_GATE" -eq 0 ]]; then
+  GATE_SCRIPT="$SCRIPT_DIR/validate-source-authority.sh"
+  if [[ -f "$GATE_SCRIPT" ]]; then
+    GATE_EXIT=0
+    bash "$GATE_SCRIPT" \
+      --stream "$ORIGIN_STREAM" \
+      --mode "$COMPILE_MODE" || GATE_EXIT=$?
+
+    if [[ "$GATE_EXIT" -ne 0 ]]; then
+      echo ""
+      echo "ERROR: Source authority gate failed (exit $GATE_EXIT)."
+      if [[ "$GATE_EXIT" -eq 2 ]]; then
+        echo "  Missing infrastructure: route_source_map.yaml or k-pi root or CAT artifacts."
+      else
+        echo "  One or more CAT-required routes are blocked."
+        echo "  Review: WEB/reports/blocked_routes_report.md"
+        echo "  Resolution: repair source or CAT authority in k-pi — do NOT patch mirror pages."
+      fi
+      if [[ "$COMPILE_MODE" == "strict" ]]; then
+        echo "  Strict mode: halting build."
+        exit 1
+      else
+        echo "  Permissive mode: source authority gate failed but build continues with WARNING."
+      fi
+    fi
+  else
+    if [[ "$COMPILE_MODE" == "strict" ]]; then
+      echo "ERROR: validate-source-authority.sh not found at $GATE_SCRIPT"
+      echo "  WEB-CAT-INTEGRATION-01 requires this script."
+      echo "  Strict mode: halting build."
+      exit 1
+    else
+      echo "  [WARN] validate-source-authority.sh not found — source gate skipped (permissive mode)"
+    fi
+  fi
+fi
 
 # ─── STEP 1: VALIDATE latest EXISTS ──────────────────────────────────────────
 

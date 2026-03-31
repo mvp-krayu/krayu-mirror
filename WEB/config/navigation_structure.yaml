@@ -1,0 +1,59 @@
+# navigation_structure.yaml
+# CAT-aligned navigation configuration
+# Contract: I.7 HARDENING BATCH 01 / 2026-03-31
+#
+# Source of truth for all nav surfaces (header, footer).
+# Only routes present in route_source_map.yaml are included.
+# Product (Signäl) is isolated in primary — not repeated elsewhere.
+
+navigation:
+
+  primary:
+
+    - label: "Program Intelligence"
+      route: "/program-intelligence/"
+      type: doctrine
+
+    - label: "PiOS"
+      route: "/pios/"
+      type: architecture
+
+    - label: "Portfolio Intelligence"
+      route: "/portfolio-intelligence/"
+      type: aggregation
+
+    - label: "Signäl"
+      route: "/signal-platform/"
+      type: product
+
+  secondary:
+
+    - label: "Problem Space"
+      route: "/manifesto/"
+      type: context
+
+    - label: "Research"
+      route: "/research/"
+      type: corpus
+
+  signals:
+
+    - label: "Execution Stability Index"
+      route: "/execution-stability-index/"
+
+    - label: "Risk Acceleration Gradient"
+      route: "/risk-acceleration-gradient/"
+
+    - label: "Early Warning Signals"
+      route: "/early-warning-signals-program-failure/"
+
+  diagnostics:
+
+    - label: "Execution Blindness"
+      route: "/execution-blindness/"
+
+    - label: "Why Dashboards Fail"
+      route: "/why-dashboards-fail-programs/"
+
+    - label: "Execution Blindness Examples"
+      route: "/execution-blindness-examples/"

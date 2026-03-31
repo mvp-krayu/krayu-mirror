@@ -68,6 +68,38 @@ fail_check()  { echo "  [FAIL] $*"; CHECKS+=("FAIL|$*"); FAILED=1; OVERALL_STATU
 warn_check()  { echo "  [WARN] $*"; CHECKS+=("WARN|$*"); if [[ "$OVERALL_STATUS" == "PASS" ]]; then OVERALL_STATUS="PARTIAL"; fi; }
 info_check()  { echo "  [INFO] $*"; CHECKS+=("INFO|$*"); }
 
+# Normalize a route or URL to canonical trailing-slash form.
+# Rules:
+#   - Strip scheme + hostname (any domain)
+#   - Ensure leading slash
+#   - Collapse duplicate slashes
+#   - /index and /index/ → /
+#   - Anchor routes (#) → preserved as-is (no trailing slash forced)
+#   - All other routes → trailing slash ensured
+#   - Root / → kept as /
+normalize_route() {
+  local r="$1"
+  # Strip scheme + hostname (handles https://any.domain/path)
+  r="$(echo "$r" | sed -E 's|^https?://[^/]*||')"
+  # Ensure leading slash
+  [[ -z "$r" || "${r:0:1}" != "/" ]] && r="/$r"
+  # Collapse duplicate slashes
+  r="$(echo "$r" | sed 's|//\+|/|g')"
+  # Normalize /index variants to root
+  if [[ "$r" == "/index" || "$r" == "/index/" ]]; then
+    echo "/"; return
+  fi
+  # Preserve anchor routes unchanged (no trailing slash after fragment)
+  if [[ "$r" == *"#"* ]]; then
+    echo "$r"; return
+  fi
+  # Ensure trailing slash for non-root routes
+  if [[ "$r" != "/" && "${r: -1}" != "/" ]]; then
+    r="${r}/"
+  fi
+  echo "$r"
+}
+
 # Extract frontmatter field from a pages/ file
 frontmatter_value() {
   local file="$1" key="$2"
@@ -107,11 +139,11 @@ else
     page_class="$(frontmatter_value "$pfile" "page_class")"
     fname="$(basename "$pfile")"
 
-    # Derive route from canonical (strip base URL) or filename
+    # Derive route from canonical (hostname-agnostic) or filename, then normalize
     if [[ -n "$canonical" ]]; then
-      route="${canonical#${BASE_URL}}"
+      route="$(normalize_route "$canonical")"
     else
-      route="/$(basename "$pfile" .md)"
+      route="$(normalize_route "/$(basename "$pfile" .md)")"
     fi
 
     [[ -z "$publish_status" ]] && publish_status="unknown"
@@ -188,17 +220,13 @@ if [[ -n "$SITEMAP_FILE" ]]; then
     SITEMAP_PARSEABLE=1
     pass_check "sitemap.xml has valid <urlset> root"
 
-    # Extract all <loc> URLs
+    # Extract all <loc> URLs and normalize to trailing-slash canonical form
     while IFS= read -r loc_line; do
       # Strip XML tags and whitespace
       url="$(echo "$loc_line" | sed 's|.*<loc>||; s|</loc>.*||; s|[[:space:]]||g')"
       [[ -z "$url" ]] && continue
-      # Strip any https://hostname to get the path (handles any domain variant)
-      route="$(echo "$url" | sed 's|https://[^/]*||')"
-      # Ensure route starts with /
-      [[ "${route:0:1}" != "/" ]] && route="/$route"
-      # Skip empty or bare homepage /
-      [[ -z "$route" || "$route" == "/" ]] && continue
+      route="$(normalize_route "$url")"
+      [[ -z "$route" ]] && continue
       SITEMAP_ROUTES+=("$route")
     done < <(grep -i '<loc>' "$SITEMAP_FILE" 2>/dev/null || true)
 
@@ -224,12 +252,24 @@ in_sitemap() {
   return 1
 }
 
-# Helper: check if a route has a backing page
+# Helper: check if a route has a backing page.
+# Checks both canonical-derived routes and filename-based lookup.
+# Pages whose canonical points to an anchor are still "backed" by their file.
 has_page() {
   local target="$1"
+  # Check against canonical-normalized routes
   for pr in "${ALL_PAGE_ROUTES[@]}"; do
     [[ "$pr" == "$target" ]] && return 0
   done
+  # Filename fallback: /slug/ → pages/slug.md, / → pages/index.md
+  local slug
+  if [[ "$target" == "/" ]]; then
+    [[ -f "$PAGES_DIR/index.md" ]] && return 0
+  else
+    slug="${target%/}"   # strip trailing slash
+    slug="${slug#/}"     # strip leading slash
+    [[ -n "$slug" && -f "$PAGES_DIR/${slug}.md" ]] && return 0
+  fi
   return 1
 }
 

@@ -8,7 +8,8 @@
 <title>{{ title }} | Krayu — Program Intelligence</title>
 <meta name="description" content="{{ description }}"/>
 
-<link rel="canonical" href="{{ canonicalUrl }}"/>
+{% set _canonicalHref = canonical or canonicalUrl %}{% if _canonicalHref %}
+<link rel="canonical" href="{{ _canonicalHref }}"/>{% endif %}
 <link rel="stylesheet" href="/css/style.css"/>
 
 {% include "structured-data-org.njk" %}

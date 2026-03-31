@@ -42,6 +42,7 @@ PROMOTION_REASON="Automated pipeline promotion via run-webops-pipeline.sh"
 COMPILE_MODE="strict"
 SKIP_EXTRACT=0
 SKIP_PROMOTE=0
+SKIP_SOURCE_GATE=0
 SKIP_COMPILE=0
 SKIP_BUILD=0
 SKIP_EXTERNAL_CHECK=0
@@ -62,6 +63,7 @@ while [[ $# -gt 0 ]]; do
     --mode)          COMPILE_MODE="$2";      shift 2 ;;
     --skip-extract)        SKIP_EXTRACT=1;          shift ;;
     --skip-promote)        SKIP_PROMOTE=1;          shift ;;
+    --skip-source-gate)    SKIP_SOURCE_GATE=1;      shift ;;
     --skip-compile)        SKIP_COMPILE=1;          shift ;;
     --skip-build)          SKIP_BUILD=1;            shift ;;
     --skip-external-check) SKIP_EXTERNAL_CHECK=1;   shift ;;
@@ -96,9 +98,10 @@ echo ""
 echo "  Stages:"
 echo "    1. WEB-OPS-03 extract:  $([ "$SKIP_EXTRACT" -eq 1 ] && echo "SKIP" || echo "RUN")"
 echo "    2. promote-snapshot:    $([ "$SKIP_PROMOTE" -eq 1 ] && echo "SKIP" || echo "RUN")"
-echo "    3. build-mirror:        $([ "$SKIP_COMPILE" -eq 1 ] && echo "SKIP" || echo "RUN")"
-echo "    4. eleventy build:      $([ "$RUN_BUILD" -eq 0 ] && echo "NOT_RUN (pass --run-build)" || ([ "$SKIP_BUILD" -eq 1 ] && echo "SKIP" || echo "RUN"))"
-echo "    5. external validate:   $([ "$RUN_EXTERNAL_CHECK" -eq 0 ] && echo "NOT_RUN (pass --run-external-check)" || ([ "$SKIP_EXTERNAL_CHECK" -eq 1 ] && echo "SKIP" || echo "RUN"))"
+echo "    3. source-authority:    $([ "$SKIP_SOURCE_GATE" -eq 1 ] && echo "SKIP" || echo "RUN")  [WEB-CAT-INTEGRATION-01]"
+echo "    4. build-mirror:        $([ "$SKIP_COMPILE" -eq 1 ] && echo "SKIP" || echo "RUN")"
+echo "    5. eleventy build:      $([ "$RUN_BUILD" -eq 0 ] && echo "NOT_RUN (pass --run-build)" || ([ "$SKIP_BUILD" -eq 1 ] && echo "SKIP" || echo "RUN"))"
+echo "    6. external validate:   $([ "$RUN_EXTERNAL_CHECK" -eq 0 ] && echo "NOT_RUN (pass --run-external-check)" || ([ "$SKIP_EXTERNAL_CHECK" -eq 1 ] && echo "SKIP" || echo "RUN"))"
 echo ""
 
 # ─── STAGE 1: WEB-OPS-03 EXTRACT ─────────────────────────────────────────────
@@ -135,7 +138,7 @@ if [[ "$SKIP_EXTRACT" -eq 0 ]]; then
     echo "Snapshot at: $SNAPSHOT_ROOT/$TIMESTAMP/"
     echo "Check the extraction output above for per-route errors."
     echo ""
-    echo "Pipeline halted. Stages 2 and 3 will not run."
+    echo "Pipeline halted. Stages 2–6 will not run."
     exit 1
   fi
 
@@ -174,7 +177,7 @@ if [[ "$SKIP_PROMOTE" -eq 0 ]]; then
   if [[ "$PROMOTE_EXIT" -ne 0 ]]; then
     echo ""
     echo "STAGE 2 FAILED — promote-snapshot.sh returned exit code $PROMOTE_EXIT"
-    echo "Pipeline halted. Stage 3 will not run."
+    echo "Pipeline halted. Stages 3–6 will not run."
     exit 1
   fi
 
@@ -186,12 +189,62 @@ else
   echo "  Using existing latest: $(basename "$(readlink "$SNAPSHOT_ROOT/latest" 2>/dev/null || echo "unset")")"
 fi
 
-# ─── STAGE 3: BUILD MIRROR ───────────────────────────────────────────────────
+# ─── STAGE 3: SOURCE AUTHORITY GATE ─────────────────────────────────────────
+# WEB-CAT-INTEGRATION-01: resolve source, validate CAT, gate projection readiness.
+# Runs BEFORE compile. A blocked route in strict mode halts the build.
+
+if [[ "$SKIP_SOURCE_GATE" -eq 0 ]]; then
+  echo ""
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo "STAGE 3 — Source Authority Gate [WEB-CAT-INTEGRATION-01]"
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo ""
+
+  GATE_SCRIPT="$SCRIPT_DIR/validate-source-authority.sh"
+  if [[ ! -f "$GATE_SCRIPT" ]]; then
+    echo "ERROR: validate-source-authority.sh not found at $GATE_SCRIPT"
+    echo "WEB-CAT-INTEGRATION-01 requires this script to be present."
+    echo "Pipeline halted. Stage 4 (build-mirror) will not run."
+    exit 1
+  fi
+
+  GATE_EXIT=0
+  bash "$GATE_SCRIPT" \
+    --stream "$ORIGIN_STREAM" \
+    --mode "$COMPILE_MODE" || GATE_EXIT=$?
+
+  if [[ "$GATE_EXIT" -eq 2 ]]; then
+    echo ""
+    echo "STAGE 3 FAILED — Source authority infrastructure missing (exit code 2)"
+    echo "  Missing: route_source_map.yaml or k-pi root or CAT artifacts."
+    echo "  Pipeline halted. Stage 4 (build-mirror) will not run."
+    exit 1
+  fi
+
+  if [[ "$GATE_EXIT" -ne 0 ]]; then
+    echo ""
+    echo "STAGE 3 FAILED — Source authority gate blocked one or more routes."
+    echo "  Review: WEB/reports/blocked_routes_report.md"
+    echo "  Resolution: repair source or CAT authority in k-pi — do NOT patch mirror pages."
+    echo "  Pipeline halted. Stage 4 (build-mirror) will not run."
+    exit 1
+  fi
+
+  echo ""
+  echo "STAGE 3 COMPLETE — source authority gate passed"
+else
+  echo ""
+  echo "STAGE 3 — Source Authority Gate: SKIPPED"
+  echo "  WARNING: Skipping source authority gate bypasses WEB-CAT-INTEGRATION-01 enforcement."
+  echo "  Use --skip-source-gate only for emergency builds with explicit operator acknowledgment."
+fi
+
+# ─── STAGE 4: BUILD MIRROR ───────────────────────────────────────────────────
 
 if [[ "$SKIP_COMPILE" -eq 0 ]]; then
   echo ""
   echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-  echo "STAGE 3 — Compiling mirror pages from latest"
+  echo "STAGE 4 — Compiling mirror pages from latest"
   echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
   echo ""
 
@@ -208,25 +261,25 @@ if [[ "$SKIP_COMPILE" -eq 0 ]]; then
 
   if [[ "$BUILD_EXIT" -ne 0 ]]; then
     echo ""
-    echo "STAGE 3 FAILED — build-mirror-from-snapshot.sh returned exit code $BUILD_EXIT"
+    echo "STAGE 4 FAILED — build-mirror-from-snapshot.sh returned exit code $BUILD_EXIT"
     echo "Compiled output is in place for inspection."
     echo "Do not use failed compile output for downstream publishing."
     exit 1
   fi
 
   echo ""
-  echo "STAGE 3 COMPLETE — mirror pages compiled"
+  echo "STAGE 4 COMPLETE — mirror pages compiled"
 else
   echo ""
-  echo "STAGE 3 — Build mirror: SKIPPED"
+  echo "STAGE 4 — Build mirror: SKIPPED"
 fi
 
-# ─── STAGE 4: ELEVENTY BUILD ─────────────────────────────────────────────────
+# ─── STAGE 5: ELEVENTY BUILD ─────────────────────────────────────────────────
 
 if [[ "$RUN_BUILD" -eq 1 ]] && [[ "$SKIP_BUILD" -eq 0 ]]; then
   echo ""
   echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-  echo "STAGE 4 — Eleventy Build"
+  echo "STAGE 5 — Eleventy Build"
   echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
   echo ""
 
@@ -235,31 +288,31 @@ if [[ "$RUN_BUILD" -eq 1 ]] && [[ "$SKIP_BUILD" -eq 0 ]]; then
 
   if [[ "$BUILD_EXIT" -ne 0 ]]; then
     echo ""
-    echo "STAGE 4 FAILED — Eleventy build returned exit code $BUILD_EXIT"
+    echo "STAGE 5 FAILED — Eleventy build returned exit code $BUILD_EXIT"
     echo "Do not deploy. Investigate Eleventy error output above."
     exit 1
   fi
 
   if [[ ! -d "$REPO_ROOT/_site" ]]; then
-    echo "STAGE 4 FAILED — _site/ directory not created"
+    echo "STAGE 5 FAILED — _site/ directory not created"
     exit 1
   fi
 
   echo ""
-  echo "STAGE 4 COMPLETE — _site/ built"
+  echo "STAGE 5 COMPLETE — _site/ built"
 else
   echo ""
-  echo "STAGE 4 — Eleventy Build: NOT_RUN"
+  echo "STAGE 5 — Eleventy Build: NOT_RUN"
   echo "  Run with --run-build to include this stage."
   echo "  Contract: WEB/contracts/eleventy-build.md"
 fi
 
-# ─── STAGE 5: EXTERNAL VALIDATION ─────────────────────────────────────────────
+# ─── STAGE 6: EXTERNAL VALIDATION ─────────────────────────────────────────────
 
 if [[ "$RUN_EXTERNAL_CHECK" -eq 1 ]] && [[ "$SKIP_EXTERNAL_CHECK" -eq 0 ]]; then
   echo ""
   echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-  echo "STAGE 5 — External Validation"
+  echo "STAGE 6 — External Validation"
   echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
   echo ""
 
@@ -282,10 +335,10 @@ if [[ "$RUN_EXTERNAL_CHECK" -eq 1 ]] && [[ "$SKIP_EXTERNAL_CHECK" -eq 0 ]]; then
   [[ "$GSC_EXIT" -ne 0 ]] && echo "  WARN: Search Console validation returned non-zero — review report"
 
   echo ""
-  echo "STAGE 5 COMPLETE — external validation run (see docs/mirror-validation/external_validation_report.md)"
+  echo "STAGE 6 COMPLETE — external validation run (see docs/mirror-validation/external_validation_report.md)"
 else
   echo ""
-  echo "STAGE 5 — External Validation: NOT_RUN"
+  echo "STAGE 6 — External Validation: NOT_RUN"
   echo "  Run with --run-external-check to include this stage."
   echo "  Contract: WEB/contracts/external-search-validation.md"
   echo "  Note: requires GSC_ACCESS_TOKEN for full validation. Sitemap check runs without credentials."
@@ -306,13 +359,15 @@ echo "║  Stream:   $ORIGIN_STREAM"
 echo "╠══════════════════════════════════════════════════════════╣"
 echo "║  Stage 1 (extract):         $([ "$SKIP_EXTRACT" -eq 1 ] && echo "SKIPPED  " || echo "PASS     ")"
 echo "║  Stage 2 (promote):         $([ "$SKIP_PROMOTE" -eq 1 ] && echo "SKIPPED  " || echo "PASS     ")"
-echo "║  Stage 3 (compile):         $([ "$SKIP_COMPILE" -eq 1 ] && echo "SKIPPED  " || echo "PASS     ")"
-echo "║  Stage 4 (eleventy build):  $([ "$RUN_BUILD" -eq 0 ] && echo "NOT_RUN  " || ([ "$SKIP_BUILD" -eq 1 ] && echo "SKIPPED  " || echo "PASS     "))"
-echo "║  Stage 5 (external check):  $([ "$RUN_EXTERNAL_CHECK" -eq 0 ] && echo "NOT_RUN  " || ([ "$SKIP_EXTERNAL_CHECK" -eq 1 ] && echo "SKIPPED  " || echo "COMPLETE "))"
+echo "║  Stage 3 (source-authority):$([ "$SKIP_SOURCE_GATE" -eq 1 ] && echo "SKIPPED  " || echo "PASS     ")"
+echo "║  Stage 4 (compile):         $([ "$SKIP_COMPILE" -eq 1 ] && echo "SKIPPED  " || echo "PASS     ")"
+echo "║  Stage 5 (eleventy build):  $([ "$RUN_BUILD" -eq 0 ] && echo "NOT_RUN  " || ([ "$SKIP_BUILD" -eq 1 ] && echo "SKIPPED  " || echo "PASS     "))"
+echo "║  Stage 6 (external check):  $([ "$RUN_EXTERNAL_CHECK" -eq 0 ] && echo "NOT_RUN  " || ([ "$SKIP_EXTERNAL_CHECK" -eq 1 ] && echo "SKIPPED  " || echo "COMPLETE "))"
 echo "╚══════════════════════════════════════════════════════════╝"
 echo ""
 echo "  Snapshot:   $SNAPSHOT_ROOT/$TIMESTAMP/"
 echo "  Latest:     $SNAPSHOT_ROOT/latest/ → $TIMESTAMP"
 echo "  Pages:      $REPO_ROOT/pages/"
 echo "  Validation: $REPO_ROOT/docs/mirror-validation/"
+echo "  Authority:  $REPO_ROOT/WEB/reports/"
 echo ""

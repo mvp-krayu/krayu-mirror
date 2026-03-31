@@ -1,15 +1,18 @@
 <header class="site-header">
-<nav class="site-nav">
-<a href="/">Krayu</a>
+<nav class="site-nav" aria-label="Primary navigation">
+<a href="/" class="nav-home">Krayu</a>
 <span class="sep">·</span>
-<a href="/program-intelligence/">Program Intelligence</a>
+<a href="/program-intelligence/"{% if page.url == '/program-intelligence/' %} aria-current="page"{% endif %}>Program Intelligence</a>
 <span class="sep">·</span>
-<a href="/manifesto/">Manifesto</a>
+<a href="/pios/"{% if page.url == '/pios/' %} aria-current="page"{% endif %}>PiOS</a>
 <span class="sep">·</span>
-<a href="/pios/">PiOS</a>
+<a href="/portfolio-intelligence/"{% if page.url == '/portfolio-intelligence/' %} aria-current="page"{% endif %}>Portfolio Intelligence</a>
 <span class="sep">·</span>
-<a href="/portfolio-intelligence/">Portfolio Intelligence</a>
+<a href="/signal-platform/"{% if page.url == '/signal-platform/' %} aria-current="page"{% endif %}>Signäl</a>
+</nav>
+<nav class="site-nav nav-secondary" aria-label="Secondary navigation">
+<a href="/manifesto/"{% if page.url == '/manifesto/' %} aria-current="page"{% endif %}>Problem Space</a>
 <span class="sep">·</span>
-<a href="/signal-platform/">Signäl</a>
+<a href="/research/"{% if page.url == '/research/' %} aria-current="page"{% endif %}>Research</a>
 </nav>
 </header>
