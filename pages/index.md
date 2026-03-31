@@ -45,4 +45,3 @@ Most technology programs fail gradually — long before leadership realizes it. 
 - [Risk Acceleration Gradient](/risk-acceleration-gradient/) — risk rate-of-change model
 - [Research](/research/) — the structural visibility problem examined
 
-<div class="cta-block"><a href="https://krayu.be/">Visit krayu.be →</a></div>
