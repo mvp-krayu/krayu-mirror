@@ -53,6 +53,8 @@ docs/mirror-validation/external_validation_report.md
 | `WEB/contracts/` | Operational contracts | Operator | All pipeline operators |
 | `WEB/logs/push-runs/` | Push manifests | Operator (post-push) | Audit, downstream checks |
 | `docs/mirror-validation/` | Validation artifacts | `build-mirror-from-snapshot.sh` | Operator, audit |
+| `WEB/config/route_source_map.yaml` | Explicit source authority per route | Operator (contract updates only) | `validate-source-authority.sh` |
+| `WEB/reports/` | Source authority and CAT gate reports | `validate-source-authority.sh` | Operator, audit |
 | `_includes/` | Eleventy layout templates | Operator (structural changes only) | Eleventy build |
 | `_data/` | Site data (nav, shared) | Operator | Eleventy build |
 | `_site/` | Built site (ephemeral) | Eleventy build | Deploy stage |
@@ -75,7 +77,15 @@ INPUT: snapshot timestamp
   → OUTPUT: WEB/base44-snapshot/latest → <ts>
              WEB/base44-snapshot/<ts>/promotion_manifest.md
 
-INPUT: latest/ (via symlink)
+INPUT: WEB/config/route_source_map.yaml + k-pi CAT artifacts
+  → bash WEB/scripts/validate-source-authority.sh [called automatically by pipeline]
+  → OUTPUT: WEB/reports/source_authority_inventory.md
+             WEB/reports/cat_projection_gate_report.md
+             WEB/reports/blocked_routes_report.md
+             WEB/reports/source_fallback_report.md
+             EXIT 0 (all allowed/provisional) | EXIT 1 (CAT-required route blocked)
+
+INPUT: latest/ (via symlink) [only reached if source authority gate passes]
   → bash WEB/scripts/build-mirror-from-snapshot.sh
   → OUTPUT: pages/*.md (compiled pages)
              docs/mirror-validation/hard_validator_report.md
@@ -107,11 +117,14 @@ Never skip a stage. Never run stages out of order.
 Stage 1: PUSH
 Stage 2: EXTRACT
 Stage 3: PROMOTE
-Stage 4: COMPILE + INTERNAL VALIDATE
-Stage 5: ELEVENTY BUILD
-Stage 6: DEPLOY
-Stage 7: EXTERNAL VALIDATE
+Stage 4: SOURCE AUTHORITY GATE  [WEB-CAT-INTEGRATION-01]
+Stage 5: COMPILE + INTERNAL VALIDATE
+Stage 6: ELEVENTY BUILD
+Stage 7: DEPLOY
+Stage 8: EXTERNAL VALIDATE
 ```
+
+Stage 4 (Source Authority Gate) is the CAT enforcement point. It must pass before Stage 5 (compile) is allowed. No page may compile unless its source authority is explicitly declared and passes CAT validation.
 
 ---
 
@@ -528,6 +541,23 @@ Day 30+:            INDEXED                 ← if not INDEXED, investigate
 
 `docs/mirror-validation/sitemap_consistency_report.md` is written on every run.
 
+### Route normalization
+
+All routes — whether derived from page frontmatter, page filenames, or sitemap `<loc>` entries — are normalized before any comparison. Normalization rules:
+
+| Input | Normalized form |
+|-------|----------------|
+| `https://mirror.krayu.be/pios/` | `/pios/` |
+| `https://krayu.be/pios` | `/pios/` |
+| `/pios` | `/pios/` |
+| `/index` or `/index/` | `/` |
+| `https://mirror.krayu.be/` | `/` |
+| `/program-intelligence#execution-blindness` | `/program-intelligence#execution-blindness` (anchor — no trailing slash) |
+
+- **All non-anchor, non-root routes receive a trailing slash.** The validator never fails on a slash mismatch.
+- **Root index page** (`pages/index.md`, route `/index`, or sitemap `/`) is always normalized to `/`.
+- **Backing-page lookup** uses both canonical-derived routes and filename-based lookup. A sitemap route `/execution-blindness/` is considered backed by `pages/execution-blindness.md` even if that page's canonical points to an anchor on another page.
+
 ### How to run
 
 ```bash
@@ -726,4 +756,209 @@ Without `GSC_ACCESS_TOKEN`, external validation steps run in NOT_CONFIGURED mode
 
 ---
 
-*Operators Manual — WEB-OPS Pipeline | Krayu Program Intelligence | 2026-03-30*
+---
+
+## 20. Canonical Tag Wiring
+
+### Source field
+
+The canonical URL for each page is taken from frontmatter at build time by `_includes/base.njk`.
+
+| Priority | Frontmatter field | Used by |
+|----------|------------------|---------|
+| 1 (preferred) | `canonical` | All pages |
+| 2 (fallback) | `canonicalUrl` | Retained for backward compatibility only — no current pages use it |
+
+If neither field is present, no `<link rel="canonical">` tag is emitted.
+
+Template logic in `_includes/base.njk`:
+```njk
+{% set _canonicalHref = canonical or canonicalUrl %}{% if _canonicalHref %}
+<link rel="canonical" href="{{ _canonicalHref }}"/>{% endif %}
+```
+
+### Rules
+
+- Do NOT invent canonical values. If a page has no `canonical` or `canonicalUrl` frontmatter, no tag is emitted — this is intentional and correct.
+- Do NOT mix source fields within a single page. If both `canonical` and `canonicalUrl` are present, `canonical` wins.
+- `og:url` and JSON-LD `url` fields, if added to the template in future, must use the same `canonical or canonicalUrl` resolution logic.
+
+### Remaining body-content CTA link issue
+
+Two pages (`research.md`, `signal-platform.md`) contain CTA block links in their **page bodies** that still point to pre-migration SPA URLs:
+
+- `research/index.html`: `href="https://krayu.be/ProgramIntelligenceResearch"`
+- `signal-platform/index.html`: `href="https://krayu.be/Product"`
+
+These are Base44 extraction artifacts in the page body — not frontmatter. They do not affect the canonical tag. Correcting them requires either re-extraction from Base44 or a targeted body edit, which is outside the scope of canonical governance contracts.
+
+### Verification
+
+After any template change, verify canonical tag output:
+```bash
+cd ~/Projects/krayu-mirror
+npx @11ty/eleventy --output=_site
+grep -r 'rel="canonical"' _site/*/index.html | head -20
+```
+
+No line should contain `canonicalUrl` or an empty `href=""`.
+
+---
+
+## Source Authority Model (WEB-CAT-INTEGRATION-01)
+
+This section documents the source authority model introduced by WEB-CAT-INTEGRATION-01. Every operator must understand these concepts before running the pipeline.
+
+### What Source Authority Means
+
+Every route in the mirror must declare where its content authority comes from. Before WEB-CAT-INTEGRATION-01, pages compiled if a markdown file existed in the snapshot — source was implicit. After WEB-CAT-INTEGRATION-01, source is explicit per route, declared in `WEB/config/route_source_map.yaml`.
+
+### source_type Is a Strict Enum
+
+`source_type` is not a free-text field. It must be exactly one of these four values:
+
+| Value | Meaning |
+|-------|---------|
+| `canonical_kpi` | Source is a k-pi governance document (architecture, doctrine) |
+| `cat_governed_derivative` | Source is a k-pi derivative node/narrative, governed by CAT |
+| `base44_snapshot_fallback` | Source is a rendered Base44 capture |
+| `compiled_trusted_legacy` | Source is a pages/ file with no upstream k-pi authority |
+
+**Any other value — including `invalid_unmapped`, empty string, or any custom string — is a BLOCKING condition.** The gate will exit 1 and the build will not proceed.
+
+This is not a warning. It is a hard block.
+
+### route_source_map.yaml
+
+**Location:** `WEB/config/route_source_map.yaml`
+
+**Role:** The single source of truth for route → source authority mapping. Every route must have an entry. No implicit sourcing is permitted.
+
+**Authority classes:**
+
+| Class | Meaning | Verdict |
+|-------|---------|---------|
+| `canonical_kpi` | Source is a k-pi governance document (architecture, doctrine) | allowed (if checks pass) |
+| `cat_governed_derivative` | Source is a k-pi derivative node/narrative, CAT-governed | allowed (if checks pass) |
+| `base44_snapshot_fallback` | Source is a rendered Base44 capture | provisional |
+| `compiled_trusted_legacy` | Source is pages/ with no upstream k-pi authority | provisional |
+| `invalid_unmapped` | No source declared | blocked |
+
+**Editing the map:** Only update `route_source_map.yaml` when a route's source authority genuinely changes (e.g., after completing a canonical narrative in k-pi). Do not edit it to unblock routes that should legitimately be blocked.
+
+### CAT Pre-Compile Gate
+
+**What it does:** Before any page compiles, `validate-source-authority.sh` checks:
+1. Does the source file exist?
+2. If CAT_required: Does the construct appear in `construct_positioning_map.md`?
+3. If CAT_required: Is `claim_boundary_model.md` present?
+4. If projection_required: Does the construct pass `projection_readiness_gate.md`?
+
+**Where CAT artifacts live:** `~/Projects/repos/k-pi/docs/governance/category/` (6 files)
+
+**Key principle: WEB enforces CAT; WEB does not define CAT.** Do not edit CAT artifacts in the WEB layer. CAT is defined exclusively in k-pi. Any change to claim boundaries, construct positioning, or projection readiness must happen in k-pi first.
+
+### Source Priority Order
+
+When selecting the source for a route, the priority order is:
+
+1. **canonical_kpi** — if a canonical k-pi governance source exists and is mapped, it must dominate
+2. **cat_governed_derivative** — if a CAT-governed derivative narrative exists, use it
+3. **base44_snapshot_fallback** — only if CAT allows the construct and claim boundaries are enforceable
+4. **compiled_trusted_legacy** — temporary explicit class only; never as an implicit default
+5. **block** — if none of the above apply
+
+No hidden fallback. No silent source substitution.
+
+### Mutation Testing — Required Verification Method
+
+The source authority gate must be verified by mutation test after any change to `validate-source-authority.sh`. The required procedure:
+
+```bash
+# 1. Backup the source map
+cp WEB/config/route_source_map.yaml /tmp/route_source_map.yaml.bak
+
+# 2. Mutate the first cat_governed_derivative entry
+#    Change: source_type: cat_governed_derivative
+#    To:     source_type: invalid_unmapped
+
+# 3. Run the gate — MUST return exit 1
+bash WEB/scripts/validate-source-authority.sh
+# Expected: GATE: FAIL, exit code 1, route appears in blocked_routes_report.md
+
+# 4. Restore the original YAML
+cp /tmp/route_source_map.yaml.bak WEB/config/route_source_map.yaml
+
+# 5. Run the gate on clean map — MUST return exit 0
+bash WEB/scripts/validate-source-authority.sh
+# Expected: GATE: PASS, exit code 0, blocked count = 0
+```
+
+A gate implementation that returns exit 0 on a mutated (invalid) source map is incorrect. Do not ship it.
+
+### What "Provisional" Means
+
+A route marked **provisional** compiles and may publish. But it is operating without canonical k-pi authority. The content may be correct, but its source is not yet part of the governed truth chain.
+
+Provisional status is not an error. It is an explicit acknowledgment that canonical maturation is incomplete. The fallback source is acknowledged, not endorsed.
+
+**A provisional route should not be treated as canonical.** It should not be cited as a governed output of the program intelligence discipline until its source_type is promoted to canonical_kpi or cat_governed_derivative.
+
+### What "Blocked" Means
+
+A route marked **blocked** must NOT compile. The gate exits 1 regardless of mode.
+
+Blocking conditions (any one is sufficient):
+- **A.** `source_type` is missing, empty, or not in the valid enum
+- **B.** `source_type` is `canonical_kpi` or `cat_governed_derivative` and the source file is missing from k-pi
+- **C.** `CAT_required: true` and `source_type: cat_governed_derivative` and the entity is not found in `construct_positioning_map.md`
+- **D.** `projection_required: true` and the construct does not pass `projection_readiness_gate.md`
+- **E.** Route explicitly declares `verdict: blocked` in `route_source_map.yaml`
+
+**Manual mirror correction is not a valid resolution to a blocked route.** The correct resolution is always repairing the source or CAT authority in k-pi, then re-running the pipeline.
+
+Note: Condition C applies only to `cat_governed_derivative` routes. `canonical_kpi` (doctrine-level) routes are not checked against `construct_positioning_map.md` because doctrine constructs are not in the derivative entity positioning model.
+
+### How Derivative Signals Are Handled
+
+ESI (`/execution-stability-index/`) and RAG (`/risk-acceleration-gradient/`) are Category Primitives under the CAT model. They:
+- Are classified `cat_governed_derivative` with `CAT_required: true` and `projection_required: true`
+- Must pass projection_readiness_gate.md (both confirmed READY as of 2026-03-31, after Stream 40.16)
+- Must not exceed `claim_boundary_model.md` claim language
+- May not publish as orphan constructs — they must remain positioned under signal_infrastructure
+- Are governed by `construct_positioning_map.md` (both classified as Category Primitive, L3, dedicated page allowed)
+
+When canonical maturity is incomplete for a derivative signal, the route must be marked provisional (base44_snapshot_fallback or compiled_trusted_legacy) rather than silently treated as canonical. The system exposes the truth of maturity; it does not hide it.
+
+### What "Manual Page Correction" Means and Why It Is Not Permitted
+
+A **manual page correction** is any direct edit to `pages/*.md` intended to fix content that was pulled from an ungoverned or incorrect source. This practice:
+- Fixes the symptom while leaving the root cause (wrong or absent source authority) in place
+- Breaks determinism: the next pipeline run will overwrite the correction
+- Creates invisible governance debt: no audit trail, no authority binding, no claim boundary enforcement
+
+**Manual page correction is not a valid steady-state operating mode.**
+
+If content in a mirror page is incorrect, the correct resolution path is:
+1. Identify the source authority gap (missing canonical source, wrong claim class, ungoverned fallback)
+2. Repair the source in k-pi (write the node, narrative, or architecture document)
+3. Update `route_source_map.yaml` to declare the repaired source
+4. Re-run the pipeline
+
+---
+
+## CAT Source Files Reference
+
+| File | Location | Purpose |
+|------|----------|---------|
+| `construct_positioning_map.md` | k-pi/docs/governance/category/ | Declares entity class, role, parent, projection depth per construct |
+| `claim_boundary_model.md` | k-pi/docs/governance/category/ | Defines allowed and disallowed claim language for derivative signals |
+| `projection_schema.md` | k-pi/docs/governance/category/ | Defines projection targets and authority for each domain |
+| `projection_readiness_gate.md` | k-pi/docs/governance/category/ | Gates which constructs may be externally projected (READY/not ready) |
+| `category_structure_model.md` | k-pi/docs/governance/category/ | Hierarchical category structure for the program intelligence discipline |
+| `domain_mapping_model.md` | k-pi/docs/governance/category/ | Maps krayu.be, mirror.krayu.be, product domains to their CAT role |
+
+---
+
+*Operators Manual — WEB-OPS Pipeline | Krayu Program Intelligence | 2026-03-31*
+*Updated: WEB-CAT-INTEGRATION-01 — Source Authority Model and CAT Pre-Compile Gate*
