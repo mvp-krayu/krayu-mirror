@@ -2,7 +2,7 @@
 layout: base.njk
 title: "Program Intelligence for Technology Organizations"
 description: "Krayu provides Program Intelligence advisory services for technology organizations, translating engineering execution into executive insight."
-canonicalUrl: "https://krayu.be/"
+canonical: "https://krayu.be/"
 pageSchema: |
   {
     "@context": "https://schema.org",
@@ -34,4 +34,15 @@ Engineering activity flows through three interpretive layers:
 
 Most technology programs fail gradually — long before leadership realizes it. Program Intelligence introduces a structured interpretive layer that converts engineering telemetry into signals about program health and emerging risk.
 
-<div class="cta-block"><a href="https://krayu.be/">Explore the full Krayu site on krayu.be →</a></div>
+## Explore
+
+- [Program Intelligence](/program-intelligence/) — the discipline, constructs, and analytical framework
+- [Manifesto](/manifesto/) — the founding position on executive visibility
+- [PiOS](/pios/) — Program Intelligence Operating System
+- [Portfolio Intelligence](/portfolio-intelligence/) — cross-program execution visibility
+- [Signäl Platform](/signal-platform/) — execution signal infrastructure
+- [Execution Stability Index](/execution-stability-index/) — composite stability indicator
+- [Risk Acceleration Gradient](/risk-acceleration-gradient/) — risk rate-of-change model
+- [Research](/research/) — the structural visibility problem examined
+
+<div class="cta-block"><a href="https://krayu.be/">Visit krayu.be →</a></div>
