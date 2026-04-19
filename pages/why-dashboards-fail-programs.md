@@ -114,6 +114,6 @@ A composite structural stability indicator computed from five execution dimensio
 
 A dynamic risk measurement that captures how fast risk is growing and whether that growth is accelerating. RAG detects the velocity and direction of structural deterioration.
 
-The solution to Execution Blindness is not better dashboards. It is a governed interpretive layer that transforms execution evidence into structural intelligence — the role that Program Intelligence is designed to perform.
+The solution to Execution Blindness is not better dashboards. It is a governed interpretive layer that transforms execution evidence into structural intelligence — the role that [Program Intelligence](/program-intelligence/) performs through [PiOS](/pios/).
 
 [Execution Blindness](/program-intelligence/#execution-blindness)[Real-World Examples](/execution-blindness-examples) [Early Warning Signals](/early-warning-signals-program-failure) [Explore ESI](/execution-stability-index)

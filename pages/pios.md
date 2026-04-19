@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: "PiOS — The Program Intelligence Operating System"
-description: "PiOS is the operating system that makes Program Intelligence executable — transforming fragmented execution evidence into signals, conditions, diagnosis, and decision-grade intelligence through a governed transformation chain."
+description: "PiOS is the execution system that makes Program Intelligence operational — computing signals, conditions, diagnosis, and decision-grade intelligence from execution evidence through a governed derivation chain."
 canonical: "https://krayu.be/pios"
 publish_status: "live"
 ---
@@ -10,7 +10,7 @@ publish_status: "live"
 
 The operating system that makes Program Intelligence executable.
 
-Where [Program Intelligence](/program-intelligence/) defines the discipline of translating engineering execution into executive insight, PiOS provides the structured system through which that translation becomes operational — transforming fragmented execution evidence into signals, conditions, diagnosis, and decision-grade intelligence.
+Where [Program Intelligence](/program-intelligence/) defines the discipline of deriving structural intelligence from engineering execution, PiOS provides the structured system through which that derivation becomes operational — computing signals, conditions, diagnosis, and decision-grade intelligence from execution evidence.
 
 ---
 
@@ -20,7 +20,7 @@ PiOS is not a dashboard, a reporting layer, or a generic analytics product. It i
 
 Its role is to ingest execution evidence, reconstruct the system in which delivery occurs, compute signals that reflect execution behavior, activate conditions that describe system state, and synthesize diagnosis that remains traceable to the original evidence chain.
 
-PiOS does not summarize execution from the outside. It operates from within a governed analytical model that preserves the relationship between observation, interpretation, and explanation.
+PiOS does not summarize execution from the outside. It operates from within a governed analytical model that preserves the relationship between observation, derivation, and explanation.
 
 PiOS serves as the system layer of Program Intelligence. Without it, Program Intelligence remains a conceptual discipline. With it, the discipline becomes operational.
 
@@ -37,9 +37,9 @@ PiOS operates through a structured four-step process:
 | 01 | Evidence Intake | Ingest execution evidence across the delivery environment |
 | 02 | Structure Reconstruction | Rebuild program structure, dependencies, and execution topology |
 | 03 | Signal Computation | Compute signals that describe system behavior over time |
-| 04 | Condition and Diagnosis | Translate signals into states and traceable explanations |
+| 04 | Condition and Diagnosis | Convert signals into states and traceable explanations |
 
-Each step is governed. No step performs the interpretive work of another. Evidence enters at Step 01 without interpretation. Interpretation is applied through the governed computation model at Step 03, not at intake.
+Each step is governed. No step performs the analytical work of another. Evidence enters at Step 01 without transformation. Signal derivation occurs through the governed computation model at Step 03, not at intake.
 
 ---
 
@@ -101,13 +101,13 @@ Why observed states emerge and how they relate to the underlying structure of th
 
 **Discipline → System**
 
-Program Intelligence defines the discipline. PiOS defines the system through which that discipline operates. Program Intelligence establishes that engineering execution can be translated into executive insight. PiOS provides the operational mechanism — connecting structural reconstruction, signal computation, condition activation, and diagnosis into one governed system.
+Program Intelligence defines the discipline. PiOS defines the system through which that discipline operates. Program Intelligence establishes that structural intelligence can be derived from engineering execution. PiOS provides the operational mechanism — connecting structural reconstruction, signal computation, condition activation, and diagnosis into one governed system.
 
 ### PiOS and Signäl
 
 **System → Product Surface**
 
-Signäl is the execution signal infrastructure and product surface built by KRAYU. PiOS is the underlying operating system that gives Signäl its analytical substance. Signäl exposes, organizes, and operationalizes the outputs; PiOS generates them through a governed transformation chain. Without PiOS, Signäl would remain a presentation layer.
+Signäl is the execution [Signal Infrastructure](/signal-infrastructure/) and product surface built by KRAYU. PiOS is the underlying operating system that gives Signäl its analytical substance. Signäl exposes, organizes, and operationalizes the outputs; PiOS generates them through a governed transformation chain. Without PiOS, Signäl would remain a presentation layer.
 
 ### PiOS and Existing Categories
 
@@ -115,7 +115,7 @@ Signäl is the execution signal infrastructure and product surface built by KRAY
 
 PiOS does not fit within existing categories such as business intelligence, observability, or delivery analytics. Business intelligence aggregates outcomes. Observability tracks the behavior of software systems. Delivery analytics measures efficiency within teams.
 
-PiOS addresses a different problem: reconstructing how complex program execution behaves as a system, and translating that behavior into intelligence that leadership can interpret.
+PiOS addresses a different problem: reconstructing how complex program execution behaves as a system, and deriving structural intelligence from that behavior.
 
 ---
 

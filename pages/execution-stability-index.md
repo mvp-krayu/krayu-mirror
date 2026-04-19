@@ -54,7 +54,7 @@ Captures the rate at which risk is injected, escalated, and propagated across pr
 
 ---
 
-## Interpreting ESI
+## ESI Score Bands
 
 ESI is expressed as a 0–100 score. The score reflects the program's current structural stability band and — critically — its direction of travel.
 
@@ -71,7 +71,7 @@ The execution system is stable, dimensions are aligned, and delivery momentum is
 
 ### Declining ESI means
 
-Structural instability is building across one or more dimensions. The program may still appear operationally normal, yet execution signals indicate that stability is eroding — often well before visible failure.
+Structural instability is building across one or more dimensions. The program may still appear operationally normal, yet execution signals indicate that stability is eroding — often well before visible failure. The structural signal patterns that appear ahead of ESI decline are documented in [Early Warning Signals of Program Failure](/early-warning-signals-program-failure).
 
 ---
 
