@@ -3,7 +3,7 @@ layout: base.njk
 title: "Why Dashboards Fail to Detect Program Failure"
 description: "📊 Structural Analysis"
 canonical: "https://krayu.be/why-dashboards-fail-programs"
-publish_status: "preview-pending-publish"
+publish_status: "live"
 page_class: "additive_expansion"
 origin_stream: "WEB-EXP-01"
 upstream_surface: "Base44"

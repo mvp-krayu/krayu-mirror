@@ -3,7 +3,7 @@ layout: base.njk
 title: "Early Warning Signals of Program Failure"
 description: "⚡ Signal Reference"
 canonical: "https://krayu.be/early-warning-signals-program-failure"
-publish_status: "preview-pending-publish"
+publish_status: "live"
 page_class: "additive_expansion"
 origin_stream: "WEB-EXP-01"
 upstream_surface: "Base44"

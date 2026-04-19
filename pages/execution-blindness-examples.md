@@ -3,7 +3,7 @@ layout: base.njk
 title: "Execution Blindness Examples"
 description: "🔍 Program Scenarios"
 canonical: "https://krayu.be/execution-blindness-examples"
-publish_status: "preview-pending-publish"
+publish_status: "live"
 page_class: "additive_expansion"
 origin_stream: "WEB-EXP-01"
 upstream_surface: "Base44"
