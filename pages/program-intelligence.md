@@ -56,7 +56,7 @@ Executive leadership needs:
 
 Engineering tools reveal **activity**. Program Intelligence explains **meaning**.
 
-[The Program Intelligence Gap — full explanation →](/program-intelligence/-gap)
+[The Program Intelligence Gap — full explanation →](/program-intelligence-gap/)
 
 ---
 

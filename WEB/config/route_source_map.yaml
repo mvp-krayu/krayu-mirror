@@ -25,7 +25,7 @@ _meta:
   version: "1.0"
   contract: "WEB-CAT-INTEGRATION-01"
   date: "2026-03-31"
-  kpi_root_relative: "../repos/k-pi"
+  kpi_governance_repo: "$HOME/Projects/k-pi-governance"
   cat_artifacts_path: "docs/governance/category"
   notes: >
     All routes must have explicit source authority.
@@ -129,28 +129,6 @@ routes:
       Product/commercial surface (Signäl). No CAT-governed doctrine source.
       Category domain_mapping_model.md positions krayu.be as narrative explanation layer.
       Treated as compiled trusted legacy. Provisional.
-
-  /signal/:
-    source_type: cat_governed_derivative
-    source_path: "docs/governance/derivatives/narratives/signal.md"
-    authority_level: derivative_capability
-    CAT_required: true
-    projection_required: false
-    allowed_claim_class: capability_description
-    fallback_policy: block_if_no_cat
-    cat_entity: "Signal"
-    projection_construct: ""
-    anchor: false
-    anchor_parent: ""
-    publish_status: live
-    verdict: allowed
-    notes: >
-      Canonical narrative: docs/governance/derivatives/narratives/signal.md
-      Promoted by I.6 Hardening Batch 01 (2026-03-31).
-      construct_positioning_map.md: Class = Analytical Signal Layer,
-      Role = Evidence-derived execution signal formation, Parent = Signal Infrastructure.
-      Signal = governed transformation output of Signal Infrastructure pipeline.
-      Sits between Signal Infrastructure and analytical constructs (ESI/RAG).
 
   /portfolio-intelligence/:
     source_type: cat_governed_derivative

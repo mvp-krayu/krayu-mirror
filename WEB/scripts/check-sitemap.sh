@@ -213,13 +213,27 @@ if [[ -n "$SITEMAP_FILE" ]]; then
   echo "--- Section 3: Sitemap route extraction ---"
   echo ""
 
-  # Validate sitemap is well-formed XML
+  # Validate sitemap is well-formed XML (xmllint when available; HTML-wrapper heuristic fallback)
   if ! grep -q '<urlset' "$SITEMAP_FILE" 2>/dev/null; then
     fail_check "sitemap.xml is malformed — missing <urlset> root element"
+  elif command -v xmllint &>/dev/null; then
+    if xmllint --noout "$SITEMAP_FILE" 2>/dev/null; then
+      SITEMAP_PARSEABLE=1
+      pass_check "sitemap.xml is valid XML (xmllint)"
+    else
+      fail_check "sitemap.xml is not valid XML — xmllint parse error (possible HTML wrapper or malformed content)"
+    fi
   else
-    SITEMAP_PARSEABLE=1
-    pass_check "sitemap.xml has valid <urlset> root"
+    # xmllint unavailable — heuristic: reject if HTML wrapper detected
+    if grep -q '<!DOCTYPE html' "$SITEMAP_FILE" 2>/dev/null || grep -q '<html' "$SITEMAP_FILE" 2>/dev/null; then
+      fail_check "sitemap.xml contains HTML wrapper — not valid XML (install xmllint for strict validation)"
+    else
+      SITEMAP_PARSEABLE=1
+      warn_check "sitemap.xml has <urlset> root — xmllint unavailable; install xmllint for strict XML validation"
+    fi
+  fi
 
+  if [[ "$SITEMAP_PARSEABLE" -eq 1 ]]; then
     # Extract all <loc> URLs and normalize to trailing-slash canonical form
     while IFS= read -r loc_line; do
       # Strip XML tags and whitespace
@@ -449,7 +463,7 @@ fi
   echo "| Live page missing from sitemap | publish_status=live but route not in sitemap.xml | YES |"
   echo "| Preview page in sitemap | publish_status=preview-pending-* but route present in sitemap.xml | YES |"
   echo "| Orphan sitemap route | Route in sitemap.xml but no backing page in pages/ | YES |"
-  echo "| Malformed sitemap | sitemap.xml missing \`<urlset\` root | YES |"
+  echo "| Malformed sitemap | sitemap.xml is not valid XML (xmllint or HTML-wrapper heuristic) | YES |"
   echo "| robots.txt missing Sitemap reference | robots.txt present but has no Sitemap: line | YES |"
   echo ""
   echo "---"
