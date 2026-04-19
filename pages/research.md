@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: "Program Intelligence Research"
-description: "Research on the structural visibility problem in technology organizations — the discipline of translating engineering execution into executive insight."
+description: "Research on the structural visibility problem in technology organizations — the discipline of deriving structural intelligence from engineering execution."
 canonical: "https://krayu.be/research"
 pageSchema: |
   {
@@ -24,7 +24,7 @@ publish_status: "live"
 
 Modern technology organizations generate vast operational data across repositories, delivery pipelines, architecture domains and enterprise systems. Engineering tools measure activity in detail, yet leadership often struggles to understand what this activity means for the program as a whole.
 
-This disconnect is not a tooling problem. It is a structural interpretive gap between engineering execution and executive decision-making.
+This disconnect is not a tooling problem. It is a structural analytical gap between engineering execution and executive decision-making.
 
 ## The Visibility Problem
 
@@ -32,7 +32,7 @@ Engineering systems optimize for delivery workflow. They answer operational ques
 
 Executive leadership requires a different class of question answered: which programs are actually underway, where delivery risks are accumulating, whether execution is structurally stable or drifting toward failure.
 
-**The challenge is interpretive.** Raw engineering telemetry does not speak the language of executive decision-making.
+**The challenge is structural.** Raw engineering telemetry does not surface the structural patterns that executive decision-making requires.
 
 Most technology programs fail gradually — long before leadership realizes it. The program may still appear operationally normal — tickets closing, deployments running, activity appearing normal — while structural instability signals are already accumulating beneath the surface.
 
@@ -58,11 +58,11 @@ Yet program execution itself remains largely opaque to leadership.
 
 As delivery environments scale, traditional governance approaches struggle to maintain visibility over program dynamics. Activity is visible. Meaning is not.
 
-Program Intelligence emerges as a response to this structural shift — providing the interpretive layer required to translate engineering execution into signals that leadership can understand and act upon.
+Program Intelligence emerges as a response to this structural shift — providing the analytical layer required to derive structural signals from engineering execution that leadership can act upon.
 
 ## Defining Program Intelligence
 
-Program Intelligence is the discipline of translating engineering execution into executive insight. It introduces a structured interpretive layer above engineering systems, transforming operational delivery data into clear signals about program structure, delivery momentum, and emerging execution risk.
+Program Intelligence is the discipline of deriving structural intelligence from engineering execution. It introduces a governed structural interpretation layer above engineering systems, converting delivery evidence into clear signals about program structure, delivery momentum, and emerging execution risk.
 
 | Discipline | Focus | Audience |
 |---|---|---|
@@ -73,7 +73,7 @@ Program Intelligence is the discipline of translating engineering execution into
 
 ## From Engineering Execution to Executive Insight
 
-Engineering activity flows through three interpretive layers:
+Engineering activity flows through three analytical layers:
 
 **Engineering Execution** — Jira · Git · CI/CD · Architecture · Service Platforms
 

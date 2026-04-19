@@ -1,20 +1,20 @@
 ---
 layout: base.njk
 title: "Program Intelligence — Execution Observability for Complex Programs"
-description: "Program Intelligence is the discipline of translating engineering execution into executive insight — introducing a structured interpretive layer above engineering systems."
+description: "Program Intelligence is the discipline of deriving structural intelligence from engineering execution — introducing a structured analytical layer above engineering systems."
 canonical: "https://krayu.be/program-intelligence/"
 publish_status: "live"
 ---
 
 # Program Intelligence
 
-The discipline of translating engineering execution into executive insight.
+The discipline of deriving structural intelligence from engineering execution.
 
 Modern technology organizations generate vast operational data across repositories, delivery pipelines, architecture domains, and enterprise systems. Engineering tools measure activity in detail, yet leadership often struggles to understand what this activity means for the program as a whole.
 
 This disconnect creates a structural visibility problem between engineering execution and executive decision-making.
 
-Program Intelligence introduces a structured interpretive layer above engineering systems. It transforms operational delivery data into clear signals about program structure, delivery momentum, and emerging execution risk.
+Program Intelligence introduces a governed structural interpretation layer above engineering systems. It transforms operational delivery data into clear signals about program structure, delivery momentum, and emerging execution risk.
 
 Rather than relying on fragmented dashboards or manual reporting, Program Intelligence converts engineering telemetry into structured executive intelligence that leadership can use to steer complex technology initiatives.
 
@@ -54,7 +54,7 @@ Executive leadership needs:
 - Where are delivery risks accumulating?
 - How stable is the execution environment?
 
-Engineering tools reveal **activity**. Program Intelligence explains **meaning**.
+Engineering tools reveal **activity**. Program Intelligence reveals **structure**.
 
 [The Program Intelligence Gap — full explanation →](/program-intelligence-gap/)
 
@@ -115,7 +115,7 @@ Program Intelligence occupies a distinct analytical position from established di
 | Business Intelligence | Commercial and operational outcomes |
 | **Program Intelligence** | **Program execution dynamics for leadership — the analytical bridge** |
 
-Engineering observability focuses on the performance and reliability of systems. DevOps analytics examines delivery efficiency within engineering teams. Business intelligence analyzes commercial and operational outcomes. Program Intelligence focuses on the dynamics of program execution itself — interpreting engineering activity to understand how complex technology initiatives evolve over time.
+Engineering observability focuses on the performance and reliability of systems. DevOps analytics examines delivery efficiency within engineering teams. Business intelligence analyzes commercial and operational outcomes. Program Intelligence focuses on the dynamics of program execution itself — measuring and detecting structural signals as complex technology initiatives evolve over time.
 
 ---
 
@@ -153,7 +153,7 @@ Program Intelligence scales across portfolios. By computing ESI and RAG across m
 
 ## Program Intelligence Advisory
 
-KRAYU provides advisory services to help technology organizations introduce Program Intelligence into their delivery environments. Our work combines program architecture, strategic advisory, and execution signal infrastructure to translate engineering execution into credible executive insight.
+KRAYU provides advisory services to help technology organizations introduce Program Intelligence into their delivery environments. Our work combines program architecture, execution signal infrastructure, and structural analysis to derive credible execution intelligence from engineering systems.
 
 ---
 

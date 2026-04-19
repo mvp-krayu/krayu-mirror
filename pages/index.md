@@ -1,14 +1,14 @@
 ---
 layout: base.njk
 title: "Program Intelligence for Technology Organizations"
-description: "Krayu provides Program Intelligence advisory services for technology organizations, translating engineering execution into executive insight."
+description: "Krayu provides Program Intelligence for technology organizations, deriving structural execution intelligence from engineering systems."
 canonical: "https://krayu.be/"
 pageSchema: |
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Krayu — Program Intelligence for Technology Organizations",
-    "description": "Krayu provides Program Intelligence advisory services for technology organizations.",
+    "description": "Krayu provides Program Intelligence for technology organizations.",
     "url": "https://krayu.be/",
     "about": { "@id": "https://krayu.be/#ProgramIntelligenceConcept" },
     "publisher": { "@id": "https://krayu.be/#organization" }
@@ -20,11 +20,11 @@ publish_status: "live"
 
 <p class="thesis">Turning engineering execution into executive intelligence.</p>
 
-Modern technology organizations generate enormous engineering activity — yet leadership often struggles to understand what this activity truly means for the program. Krayu translates engineering complexity into clear program insight for executives, boards, and investors.
+Modern technology organizations generate enormous engineering activity — yet leadership often struggles to understand what this activity truly means for the program. Krayu derives structural execution intelligence from engineering systems for executives, boards, and investors.
 
 ## The Program Intelligence Framework
 
-Engineering activity flows through three interpretive layers:
+Engineering activity flows through three analytical layers:
 
 - **Engineering Execution** — Jira, Git, DevOps, CI/CD, repositories.
 - **Program Intelligence** — Program structuring, initiative transparency, execution signals, governance.
@@ -32,7 +32,7 @@ Engineering activity flows through three interpretive layers:
 
 ## Detect Execution Drift Before It Becomes Program Failure
 
-Most technology programs fail gradually — long before leadership realizes it. Program Intelligence introduces a structured interpretive layer that converts engineering telemetry into signals about program health and emerging risk.
+Most technology programs fail gradually — long before leadership realizes it. Program Intelligence introduces a governed structural interpretation layer that derives signals from engineering telemetry about program health and emerging risk.
 
 ## Explore
 
