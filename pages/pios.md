@@ -109,6 +109,8 @@ Program Intelligence defines the discipline. PiOS defines the system through whi
 
 Signäl is the execution [Signal Infrastructure](/signal-infrastructure/) and product surface built by KRAYU. PiOS is the underlying operating system that gives Signäl its analytical substance. Signäl exposes, organizes, and operationalizes the outputs; PiOS generates them through a governed transformation chain. Without PiOS, Signäl would remain a presentation layer.
 
+The Signäl platform and its execution intelligence outputs are available through [signal-pi.com](https://signal-pi.com/).
+
 ### PiOS and Existing Categories
 
 **New Category**

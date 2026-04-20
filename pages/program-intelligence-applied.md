@@ -50,4 +50,4 @@ There are no ongoing reporting requirements. No instrumentation changes. No exte
 
 ## Where to Start
 
-To understand the discipline before evaluating the engagement, start with [Program Intelligence](/program-intelligence/) or explore how [PiOS](/pios/) governs the derivation chain that produces execution intelligence.
+To understand the discipline before evaluating the engagement, start with [Program Intelligence](/program-intelligence/) or explore how [PiOS](/pios/) governs the derivation chain that produces execution intelligence. To learn more about the LENS Assessment or request an engagement, visit [Signäl at signal-pi.com](https://signal-pi.com/).

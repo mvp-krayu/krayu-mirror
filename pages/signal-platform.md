@@ -59,6 +59,8 @@ Signäl translates operational complexity into strategic insight.
 - Investors
 - Program governance functions
 
+The Signäl platform is accessible through [signal-pi.com](https://signal-pi.com/).
+
 ## Signal Infrastructure Principles
 
 - Every signal output is linked to verifiable source artifacts

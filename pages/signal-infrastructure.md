@@ -107,6 +107,8 @@ Executive leadership · Boards · Investors · Program governance
 
 Signäl does not produce intelligence. It surfaces intelligence that the PiOS pipeline has already produced under the full constraint of the Program Intelligence discipline. Where PiOS outputs are absent, Signäl surfaces that absence. It does not fill it with estimates.
 
+The Signäl platform is accessible through [signal-pi.com](https://signal-pi.com/).
+
 ---
 
 ## ExecLens
