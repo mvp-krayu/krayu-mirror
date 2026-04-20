@@ -114,7 +114,7 @@ Execution signal infrastructure enables the extraction, normalization, and inter
 
 KRAYU's **Signäl** platform provides the execution signal infrastructure that operationalizes Program Intelligence — transforming fragmented operational data into structured program signals that leadership can act upon with confidence.
 
-See: https://krayu.be/signal-platform
+See: [Signäl Platform](https://krayu.be/signal-platform)
 
 ---
 
@@ -154,8 +154,8 @@ Organizations that develop this capability will gain a structural advantage in t
 
 ## See Also
 
-- Program Intelligence Overview — https://krayu.be/program-intelligence
-- Signäl Platform — https://krayu.be/signal-platform
-- Execution Stability Index — https://krayu.be/execution-stability-index
-- Risk Acceleration Gradient — https://krayu.be/risk-acceleration-gradient
-- Research Library — https://krayu.be/research
+- [Program Intelligence Overview](https://krayu.be/program-intelligence)
+- [Signäl Platform](https://krayu.be/signal-platform)
+- [Execution Stability Index](https://krayu.be/execution-stability-index)
+- [Risk Acceleration Gradient](https://krayu.be/risk-acceleration-gradient)
+- [Research Library](https://krayu.be/research)
