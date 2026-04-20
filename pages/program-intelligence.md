@@ -141,6 +141,8 @@ The discipline of Program Intelligence is operationalized through PiOS™ — th
 
 The execution signals that Program Intelligence produces are delivered through **Signäl** — the signal infrastructure built by KRAYU. Signäl sits above engineering systems such as Jira, Git, DevOps pipelines, and enterprise platforms, converting execution telemetry into structured signals across ESI, RAG, and the ExecLens intelligence surface.
 
+For technology leadership considering how Program Intelligence becomes operational in practice, [Program Intelligence Applied](/program-intelligence-applied/) describes the engagement path and what the LENS Assessment produces.
+
 [Signal Infrastructure →](/signal-infrastructure)
 
 ## Portfolio Intelligence
