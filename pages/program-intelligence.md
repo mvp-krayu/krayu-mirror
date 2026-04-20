@@ -159,6 +159,8 @@ KRAYU establishes Program Intelligence as an operational capability within techn
 
 The result is a governed view of execution: what is proven, where uncertainty remains, and where intervention is required before commitment.
 
+A representative implementation of this approach is accessible through the Signäl platform at https://signal-pi.com/.
+
 ---
 
 *Program Intelligence — Krayu canonical discipline definition | Authority: CKR-001 | GOV-00 | CAT-00 | Source: krayu.be/program-intelligence snapshot 2026-03-30*
