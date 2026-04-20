@@ -98,6 +98,8 @@ Adding more metrics, dashboards, or reporting layers does not resolve Execution 
 
 **Dashboards display what they are fed.** A dashboard receiving operational inputs displays operational status. Structural intelligence requires execution signals derived from governed analytical transformation of the underlying evidence — not a better view of the same inputs.
 
+The structural explanation for why operational reporting tools cannot resolve Execution Blindness — regardless of volume or aggregation — is examined in [Why Dashboards Fail Programs](/why-dashboards-fail-programs/).
+
 ---
 
 ## How Program Intelligence Addresses Execution Blindness
