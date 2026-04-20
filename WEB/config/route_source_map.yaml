@@ -339,3 +339,28 @@ routes:
       construct_positioning_map.md: Class = Detection Layer,
       Role = Identification of program failure conditions via signal patterns.
       Derives from ESI and RAG — does not invent new signals.
+
+  /program-intelligence-applied/:
+    source_type: bridge_governed
+    source_path: "pages/program-intelligence-applied.md"
+    authority_level: bridge
+    CAT_required: false
+    projection_required: true
+    allowed_claim_class: bridge
+    fallback_policy: n/a
+    cat_entity: ""
+    projection_construct: ""
+    anchor: false
+    anchor_parent: ""
+    publish_status: preview-pending-publish
+    verdict: provisional
+    notes: >
+      Retrospective entry. Route was created directly in the Base44 app without a governed
+      push operation, bypassing all pipeline stages (no push manifest, no snapshot capture,
+      no prior route_source_map.yaml entry). Route is being brought under governance via
+      WEB.EXECUTION.ROUTE.RESOLUTION.GOVREC.01 (2026-04-20). Classification: BRIDGE.
+      Claims are governed by docs/brain/publish/program_intelligence_applied_page.md in
+      k-pi-core (krayu-program-intelligence repo). The mirror source page
+      (pages/program-intelligence-applied.md) has not yet been created; it will be authored
+      in the subsequent BRIDGE stream with content derived exclusively from the controlled
+      claims table. Verdict: provisional pending mirror page creation and content review.
