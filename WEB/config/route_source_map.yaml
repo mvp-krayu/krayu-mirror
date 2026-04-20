@@ -352,15 +352,15 @@ routes:
     projection_construct: ""
     anchor: false
     anchor_parent: ""
-    publish_status: preview-pending-publish
-    verdict: provisional
+    publish_status: live
+    verdict: allowed
     notes: >
       Retrospective entry. Route was created directly in the Base44 app without a governed
       push operation, bypassing all pipeline stages (no push manifest, no snapshot capture,
-      no prior route_source_map.yaml entry). Route is being brought under governance via
+      no prior route_source_map.yaml entry). Brought under governance via
       WEB.EXECUTION.ROUTE.RESOLUTION.GOVREC.01 (2026-04-20). Classification: BRIDGE.
       Claims are governed by docs/brain/publish/program_intelligence_applied_page.md in
-      k-pi-core (krayu-program-intelligence repo). The mirror source page
-      (pages/program-intelligence-applied.md) has not yet been created; it will be authored
-      in the subsequent BRIDGE stream with content derived exclusively from the controlled
-      claims table. Verdict: provisional pending mirror page creation and content review.
+      k-pi-core (krayu-program-intelligence repo). Mirror source page created and reviewed
+      in WEB.EXECUTION.ROUTE.RESOLUTION.BRIDGE.01. Promoted to live by
+      WEB.EXECUTION.ROUTE.RESOLUTION.PROMOTION.REVIEW.01 (2026-04-20). All promotion
+      criteria passed. Verdict upgraded from provisional to allowed.

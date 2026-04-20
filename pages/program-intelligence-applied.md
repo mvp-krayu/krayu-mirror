@@ -3,7 +3,7 @@ layout: base.njk
 title: "Program Intelligence Applied — Execution Intelligence in Practice"
 description: "Program Intelligence delivers a structural view of program health from validated delivery evidence. Powered by the Signäl execution signal infrastructure, the LENS Assessment makes this intelligence operational for technology leadership."
 canonical: "https://krayu.be/program-intelligence-applied"
-publish_status: "preview-pending-publish"
+publish_status: "live"
 ---
 
 <p class="back-link"><a href="/program-intelligence/">← Program Intelligence</a></p>
